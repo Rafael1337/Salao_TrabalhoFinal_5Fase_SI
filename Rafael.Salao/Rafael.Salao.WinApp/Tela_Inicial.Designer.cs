@@ -28,64 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.funcionariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.inicio_aba = new System.Windows.Forms.TabPage();
+            this.agenda_aba = new System.Windows.Forms.TabPage();
+            this.funcionarios_aba = new System.Windows.Forms.TabPage();
+            this.caixa_aba = new System.Windows.Forms.TabPage();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // tabControl1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agendaToolStripMenuItem,
-            this.funcionariosToolStripMenuItem,
-            this.caixaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(634, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.tabControl1.Controls.Add(this.inicio_aba);
+            this.tabControl1.Controls.Add(this.agenda_aba);
+            this.tabControl1.Controls.Add(this.funcionarios_aba);
+            this.tabControl1.Controls.Add(this.caixa_aba);
+            this.tabControl1.Location = new System.Drawing.Point(12, 3);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(610, 326);
+            this.tabControl1.TabIndex = 0;
             // 
-            // agendaToolStripMenuItem
+            // inicio_aba
             // 
-            this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
-            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.agendaToolStripMenuItem.Text = "Agenda";
+            this.inicio_aba.Location = new System.Drawing.Point(4, 22);
+            this.inicio_aba.Name = "inicio_aba";
+            this.inicio_aba.Padding = new System.Windows.Forms.Padding(3);
+            this.inicio_aba.Size = new System.Drawing.Size(602, 300);
+            this.inicio_aba.TabIndex = 0;
+            this.inicio_aba.Text = "Inicio";
+            this.inicio_aba.UseVisualStyleBackColor = true;
             // 
-            // funcionariosToolStripMenuItem
+            // agenda_aba
             // 
-            this.funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
-            this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.funcionariosToolStripMenuItem.Text = "Funcionarios";
+            this.agenda_aba.Location = new System.Drawing.Point(4, 22);
+            this.agenda_aba.Name = "agenda_aba";
+            this.agenda_aba.Padding = new System.Windows.Forms.Padding(3);
+            this.agenda_aba.Size = new System.Drawing.Size(602, 300);
+            this.agenda_aba.TabIndex = 1;
+            this.agenda_aba.Text = "Agenda";
+            this.agenda_aba.UseVisualStyleBackColor = true;
             // 
-            // caixaToolStripMenuItem
+            // funcionarios_aba
             // 
-            this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
-            this.caixaToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.caixaToolStripMenuItem.Text = "Caixa";
+            this.funcionarios_aba.Location = new System.Drawing.Point(4, 22);
+            this.funcionarios_aba.Name = "funcionarios_aba";
+            this.funcionarios_aba.Padding = new System.Windows.Forms.Padding(3);
+            this.funcionarios_aba.Size = new System.Drawing.Size(602, 300);
+            this.funcionarios_aba.TabIndex = 2;
+            this.funcionarios_aba.Text = "Funcionarios";
+            this.funcionarios_aba.UseVisualStyleBackColor = true;
+            // 
+            // caixa_aba
+            // 
+            this.caixa_aba.Location = new System.Drawing.Point(4, 22);
+            this.caixa_aba.Name = "caixa_aba";
+            this.caixa_aba.Padding = new System.Windows.Forms.Padding(3);
+            this.caixa_aba.Size = new System.Drawing.Size(602, 300);
+            this.caixa_aba.TabIndex = 3;
+            this.caixa_aba.Text = "Caixa";
+            this.caixa_aba.UseVisualStyleBackColor = true;
             // 
             // Tela_Inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 341);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.tabControl1);
             this.Name = "Tela_Inicial";
             this.Text = "Tela_Inicial";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem agendaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem funcionariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage inicio_aba;
+        private System.Windows.Forms.TabPage agenda_aba;
+        private System.Windows.Forms.TabPage funcionarios_aba;
+        private System.Windows.Forms.TabPage caixa_aba;
     }
 }
