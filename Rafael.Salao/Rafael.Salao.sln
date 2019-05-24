@@ -15,6 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 Banco de dados", "4.1 B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rafael.Salao.WinApp", "Rafael.Salao.WinApp\Rafael.Salao.WinApp.csproj", "{1ED7E6CC-D6B7-4A39-BC2D-2884ACEC2B69}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentação", "Documentação", "{38EA1E4A-B702-410B-ABD8-0FBA893D3BA3}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Desktop\Casos de uso diagrama.mdj = ..\..\..\..\Desktop\Casos de uso diagrama.mdj
+		..\..\..\..\Desktop\Diagrama de caso de uso 1.png = ..\..\..\..\Desktop\Diagrama de caso de uso 1.png
+		..\..\..\..\Desktop\Diagrama de caso de uso 2.png = ..\..\..\..\Desktop\Diagrama de caso de uso 2.png
+		..\..\..\..\Desktop\Diagrama de classe.png = ..\..\..\..\Desktop\Diagrama de classe.png
+		..\..\..\..\Desktop\Trabalho 5 fase SI.mdj = ..\..\..\..\Desktop\Trabalho 5 fase SI.mdj
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rafael.Salao.Dominio", "Rafael.Salao.Dominio\Rafael.Salao.Dominio.csproj", "{3FC1A4CE-172A-4CB5-8DDD-F07621AAE9EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +36,10 @@ Global
 		{1ED7E6CC-D6B7-4A39-BC2D-2884ACEC2B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ED7E6CC-D6B7-4A39-BC2D-2884ACEC2B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ED7E6CC-D6B7-4A39-BC2D-2884ACEC2B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FC1A4CE-172A-4CB5-8DDD-F07621AAE9EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC1A4CE-172A-4CB5-8DDD-F07621AAE9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC1A4CE-172A-4CB5-8DDD-F07621AAE9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC1A4CE-172A-4CB5-8DDD-F07621AAE9EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +47,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{696959A5-1151-4673-8B44-23A9C375422E} = {4B9BE512-6435-41A1-B052-C4C442D0EAA4}
 		{1ED7E6CC-D6B7-4A39-BC2D-2884ACEC2B69} = {3FD6BF2D-5AB9-4D94-93FC-7F5C909C20AF}
+		{3FC1A4CE-172A-4CB5-8DDD-F07621AAE9EC} = {7AB1AB7B-C5BD-48CC-9BD5-A6A9DF59F674}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47EA0011-BBE7-4474-89FD-1FDB62464F38}
