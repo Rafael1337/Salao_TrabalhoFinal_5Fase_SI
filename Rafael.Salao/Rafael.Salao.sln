@@ -26,6 +26,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentação", "Documenta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rafael.Salao.Dominio", "Rafael.Salao.Dominio\Rafael.Salao.Dominio.csproj", "{3FC1A4CE-172A-4CB5-8DDD-F07621AAE9EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rafael.Salao.Infra.Dados", "Rafael.Salao.Infra.Dados\Rafael.Salao.Infra.Dados.csproj", "{9BAE39C9-00B7-4265-9E05-CB591032E5A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{D60A5B09-FA5A-4642-B520-A32802BD14C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,10 @@ Global
 		{3FC1A4CE-172A-4CB5-8DDD-F07621AAE9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FC1A4CE-172A-4CB5-8DDD-F07621AAE9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FC1A4CE-172A-4CB5-8DDD-F07621AAE9EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BAE39C9-00B7-4265-9E05-CB591032E5A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BAE39C9-00B7-4265-9E05-CB591032E5A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BAE39C9-00B7-4265-9E05-CB591032E5A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BAE39C9-00B7-4265-9E05-CB591032E5A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{696959A5-1151-4673-8B44-23A9C375422E} = {4B9BE512-6435-41A1-B052-C4C442D0EAA4}
 		{1ED7E6CC-D6B7-4A39-BC2D-2884ACEC2B69} = {3FD6BF2D-5AB9-4D94-93FC-7F5C909C20AF}
 		{3FC1A4CE-172A-4CB5-8DDD-F07621AAE9EC} = {7AB1AB7B-C5BD-48CC-9BD5-A6A9DF59F674}
+		{9BAE39C9-00B7-4265-9E05-CB591032E5A5} = {696959A5-1151-4673-8B44-23A9C375422E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47EA0011-BBE7-4474-89FD-1FDB62464F38}
