@@ -50,5 +50,10 @@
       <DependentUpon>Tela_Inicial.cs</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tela_Inicial.resx">
+      <DependentUpon>Tela_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
