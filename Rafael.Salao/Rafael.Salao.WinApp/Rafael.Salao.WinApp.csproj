@@ -51,6 +51,12 @@
     <Compile Include="Agenda\Agenda_Adicionar_Tela.Designer.cs">
       <DependentUpon>Agenda_Adicionar_Tela.cs</DependentUpon>
     </Compile>
+    <Compile Include="Agenda\Agenda_Editar_Tela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda\Agenda_Editar_Tela.Designer.cs">
+      <DependentUpon>Agenda_Editar_Tela.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -68,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Agenda\Agenda_Adicionar_Tela.resx">
       <DependentUpon>Agenda_Adicionar_Tela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agenda\Agenda_Editar_Tela.resx">
+      <DependentUpon>Agenda_Editar_Tela.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
