@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Rafael.Salao.WinApp
+namespace Rafael.Salao.WinApp.Agenda
 {
-    public partial class Tela_Inicial : Form
+    public partial class Agenda_Adicionar_Tela : Form
     {
-        public Tela_Inicial()
+        public Agenda_Adicionar_Tela()
         {
             InitializeComponent();
-        }
-
-        private void remover_funcionario_button_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

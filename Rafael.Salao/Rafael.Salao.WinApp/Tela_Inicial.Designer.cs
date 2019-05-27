@@ -92,7 +92,7 @@
             this.remover_horario_agenda_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
             this.remover_horario_agenda_button.FlatAppearance.BorderSize = 0;
             this.remover_horario_agenda_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.remover_horario_agenda_button.Location = new System.Drawing.Point(102, 3);
+            this.remover_horario_agenda_button.Location = new System.Drawing.Point(102, 6);
             this.remover_horario_agenda_button.Name = "remover_horario_agenda_button";
             this.remover_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
             this.remover_horario_agenda_button.TabIndex = 3;
@@ -105,7 +105,7 @@
             this.editar_horario_agenda_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
             this.editar_horario_agenda_button.FlatAppearance.BorderSize = 0;
             this.editar_horario_agenda_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editar_horario_agenda_button.Location = new System.Drawing.Point(54, 3);
+            this.editar_horario_agenda_button.Location = new System.Drawing.Point(54, 6);
             this.editar_horario_agenda_button.Name = "editar_horario_agenda_button";
             this.editar_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
             this.editar_horario_agenda_button.TabIndex = 2;
@@ -118,7 +118,7 @@
             this.adicionar_horario_agenda_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
             this.adicionar_horario_agenda_button.FlatAppearance.BorderSize = 0;
             this.adicionar_horario_agenda_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adicionar_horario_agenda_button.Location = new System.Drawing.Point(6, 3);
+            this.adicionar_horario_agenda_button.Location = new System.Drawing.Point(6, 6);
             this.adicionar_horario_agenda_button.Name = "adicionar_horario_agenda_button";
             this.adicionar_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
             this.adicionar_horario_agenda_button.TabIndex = 1;
@@ -163,11 +163,12 @@
             this.remover_funcionario_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
             this.remover_funcionario_button.FlatAppearance.BorderSize = 0;
             this.remover_funcionario_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.remover_funcionario_button.Location = new System.Drawing.Point(102, 5);
+            this.remover_funcionario_button.Location = new System.Drawing.Point(102, 6);
             this.remover_funcionario_button.Name = "remover_funcionario_button";
             this.remover_funcionario_button.Size = new System.Drawing.Size(42, 39);
             this.remover_funcionario_button.TabIndex = 7;
             this.remover_funcionario_button.UseVisualStyleBackColor = true;
+            this.remover_funcionario_button.Click += new System.EventHandler(this.remover_funcionario_button_Click);
             // 
             // editar_funcionario_button
             // 
@@ -176,7 +177,7 @@
             this.editar_funcionario_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
             this.editar_funcionario_button.FlatAppearance.BorderSize = 0;
             this.editar_funcionario_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editar_funcionario_button.Location = new System.Drawing.Point(54, 5);
+            this.editar_funcionario_button.Location = new System.Drawing.Point(54, 6);
             this.editar_funcionario_button.Name = "editar_funcionario_button";
             this.editar_funcionario_button.Size = new System.Drawing.Size(42, 39);
             this.editar_funcionario_button.TabIndex = 6;
@@ -189,7 +190,7 @@
             this.add_funcionario_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
             this.add_funcionario_button.FlatAppearance.BorderSize = 0;
             this.add_funcionario_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.add_funcionario_button.Location = new System.Drawing.Point(6, 5);
+            this.add_funcionario_button.Location = new System.Drawing.Point(6, 6);
             this.add_funcionario_button.Name = "add_funcionario_button";
             this.add_funcionario_button.Size = new System.Drawing.Size(42, 39);
             this.add_funcionario_button.TabIndex = 5;
@@ -200,7 +201,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(6, 50);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(590, 246);
+            this.dataGridView2.Size = new System.Drawing.Size(590, 244);
             this.dataGridView2.TabIndex = 4;
             // 
             // Tela_Inicial
