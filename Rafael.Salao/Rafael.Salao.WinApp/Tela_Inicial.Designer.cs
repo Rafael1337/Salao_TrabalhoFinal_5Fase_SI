@@ -37,11 +37,11 @@
             this.adicionar_horario_agenda_button = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.funcionarios_aba = new System.Windows.Forms.TabPage();
-            this.caixa_aba = new System.Windows.Forms.TabPage();
             this.remover_funcionario_button = new System.Windows.Forms.Button();
             this.editar_funcionario_button = new System.Windows.Forms.Button();
             this.add_funcionario_button = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.caixa_aba = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.agenda_aba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -146,16 +146,6 @@
             this.funcionarios_aba.Text = "Funcionarios";
             this.funcionarios_aba.UseVisualStyleBackColor = true;
             // 
-            // caixa_aba
-            // 
-            this.caixa_aba.Location = new System.Drawing.Point(4, 22);
-            this.caixa_aba.Name = "caixa_aba";
-            this.caixa_aba.Padding = new System.Windows.Forms.Padding(3);
-            this.caixa_aba.Size = new System.Drawing.Size(602, 300);
-            this.caixa_aba.TabIndex = 3;
-            this.caixa_aba.Text = "Caixa";
-            this.caixa_aba.UseVisualStyleBackColor = true;
-            // 
             // remover_funcionario_button
             // 
             this.remover_funcionario_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("remover_funcionario_button.BackgroundImage")));
@@ -199,10 +189,20 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 50);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 51);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(590, 244);
+            this.dataGridView2.Size = new System.Drawing.Size(590, 246);
             this.dataGridView2.TabIndex = 4;
+            // 
+            // caixa_aba
+            // 
+            this.caixa_aba.Location = new System.Drawing.Point(4, 22);
+            this.caixa_aba.Name = "caixa_aba";
+            this.caixa_aba.Padding = new System.Windows.Forms.Padding(3);
+            this.caixa_aba.Size = new System.Drawing.Size(602, 300);
+            this.caixa_aba.TabIndex = 3;
+            this.caixa_aba.Text = "Caixa";
+            this.caixa_aba.UseVisualStyleBackColor = true;
             // 
             // Tela_Inicial
             // 
