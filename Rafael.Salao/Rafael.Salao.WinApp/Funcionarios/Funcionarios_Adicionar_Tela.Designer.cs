@@ -97,7 +97,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(12, 132);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(546, 168);
+            this.groupBox1.Size = new System.Drawing.Size(546, 124);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Endereço";
@@ -200,7 +200,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(483, 306);
+            this.button1.Location = new System.Drawing.Point(483, 262);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -275,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 339);
+            this.ClientSize = new System.Drawing.Size(570, 295);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox2);
