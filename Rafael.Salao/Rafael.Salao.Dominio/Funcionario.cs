@@ -14,5 +14,20 @@ namespace Rafael.Salao.Dominio
         private double Telefone { get; set; }
         private double RG { get; set; }
         private double CPF { get; set; }
+
+        public Funcionario(string _nome, int _idade, double _telefone, double _rg, double _cpf)
+        {
+            Id = FuncionarioGetId();
+            Nome = _nome;
+            Idade = _idade;
+            Telefone = _telefone;
+            RG = _rg;
+            CPF = _cpf;
+        }
+
+        private int FuncionarioGetId()
+        {
+            return 0+1;
+        }
     }
 }

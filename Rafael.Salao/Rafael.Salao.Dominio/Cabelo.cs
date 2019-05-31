@@ -11,5 +11,11 @@ namespace Rafael.Salao.Dominio
         private int Id { get; set; }
         private string Tipo { get; set; }
         private double Valor { get; set; }
+
+        public Cabelo(string _tipo, double _valor)
+        {
+            Tipo = _tipo;
+            Valor = _valor;
+        }
     }
 }
