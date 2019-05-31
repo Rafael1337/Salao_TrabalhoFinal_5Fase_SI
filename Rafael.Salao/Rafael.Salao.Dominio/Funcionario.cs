@@ -8,7 +8,7 @@ namespace Rafael.Salao.Dominio
 {
     public class Funcionario
     {
-        private int Id { get; set; }
+        private int Id { get;  set; }
         private string Nome { get; set; }
         private int Idade { get; set; }
         private double Telefone { get; set; }

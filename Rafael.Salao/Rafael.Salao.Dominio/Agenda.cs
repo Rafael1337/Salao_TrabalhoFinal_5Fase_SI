@@ -8,10 +8,10 @@ namespace Rafael.Salao.Dominio
 {
     public class Agenda
     {
-        private int Id;
-        private DateTime horario;
-        private string Nome_cliente;
-        private Funcionario Funcionario;
-        private Servicos servicos;
+        private int Id {get; set;}
+        private DateTime horario { get; set; }
+        private string Nome_cliente { get; set; }
+        private Funcionario Funcionario { get; set; }
+        private Servicos servicos { get; set; }
     }
 }
