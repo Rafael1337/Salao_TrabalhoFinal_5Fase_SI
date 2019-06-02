@@ -59,6 +59,12 @@
     <Compile Include="Agenda\Agenda_Editar_Tela.Designer.cs">
       <DependentUpon>Agenda_Editar_Tela.cs</DependentUpon>
     </Compile>
+    <Compile Include="Banco\Tela_Conexao_Banco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banco\Tela_Conexao_Banco.Designer.cs">
+      <DependentUpon>Tela_Conexao_Banco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funcionarios\Funcionarios_Adicionar_Tela.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Agenda\Agenda_Editar_Tela.resx">
       <DependentUpon>Agenda_Editar_Tela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Banco\Tela_Conexao_Banco.resx">
+      <DependentUpon>Tela_Conexao_Banco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionarios\Funcionarios_Adicionar_Tela.resx">
       <DependentUpon>Funcionarios_Adicionar_Tela.cs</DependentUpon>

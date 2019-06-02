@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +53,10 @@
     <ProjectReference Include="..\Rafael.Salao.Dominio\Rafael.Salao.Dominio.csproj">
       <Project>{3fc1a4ce-172a-4cb5-8ddd-f07621aae9ec}</Project>
       <Name>Rafael.Salao.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rafael.Salao.WinApp\Rafael.Salao.WinApp.csproj">
+      <Project>{1ED7E6CC-D6B7-4A39-BC2D-2884ACEC2B69}</Project>
+      <Name>Rafael.Salao.WinApp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

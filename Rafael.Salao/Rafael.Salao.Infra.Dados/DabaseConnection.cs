@@ -4,6 +4,8 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Xml.Linq;
 using Rafael.Salao.Infra.Dados.Helper;
+using Rafael.Salao.WinApp.Banco;
+
 namespace Rafael.Salao.Infra.Dados
 {
     public class DabaseConnection
@@ -18,7 +20,7 @@ namespace Rafael.Salao.Infra.Dados
             try
             {
                 connection_created.Open();
-                CreateTable();
+                CreateTable(); // auto executar script de tabelas da solução.
                 connection_created.Close();
             }
             catch (SqlException)
@@ -40,8 +42,8 @@ namespace Rafael.Salao.Infra.Dados
                     CreateDatabase();
                 }
                 catch (SqlException) { }
-                NewConnectionWindow NCW = new NewConnectionWindow(); //Chamar nova tela para conexao de banco
-                NCW.ShowDialog();
+                Tela_Conexao_Banco TCB = new Tela_Conexao_Banco(); //Chamar nova tela para conexao de banco
+                TCB.ShowDialog();
             }
         }
 
