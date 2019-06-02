@@ -33,10 +33,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.servidor_txtbox = new System.Windows.Forms.TextBox();
+            this.bando_txtbox = new System.Windows.Forms.TextBox();
+            this.usuario_txtbox = new System.Windows.Forms.TextBox();
+            this.senha_txtbox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,33 +77,33 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Senha:";
             // 
-            // textBox1
+            // servidor_txtbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 4;
+            this.servidor_txtbox.Location = new System.Drawing.Point(71, 10);
+            this.servidor_txtbox.Name = "servidor_txtbox";
+            this.servidor_txtbox.Size = new System.Drawing.Size(200, 20);
+            this.servidor_txtbox.TabIndex = 4;
             // 
-            // textBox2
+            // bando_txtbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(71, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 5;
+            this.bando_txtbox.Location = new System.Drawing.Point(71, 51);
+            this.bando_txtbox.Name = "bando_txtbox";
+            this.bando_txtbox.Size = new System.Drawing.Size(200, 20);
+            this.bando_txtbox.TabIndex = 5;
             // 
-            // textBox3
+            // usuario_txtbox
             // 
-            this.textBox3.Location = new System.Drawing.Point(71, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 6;
+            this.usuario_txtbox.Location = new System.Drawing.Point(71, 91);
+            this.usuario_txtbox.Name = "usuario_txtbox";
+            this.usuario_txtbox.Size = new System.Drawing.Size(200, 20);
+            this.usuario_txtbox.TabIndex = 6;
             // 
-            // textBox4
+            // senha_txtbox
             // 
-            this.textBox4.Location = new System.Drawing.Point(71, 128);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 20);
-            this.textBox4.TabIndex = 7;
+            this.senha_txtbox.Location = new System.Drawing.Point(71, 128);
+            this.senha_txtbox.Name = "senha_txtbox";
+            this.senha_txtbox.Size = new System.Drawing.Size(200, 20);
+            this.senha_txtbox.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -120,10 +120,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 188);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.senha_txtbox);
+            this.Controls.Add(this.usuario_txtbox);
+            this.Controls.Add(this.bando_txtbox);
+            this.Controls.Add(this.servidor_txtbox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -142,10 +142,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox servidor_txtbox;
+        private System.Windows.Forms.TextBox bando_txtbox;
+        private System.Windows.Forms.TextBox usuario_txtbox;
+        private System.Windows.Forms.TextBox senha_txtbox;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
