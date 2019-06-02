@@ -48,11 +48,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DabaseConnection.cs" />
+    <Compile Include="DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rafael.Salao.Dominio\Rafael.Salao.Dominio.csproj">
+      <Project>{3fc1a4ce-172a-4cb5-8ddd-f07621aae9ec}</Project>
+      <Name>Rafael.Salao.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
