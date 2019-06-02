@@ -119,5 +119,11 @@
   <ItemGroup>
     <None Include="Resources\button_add.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rafael.Salao.Infra.Dados\Rafael.Salao.Infra.Dados.csproj">
+      <Project>{9bae39c9-00b7-4265-9e05-cb591032e5a5}</Project>
+      <Name>Rafael.Salao.Infra.Dados</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

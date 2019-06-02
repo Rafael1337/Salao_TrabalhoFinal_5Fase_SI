@@ -4,28 +4,27 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Xml.Linq;
 using Rafael.Salao.Infra.Dados.Helper;
-using Rafael.Salao.WinApp.Banco;
 
 namespace Rafael.Salao.Infra.Dados
 {
     public class DabaseConnection
     {
-        public static SqlConnection connection_created;
-        public static string connection_string = "";
+        public SqlConnection connection_created;
+        public string connection_string = "";
 
-        public static void CreateConnection()
+        public void InitializeConnection()
         {
             GetConnectionString();
             connection_created = new SqlConnection(connection_string);
             try
             {
                 connection_created.Open();
-                CreateTable(); // auto executar script de tabelas da solução.
+                //CreateTable(); // auto executar script de tabelas da solução.
                 connection_created.Close();
             }
             catch (SqlException)
             {
-                CreateConnection();
+                InitializeConnection();
             }
         }
 
@@ -33,7 +32,7 @@ namespace Rafael.Salao.Infra.Dados
         {
             if (File.Exists(@"databaseconnection.xml"))
             {
-                CriaNovoArquivoDeConexao();
+                ObterParametrosConnectionString();
             }
             else
             {
@@ -42,12 +41,12 @@ namespace Rafael.Salao.Infra.Dados
                     CreateDatabase();
                 }
                 catch (SqlException) { }
-                Tela_Conexao_Banco TCB = new Tela_Conexao_Banco(); //Chamar nova tela para conexao de banco
-                TCB.ShowDialog();
+              //  Tela_Conexao_Banco TCB = new Tela_Conexao_Banco(); //Chamar nova tela para conexao de banco
+               // TCB.ShowDialog();
             }
         }
 
-        private static void CriaNovoArquivoDeConexao()
+        private static void ObterParametrosConnectionString()
         {
             XDocument xdoc = new XDocument();
             xdoc = XDocument.Load(@"databaseconnection.xml");
