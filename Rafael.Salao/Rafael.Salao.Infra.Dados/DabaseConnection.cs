@@ -11,10 +11,11 @@ namespace Rafael.Salao.Infra.Dados
     {
         public SqlConnection connection_created;
         public string connection_string = "";
+        public bool connection_valid;
 
         public void InitializeConnection()
         {
-            GetConnectionString();
+            connection_valid =  GetConnectionString();
             connection_created = new SqlConnection(connection_string);
             try
             {
@@ -28,7 +29,7 @@ namespace Rafael.Salao.Infra.Dados
             }
         }
 
-        private static void GetConnectionString()
+        private bool GetConnectionString()
         {
             if (File.Exists(@"databaseconnection.xml"))
             {
@@ -40,13 +41,14 @@ namespace Rafael.Salao.Infra.Dados
                 {
                     CreateDatabase();
                 }
-                catch (SqlException) { }
-              //  Tela_Conexao_Banco TCB = new Tela_Conexao_Banco(); //Chamar nova tela para conexao de banco
-               // TCB.ShowDialog();
+                catch (SqlException) {
+                    return false;
+                }
             }
+            return true;
         }
 
-        private static void ObterParametrosConnectionString()
+        private void ObterParametrosConnectionString()
         {
             XDocument xdoc = new XDocument();
             xdoc = XDocument.Load(@"databaseconnection.xml");
