@@ -16,5 +16,10 @@ namespace Rafael.Salao.WinApp.Banco
         {
             InitializeComponent();
         }
+
+        private void gravar_database_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

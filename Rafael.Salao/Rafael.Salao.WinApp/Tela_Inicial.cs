@@ -6,7 +6,7 @@ namespace Rafael.Salao.WinApp
 {
     public partial class Tela_Inicial : Form
     {
-        public DabaseConnection _databaseConnection;
+        public DabaseConnection _databaseConnection = new DabaseConnection();
         public Tela_Conexao_Banco TCB = new Tela_Conexao_Banco();
         public Tela_Inicial()
         {

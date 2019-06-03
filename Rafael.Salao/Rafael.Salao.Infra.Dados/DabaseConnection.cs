@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using System.Data.SqlClient;
 using System.IO;
 using System.Xml.Linq;
@@ -15,18 +16,26 @@ namespace Rafael.Salao.Infra.Dados
 
         public void InitializeConnection()
         {
-            connection_valid =  GetConnectionString();
+            connection_valid = GetConnectionString();
+                if (connection_valid == false)
+                return;
+
             connection_created = new SqlConnection(connection_string);
             try
             {
                 connection_created.Open();
-                //CreateTable(); // auto executar script de tabelas da solução.
+                CreateTables(); // auto executar script de tabelas da solução.
                 connection_created.Close();
             }
             catch (SqlException)
             {
                 InitializeConnection();
             }
+        }
+
+        private void CreateTables()
+        {
+            throw new NotImplementedException();
         }
 
         private bool GetConnectionString()

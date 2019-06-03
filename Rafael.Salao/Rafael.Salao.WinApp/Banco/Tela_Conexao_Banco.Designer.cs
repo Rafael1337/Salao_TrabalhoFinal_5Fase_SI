@@ -38,6 +38,7 @@
             this.usuario_txtbox = new System.Windows.Forms.TextBox();
             this.senha_txtbox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gravar_database_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,11 +115,22 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // gravar_database_btn
+            // 
+            this.gravar_database_btn.Location = new System.Drawing.Point(139, 170);
+            this.gravar_database_btn.Name = "gravar_database_btn";
+            this.gravar_database_btn.Size = new System.Drawing.Size(132, 23);
+            this.gravar_database_btn.TabIndex = 9;
+            this.gravar_database_btn.Text = "Gravar";
+            this.gravar_database_btn.UseVisualStyleBackColor = true;
+            this.gravar_database_btn.Click += new System.EventHandler(this.gravar_database_btn_Click);
+            // 
             // Tela_Conexao_Banco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 188);
+            this.ClientSize = new System.Drawing.Size(432, 205);
+            this.Controls.Add(this.gravar_database_btn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.senha_txtbox);
             this.Controls.Add(this.usuario_txtbox);
@@ -147,5 +159,6 @@
         private System.Windows.Forms.TextBox usuario_txtbox;
         private System.Windows.Forms.TextBox senha_txtbox;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button gravar_database_btn;
     }
 }
