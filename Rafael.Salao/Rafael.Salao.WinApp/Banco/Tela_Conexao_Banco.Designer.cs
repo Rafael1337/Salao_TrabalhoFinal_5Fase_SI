@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.servidor_txtbox = new System.Windows.Forms.TextBox();
-            this.bando_txtbox = new System.Windows.Forms.TextBox();
+            this.banco_txtbox = new System.Windows.Forms.TextBox();
             this.usuario_txtbox = new System.Windows.Forms.TextBox();
             this.senha_txtbox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -85,12 +85,12 @@
             this.servidor_txtbox.Size = new System.Drawing.Size(200, 20);
             this.servidor_txtbox.TabIndex = 4;
             // 
-            // bando_txtbox
+            // banco_txtbox
             // 
-            this.bando_txtbox.Location = new System.Drawing.Point(71, 51);
-            this.bando_txtbox.Name = "bando_txtbox";
-            this.bando_txtbox.Size = new System.Drawing.Size(200, 20);
-            this.bando_txtbox.TabIndex = 5;
+            this.banco_txtbox.Location = new System.Drawing.Point(71, 51);
+            this.banco_txtbox.Name = "banco_txtbox";
+            this.banco_txtbox.Size = new System.Drawing.Size(200, 20);
+            this.banco_txtbox.TabIndex = 5;
             // 
             // usuario_txtbox
             // 
@@ -134,7 +134,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.senha_txtbox);
             this.Controls.Add(this.usuario_txtbox);
-            this.Controls.Add(this.bando_txtbox);
+            this.Controls.Add(this.banco_txtbox);
             this.Controls.Add(this.servidor_txtbox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -155,7 +155,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox servidor_txtbox;
-        private System.Windows.Forms.TextBox bando_txtbox;
+        private System.Windows.Forms.TextBox banco_txtbox;
         private System.Windows.Forms.TextBox usuario_txtbox;
         private System.Windows.Forms.TextBox senha_txtbox;
         private System.Windows.Forms.PictureBox pictureBox1;

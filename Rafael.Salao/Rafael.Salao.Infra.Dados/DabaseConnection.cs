@@ -35,12 +35,21 @@ namespace Rafael.Salao.Infra.Dados
 
         private void CreateTables()
         {
-            throw new NotImplementedException();
+            string script = File.ReadAllText(@"Rafael.Salao.Infra.Dados\Scripts\scripts salao.sql");
+            using (SqlCommand cmd = new SqlCommand(script, connection_created))
+            {
+                connection_created.Open();
+                cmd.ExecuteNonQuery();
+                connection_created.Close();
+            }
         }
 
         private bool GetConnectionString()
         {
-            if (File.Exists(@"databaseconnection.xml"))
+            if (!Directory.Exists(@"config"))
+                Directory.CreateDirectory(@"config");
+
+            if (File.Exists(@"config\databaseconnection.xml"))
             {
                 ObterParametrosConnectionString();
             }
@@ -60,8 +69,8 @@ namespace Rafael.Salao.Infra.Dados
         private void ObterParametrosConnectionString()
         {
             XDocument xdoc = new XDocument();
-            xdoc = XDocument.Load(@"databaseconnection.xml");
-            connection_string = @"Data Source=" + xdoc.FindElement("server").Value + ";Initial Catalog=" + xdoc.FindElement("database").Value + ";User ID=" + xdoc.FindElement("user").Value + ";Password=" + xdoc.FindElement("password").Value + ";";
+            xdoc = XDocument.Load(@"config\databaseconnection.xml");
+            connection_string = @"Data Source=" + xdoc.FindElement("servidor").Value + ";Initial Catalog=" + xdoc.FindElement("banco").Value + ";User ID=" + xdoc.FindElement("usuario").Value + ";Password=" + xdoc.FindElement("senha").Value + ";";
         }
 
         private static void CreateDatabase()

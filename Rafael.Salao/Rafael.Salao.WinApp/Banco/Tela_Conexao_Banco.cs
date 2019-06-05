@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Rafael.Salao.WinApp.Banco
 {
@@ -19,7 +13,15 @@ namespace Rafael.Salao.WinApp.Banco
 
         private void gravar_database_btn_Click(object sender, EventArgs e)
         {
+            GerarArquivoDeConexao(servidor_txtbox.Text, banco_txtbox.Text, usuario_txtbox.Text, senha_txtbox.Text);
+        }
 
+        public void GerarArquivoDeConexao(string servidor, string banco, string usuario, string senha)
+        {
+            XDocument xdoc = new XDocument();
+            string connectionstring = "<servidor>" + servidor + "</servidor>/n<banco>" + banco + "</banco>/n<usuario>=" + usuario + "</usuario>/n <senha>" +senha+ "</senha>";
+            xdoc = XDocument.Parse(connectionstring);
+            xdoc.Save(@"config\" + "databaseconfig.xml");
         }
     }
 }
