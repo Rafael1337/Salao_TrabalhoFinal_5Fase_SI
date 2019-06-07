@@ -40,17 +40,17 @@
             this.remover_funcionario_button = new System.Windows.Forms.Button();
             this.editar_funcionario_button = new System.Windows.Forms.Button();
             this.add_funcionario_button = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.funcionario_datagrid = new System.Windows.Forms.DataGridView();
             this.caixa_aba = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.saldo_caixa_label = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.agenda_aba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.funcionarios_aba.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionario_datagrid)).BeginInit();
             this.caixa_aba.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,7 +142,7 @@
             this.funcionarios_aba.Controls.Add(this.remover_funcionario_button);
             this.funcionarios_aba.Controls.Add(this.editar_funcionario_button);
             this.funcionarios_aba.Controls.Add(this.add_funcionario_button);
-            this.funcionarios_aba.Controls.Add(this.dataGridView2);
+            this.funcionarios_aba.Controls.Add(this.funcionario_datagrid);
             this.funcionarios_aba.Location = new System.Drawing.Point(4, 22);
             this.funcionarios_aba.Name = "funcionarios_aba";
             this.funcionarios_aba.Padding = new System.Windows.Forms.Padding(3);
@@ -177,6 +177,7 @@
             this.editar_funcionario_button.Size = new System.Drawing.Size(42, 39);
             this.editar_funcionario_button.TabIndex = 6;
             this.editar_funcionario_button.UseVisualStyleBackColor = true;
+            this.editar_funcionario_button.Click += new System.EventHandler(this.editar_funcionario_button_Click);
             // 
             // add_funcionario_button
             // 
@@ -190,14 +191,15 @@
             this.add_funcionario_button.Size = new System.Drawing.Size(42, 39);
             this.add_funcionario_button.TabIndex = 5;
             this.add_funcionario_button.UseVisualStyleBackColor = true;
+            this.add_funcionario_button.Click += new System.EventHandler(this.add_funcionario_button_Click);
             // 
-            // dataGridView2
+            // funcionario_datagrid
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 51);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(590, 246);
-            this.dataGridView2.TabIndex = 4;
+            this.funcionario_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.funcionario_datagrid.Location = new System.Drawing.Point(6, 51);
+            this.funcionario_datagrid.Name = "funcionario_datagrid";
+            this.funcionario_datagrid.Size = new System.Drawing.Size(590, 246);
+            this.funcionario_datagrid.TabIndex = 4;
             // 
             // caixa_aba
             // 
@@ -212,6 +214,32 @@
             this.caixa_aba.TabIndex = 3;
             this.caixa_aba.Text = "Caixa";
             this.caixa_aba.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(64, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(41, 39);
+            this.button2.TabIndex = 3;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(16, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 39);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // saldo_caixa_label
             // 
@@ -230,32 +258,6 @@
             this.textBox1.Size = new System.Drawing.Size(149, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(16, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 39);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(64, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(41, 39);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // Tela_Inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,7 +270,7 @@
             this.agenda_aba.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.funcionarios_aba.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionario_datagrid)).EndInit();
             this.caixa_aba.ResumeLayout(false);
             this.caixa_aba.PerformLayout();
             this.ResumeLayout(false);
@@ -289,7 +291,7 @@
         private System.Windows.Forms.Button remover_funcionario_button;
         private System.Windows.Forms.Button editar_funcionario_button;
         private System.Windows.Forms.Button add_funcionario_button;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView funcionario_datagrid;
         private System.Windows.Forms.Label saldo_caixa_label;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;

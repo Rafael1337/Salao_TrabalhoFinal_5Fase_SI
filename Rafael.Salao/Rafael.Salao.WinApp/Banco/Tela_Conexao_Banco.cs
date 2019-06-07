@@ -19,9 +19,10 @@ namespace Rafael.Salao.WinApp.Banco
         public void GerarArquivoDeConexao(string servidor, string banco, string usuario, string senha)
         {
             XDocument xdoc = new XDocument();
-            string connectionstring = "<servidor>" + servidor + "</servidor>/n<banco>" + banco + "</banco>/n<usuario>=" + usuario + "</usuario>/n <senha>" +senha+ "</senha>";
+            string connectionstring = "<database-config><servidor>" + servidor + "</servidor>\n<banco>" + banco + "</banco>\n<usuario>" + usuario + "</usuario>\n <senha>" +senha+ "</senha></database-config>";
             xdoc = XDocument.Parse(connectionstring);
             xdoc.Save(@"config\" + "databaseconfig.xml");
+            Close();
         }
     }
 }
