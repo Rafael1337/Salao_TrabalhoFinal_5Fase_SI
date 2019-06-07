@@ -36,5 +36,10 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
         ,[CPF]
         ,[RG]
         FROM [TBFUNCIONARIO]";
+
+        public static void RemoverFuncionario(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

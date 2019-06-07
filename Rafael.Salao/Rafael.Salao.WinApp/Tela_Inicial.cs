@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using Rafael.Salao.Infra.Dados;
+using Rafael.Salao.Infra.Dados.Funcionario;
 using Rafael.Salao.WinApp.Banco;
+using Rafael.Salao.WinApp.Funcionarios;
 namespace Rafael.Salao.WinApp
 {
     public partial class Tela_Inicial : Form
@@ -28,11 +30,13 @@ namespace Rafael.Salao.WinApp
 
         private void remover_funcionario_button_Click(object sender, EventArgs e)
         {
+            FuncionarioDao.RemoverFuncionario(Convert.ToInt32(funcionario_datagrid.Rows[funcionario_datagrid.CurrentRow.Index].Cells[0].Value));
         }
 
         private void add_funcionario_button_Click(object sender, EventArgs e)
         {
-
+            Funcionarios_Adicionar_Tela FAT = new Funcionarios_Adicionar_Tela();
+            FAT.ShowDialog();
         }
 
         private void editar_funcionario_button_Click(object sender, EventArgs e)
