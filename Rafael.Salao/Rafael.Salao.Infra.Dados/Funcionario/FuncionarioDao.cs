@@ -30,11 +30,11 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
         WHERE ID = {0}ID";
 
         string scriptExibir = @"SELECT [ID]
-      ,[NOME]
-      ,[IDADE]
-      ,[TELEFONE]
-      ,[CPF]
-      ,[RG]
-      FROM [TBFUNCIONARIO]";
+        ,[NOME]
+        ,[IDADE]
+        ,[TELEFONE]
+        ,[CPF]
+        ,[RG]
+        FROM [TBFUNCIONARIO]";
     }
 }

@@ -12,17 +12,18 @@ namespace Rafael.Salao.WinApp
         {
             InializeDatabase();
             InitializeComponent();
-
-        }
+         }
 
         private void InializeDatabase()
         {
-            _databaseConnection.InitializeConnection();
-            if (!_databaseConnection.connection_valid)
+            while (_databaseConnection.connection_valid == true)
             {
-                TCB.ShowDialog();
+                _databaseConnection.InitializeConnection();
+                if (!_databaseConnection.connection_valid)
+                {
+                    TCB.ShowDialog();
+                }
             }
-            InializeDatabase();
         }
 
         private void remover_funcionario_button_Click(object sender, EventArgs e)
