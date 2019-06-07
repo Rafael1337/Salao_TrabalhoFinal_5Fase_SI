@@ -10,8 +10,8 @@ namespace Rafael.Salao.Infra.Dados
 {
     public class DabaseConnection
     {
-        public SqlConnection connection_created;
-        public string connection_string = "";
+        public static SqlConnection connection_created;
+        public static string connection_string = "";
         public bool connection_valid;
 
         public void InitializeConnection()
@@ -24,7 +24,6 @@ namespace Rafael.Salao.Infra.Dados
             try
             {
                 connection_created.Open();
-                CreateTables(); // auto executar script de tabelas da solução.
                 connection_created.Close();
             }
             catch (SqlException)
@@ -58,6 +57,7 @@ namespace Rafael.Salao.Infra.Dados
                 try
                 {
                     CreateDatabase();
+                    CreateTables(); // auto executar script de tabelas da solução.
                 }
                 catch (SqlException) {
                     return false;
@@ -66,7 +66,7 @@ namespace Rafael.Salao.Infra.Dados
             return true;
         }
 
-        private void ObterParametrosConnectionString()
+        public static void ObterParametrosConnectionString()
         {
             XDocument xdoc = new XDocument();
             xdoc = XDocument.Load(@"config\databaseconnection.xml");
