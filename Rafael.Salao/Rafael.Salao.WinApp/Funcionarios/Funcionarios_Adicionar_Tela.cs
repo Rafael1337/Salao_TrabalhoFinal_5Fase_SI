@@ -16,5 +16,10 @@ namespace Rafael.Salao.WinApp.Funcionarios
         {
             InitializeComponent();
         }
+
+        private void gravar_funcionario_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

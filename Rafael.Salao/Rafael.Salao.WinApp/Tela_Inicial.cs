@@ -30,7 +30,7 @@ namespace Rafael.Salao.WinApp
 
         private void remover_funcionario_button_Click(object sender, EventArgs e)
         {
-            FuncionarioDao.RemoverFuncionario(Convert.ToInt32(funcionario_datagrid.Rows[funcionario_datagrid.CurrentRow.Index].Cells[0].Value));
+           // FuncionarioDao.RemoverFuncionario(Convert.ToInt32(funcionario_datagrid.Rows[funcionario_datagrid.CurrentRow.Index].Cells[0].Value));
         }
 
         private void add_funcionario_button_Click(object sender, EventArgs e)

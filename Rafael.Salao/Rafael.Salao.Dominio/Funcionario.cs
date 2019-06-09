@@ -8,22 +8,12 @@ namespace Rafael.Salao.Dominio
 {
     public class Funcionario
     {
-        private int Id { get;  set; }
-        private string Nome { get; set; }
-        private int Idade { get; set; }
-        private double Telefone { get; set; }
-        private double RG { get; set; }
-        private double CPF { get; set; }
-
-        public Funcionario(string _nome, int _idade, double _telefone, double _rg, double _cpf)
-        {
-            Id = FuncionarioGetId();
-            Nome = _nome;
-            Idade = _idade;
-            Telefone = _telefone;
-            RG = _rg;
-            CPF = _cpf;
-        }
+        public int Id { get;  set; }
+        public string Nome { get; set; }
+        public int Idade { get; set; }
+        public double Telefone { get; set; }
+        public double RG { get; set; }
+        public double CPF { get; set; }
 
         private int FuncionarioGetId()
         {
