@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using FluentAssertions;
 using NUnit.Framework;
 using Rafael.Salao.Dominio.Validations;
-using FluentValidation;
 
 
 namespace Rafael.Salao.Dominio.Testes
