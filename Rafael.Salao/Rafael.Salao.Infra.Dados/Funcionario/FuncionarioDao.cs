@@ -33,10 +33,9 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
         ,[RG]
         FROM [TBFUNCIONARIO]";
 
-        public void InserirFuncionario(Funcionario funcionario)
+        public void InserirFuncionario(Dominio.Funcionario funcionario)
         {
 
         }
-
     }
 }
