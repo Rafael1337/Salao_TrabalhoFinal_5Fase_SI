@@ -1,13 +1,19 @@
-﻿using System;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
+using Rafael.Salao.Dominio;
 using Rafael.Salao.Dominio.Validations;
+using System;
+using FluentValidation;
 
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Rafael.Salao.Dominio.Testes
+namespace Rafael.Salao.Testes.Dominio
 {
     [TestFixture]
-    public class FuncionarioTestes
+    public class TesteFuncionario
     {
         [Test]
         public void Teste_Nome_Funcionario_Nao_Pode_Ser_Vazio()
@@ -19,11 +25,11 @@ namespace Rafael.Salao.Dominio.Testes
 
             //ACTIONl
             Action resultado = () => validation.Validate(funcionario);
-            
+
             //ASSERT
             resultado.Should()
                 .Throw<Exception>()
-                .WithMessage("O nome não deve ser vazio!");
+                .WithMessage("Por favor informe o nome do funcionario");
         }
     }
 }
