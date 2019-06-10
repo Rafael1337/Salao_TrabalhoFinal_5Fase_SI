@@ -140,6 +140,10 @@
     <None Include="Resources\button_add.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Rafael.Salao.Dominio\Rafael.Salao.Dominio.csproj">
+      <Project>{3fc1a4ce-172a-4cb5-8ddd-f07621aae9ec}</Project>
+      <Name>Rafael.Salao.Dominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Rafael.Salao.Infra.Dados\Rafael.Salao.Infra.Dados.csproj">
       <Project>{9bae39c9-00b7-4265-9e05-cb591032e5a5}</Project>
       <Name>Rafael.Salao.Infra.Dados</Name>

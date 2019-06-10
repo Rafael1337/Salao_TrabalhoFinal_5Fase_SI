@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Rafael.Salao.Dominio;
 
 namespace Rafael.Salao.Infra.Dados.Funcionario
 {
@@ -37,6 +33,10 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
         ,[RG]
         FROM [TBFUNCIONARIO]";
 
+        public void InserirFuncionario(Funcionario funcionario)
+        {
+
+        }
 
     }
 }

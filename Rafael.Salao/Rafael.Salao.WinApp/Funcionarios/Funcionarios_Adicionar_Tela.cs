@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Rafael.Salao.Dominio;
 
 namespace Rafael.Salao.WinApp.Funcionarios
 {
@@ -17,9 +11,9 @@ namespace Rafael.Salao.WinApp.Funcionarios
             InitializeComponent();
         }
 
-        private void gravar_funcionario_button_Click(object sender, EventArgs e)
+        private void gravar_funcionar_button_Click(object sender, EventArgs e)
         {
-
+            Funcionario funcionario = new Funcionario();
         }
     }
 }

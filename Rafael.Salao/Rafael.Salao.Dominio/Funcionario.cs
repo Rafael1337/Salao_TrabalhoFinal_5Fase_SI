@@ -15,9 +15,5 @@ namespace Rafael.Salao.Dominio
         public double RG { get; set; }
         public double CPF { get; set; }
 
-        private int FuncionarioGetId()
-        {
-            return 0+1;
-        }
     }
 }

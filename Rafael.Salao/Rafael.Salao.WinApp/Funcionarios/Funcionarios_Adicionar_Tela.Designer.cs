@@ -241,6 +241,7 @@
             this.gravar_funcionar_button.TabIndex = 6;
             this.gravar_funcionar_button.Text = "Gravar";
             this.gravar_funcionar_button.UseVisualStyleBackColor = true;
+            this.gravar_funcionar_button.Click += new System.EventHandler(this.gravar_funcionar_button_Click);
             // 
             // textBox1
             // 
