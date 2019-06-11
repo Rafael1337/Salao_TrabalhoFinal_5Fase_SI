@@ -16,6 +16,8 @@ namespace Rafael.Salao.WinApp.Funcionarios
         private void gravar_funcionar_button_Click(object sender, EventArgs e)
         {
             Funcionario _funcionario = new Funcionario();
+            _funcionario.Endereco = new Endereco();
+
             _funcionario.Nome = nome_funcionario_txt.Text;
             _funcionario.Telefone = Convert.ToDouble(telefone_funcionario_txt.Text);
             _funcionario.Idade = Convert.ToInt32(idade_funcionario_txt.Text);
