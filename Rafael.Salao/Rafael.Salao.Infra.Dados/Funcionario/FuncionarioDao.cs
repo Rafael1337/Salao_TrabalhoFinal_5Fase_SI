@@ -1,10 +1,13 @@
 ﻿using Rafael.Salao.Dominio;
+using System;
+using System.Collections.Generic;
+using System.Data;
 
 namespace Rafael.Salao.Infra.Dados.Funcionario
 {
     public class FuncionarioDao
     {
-        string scriptInsercao = @"INSERT INTO TBFUNCIONARIO 
+        private const string _scriptInsercao = @"INSERT INTO TBFUNCIONARIO 
            ([NOME]
            ,[IDADE]
            ,[TELEFONE]
@@ -17,15 +20,27 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
            ,{0}CPF 
            ,{0}RG";
 
-        string scriptRemocao = @"DELETE FROM TBFUNCIONARIO WHERE ID = {0}ID";
-        string scriptUpdate = @"UPDATE SALAO_DATABASE TBFUNCIONARIO SET NOME = {0}NOME,
+        private const string _scriptRemocao = @"DELETE FROM TBFUNCIONARIO WHERE ID = {0}ID";
+
+        private const string _scriptUpdate = @"UPDATE SALAO_DATABASE TBFUNCIONARIO SET NOME = {0}NOME,
         ,[IDADE] = {0}IDADE
         ,[TELEFONE] = {0}TELEFONE
         ,[CPF] = {0}CPF
         ,[RG] = {0}RG
         WHERE ID = {0}ID";
 
-        string scriptExibir = @"SELECT [ID]
+
+        private const string _scriptBuscaPorId =
+            @"SELECT [Id]
+                  ,[NOME]
+                  ,[IDADE]
+                  ,[TELEFONE]
+                  ,[CPF]
+                  ,[RG]
+              FROM [dbo].[TBFuncionario]
+              WHERE [Id] = {0}Id";
+
+        private const string _scriptExibir = @"SELECT [ID]
         ,[NOME]
         ,[IDADE]
         ,[TELEFONE]
@@ -33,9 +48,77 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
         ,[RG]
         FROM [TBFUNCIONARIO]";
 
-        public void InserirFuncionario(Dominio.Funcionario funcionario)
+        public int Adicionar(Dominio.Funcionario novoFuncionario)
         {
-
+            return Db.Insert(_scriptInsercao, BuscarParametros(novoFuncionario));
         }
+
+        public IList<Dominio.Funcionario> BuscarTodos()
+        {
+            return Db.GetAll(_scriptExibir, ConverterFuncionario);
+        }
+
+        public Dominio.Funcionario BuscarPorId(int id)
+        {
+            var parms = new Dictionary<string, object> { { "Id", id } };
+
+            return Db.Get(_scriptBuscaPorId, ConverterFuncionario, parms);
+        }
+
+        public void Editar(Dominio.Funcionario funcionario)
+        {
+            Db.Update(_scriptUpdate, BuscarParametros(funcionario));
+        }
+
+        public void Deletar(int id)
+        {
+            var parms = new Dictionary<string, object> { { "Id", id } };
+
+            Db.Delete(_scriptRemocao, parms);
+        }
+
+        # region Metódos Privados - Conversor e Manipulador de Parametros
+
+        private Dominio.Funcionario ConverterFuncionario(IDataReader reader)
+        {
+            Dominio.Funcionario funcionario = new Dominio.Funcionario();
+            funcionario.Id = Convert.ToInt32(reader["Id"]);
+            funcionario.Nome = Convert.ToString(reader["Nome"]);
+            funcionario.Idade = Convert.ToInt32(reader["IDADE"]);
+            funcionario.Telefone = Convert.ToDouble(reader["TELEFONE"]);
+            funcionario.RG = Convert.ToDouble(reader["RG"]);
+            funcionario.CPF = Convert.ToDouble(reader["CPF"]);
+            funcionario.Endereco = new Endereco
+            {
+                Rua = Convert.ToString(reader["RUA"]),
+                Bairro = Convert.ToString(reader["BAIRRO"]),
+                Numero = Convert.ToString(reader["NUMERO"]),
+                CEP = Convert.ToString(reader["CEP"]),
+                Complemento = Convert.ToString(reader["Complemento"]),
+            };
+
+            return funcionario;
+        }
+
+        private Dictionary<string, object> BuscarParametros(Dominio.Funcionario funcionario)
+        {
+            return new Dictionary<string, object>
+            {
+                {"Id",funcionario.Id},
+                { "NOME",funcionario.Nome},
+                {"IDADE",funcionario.Idade},
+                {"TELEFONE",funcionario.Telefone},
+                {"RG",funcionario.RG},
+                {"CPF",funcionario.CPF},
+                {"RUA",funcionario.Endereco.Rua},
+                {"BAIRRO",funcionario.Endereco.Bairro},
+                {"NUMERO",funcionario.Endereco.Numero},
+                {"COMPLEMENTO",funcionario.Endereco.Complemento},
+                { "CEP",funcionario.Endereco.CEP},
+
+            };
+        }
+
+        #endregion
     }
 }

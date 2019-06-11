@@ -32,26 +32,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cep_funcionario_txt = new System.Windows.Forms.TextBox();
+            this.bairro_funcionario_txt = new System.Windows.Forms.TextBox();
+            this.complemento_funcionario_txt = new System.Windows.Forms.TextBox();
+            this.numero_funcionario_txt = new System.Windows.Forms.TextBox();
+            this.rua_funcionario_txt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.gravar_funcionar_button = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.nome_funcionario_txt = new System.Windows.Forms.TextBox();
+            this.cpf_funcionario_txt = new System.Windows.Forms.TextBox();
+            this.telefone_funcionario_txt = new System.Windows.Forms.RichTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.idade_funcionario_txt = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.rg_funcionario_txt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -85,57 +87,57 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.cep_funcionario_txt);
+            this.groupBox1.Controls.Add(this.bairro_funcionario_txt);
+            this.groupBox1.Controls.Add(this.complemento_funcionario_txt);
+            this.groupBox1.Controls.Add(this.numero_funcionario_txt);
+            this.groupBox1.Controls.Add(this.rua_funcionario_txt);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(12, 132);
+            this.groupBox1.Location = new System.Drawing.Point(12, 165);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(546, 124);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Endereço";
             // 
-            // textBox7
+            // cep_funcionario_txt
             // 
-            this.textBox7.Location = new System.Drawing.Point(328, 48);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(212, 20);
-            this.textBox7.TabIndex = 13;
+            this.cep_funcionario_txt.Location = new System.Drawing.Point(328, 48);
+            this.cep_funcionario_txt.Name = "cep_funcionario_txt";
+            this.cep_funcionario_txt.Size = new System.Drawing.Size(212, 20);
+            this.cep_funcionario_txt.TabIndex = 13;
             // 
-            // textBox6
+            // bairro_funcionario_txt
             // 
-            this.textBox6.Location = new System.Drawing.Point(334, 23);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(206, 20);
-            this.textBox6.TabIndex = 12;
+            this.bairro_funcionario_txt.Location = new System.Drawing.Point(334, 23);
+            this.bairro_funcionario_txt.Name = "bairro_funcionario_txt";
+            this.bairro_funcionario_txt.Size = new System.Drawing.Size(206, 20);
+            this.bairro_funcionario_txt.TabIndex = 12;
             // 
-            // textBox5
+            // complemento_funcionario_txt
             // 
-            this.textBox5.Location = new System.Drawing.Point(86, 74);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(199, 20);
-            this.textBox5.TabIndex = 11;
+            this.complemento_funcionario_txt.Location = new System.Drawing.Point(86, 74);
+            this.complemento_funcionario_txt.Name = "complemento_funcionario_txt";
+            this.complemento_funcionario_txt.Size = new System.Drawing.Size(199, 20);
+            this.complemento_funcionario_txt.TabIndex = 11;
             // 
-            // textBox4
+            // numero_funcionario_txt
             // 
-            this.textBox4.Location = new System.Drawing.Point(59, 48);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(226, 20);
-            this.textBox4.TabIndex = 10;
+            this.numero_funcionario_txt.Location = new System.Drawing.Point(59, 48);
+            this.numero_funcionario_txt.Name = "numero_funcionario_txt";
+            this.numero_funcionario_txt.Size = new System.Drawing.Size(226, 20);
+            this.numero_funcionario_txt.TabIndex = 10;
             // 
-            // textBox3
+            // rua_funcionario_txt
             // 
-            this.textBox3.Location = new System.Drawing.Point(42, 23);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(243, 20);
-            this.textBox3.TabIndex = 9;
+            this.rua_funcionario_txt.Location = new System.Drawing.Point(42, 23);
+            this.rua_funcionario_txt.Name = "rua_funcionario_txt";
+            this.rua_funcionario_txt.Size = new System.Drawing.Size(243, 20);
+            this.rua_funcionario_txt.TabIndex = 9;
             // 
             // label8
             // 
@@ -182,15 +184,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Rua:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 101);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 13);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Data de Nascimento:";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.checkBox3);
@@ -235,7 +228,7 @@
             // 
             // gravar_funcionar_button
             // 
-            this.gravar_funcionar_button.Location = new System.Drawing.Point(483, 262);
+            this.gravar_funcionar_button.Location = new System.Drawing.Point(483, 295);
             this.gravar_funcionar_button.Name = "gravar_funcionar_button";
             this.gravar_funcionar_button.Size = new System.Drawing.Size(75, 23);
             this.gravar_funcionar_button.TabIndex = 6;
@@ -243,47 +236,74 @@
             this.gravar_funcionar_button.UseVisualStyleBackColor = true;
             this.gravar_funcionar_button.Click += new System.EventHandler(this.gravar_funcionar_button_Click);
             // 
-            // textBox1
+            // nome_funcionario_txt
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
-            this.textBox1.TabIndex = 7;
+            this.nome_funcionario_txt.Location = new System.Drawing.Point(57, 10);
+            this.nome_funcionario_txt.Name = "nome_funcionario_txt";
+            this.nome_funcionario_txt.Size = new System.Drawing.Size(184, 20);
+            this.nome_funcionario_txt.TabIndex = 7;
             // 
-            // textBox2
+            // cpf_funcionario_txt
             // 
-            this.textBox2.Location = new System.Drawing.Point(49, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(184, 20);
-            this.textBox2.TabIndex = 8;
+            this.cpf_funcionario_txt.Location = new System.Drawing.Point(49, 68);
+            this.cpf_funcionario_txt.Name = "cpf_funcionario_txt";
+            this.cpf_funcionario_txt.Size = new System.Drawing.Size(184, 20);
+            this.cpf_funcionario_txt.TabIndex = 8;
             // 
-            // dateTimePicker1
+            // telefone_funcionario_txt
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(130, 101);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(158, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.telefone_funcionario_txt.Location = new System.Drawing.Point(70, 36);
+            this.telefone_funcionario_txt.Name = "telefone_funcionario_txt";
+            this.telefone_funcionario_txt.Size = new System.Drawing.Size(171, 21);
+            this.telefone_funcionario_txt.TabIndex = 10;
+            this.telefone_funcionario_txt.Text = "";
             // 
-            // richTextBox1
+            // label9
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(70, 36);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(171, 21);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 123);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 13);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Idade:";
+            // 
+            // idade_funcionario_txt
+            // 
+            this.idade_funcionario_txt.Location = new System.Drawing.Point(49, 121);
+            this.idade_funcionario_txt.Name = "idade_funcionario_txt";
+            this.idade_funcionario_txt.Size = new System.Drawing.Size(68, 20);
+            this.idade_funcionario_txt.TabIndex = 12;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 97);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(26, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "RG:";
+            // 
+            // rg_funcionario_txt
+            // 
+            this.rg_funcionario_txt.Location = new System.Drawing.Point(49, 95);
+            this.rg_funcionario_txt.Name = "rg_funcionario_txt";
+            this.rg_funcionario_txt.Size = new System.Drawing.Size(158, 20);
+            this.rg_funcionario_txt.TabIndex = 14;
             // 
             // Funcionarios_Adicionar_Tela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 295);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(570, 346);
+            this.Controls.Add(this.rg_funcionario_txt);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.idade_funcionario_txt);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.telefone_funcionario_txt);
+            this.Controls.Add(this.cpf_funcionario_txt);
+            this.Controls.Add(this.nome_funcionario_txt);
             this.Controls.Add(this.gravar_funcionar_button);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -310,20 +330,22 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button gravar_funcionar_button;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox cep_funcionario_txt;
+        private System.Windows.Forms.TextBox bairro_funcionario_txt;
+        private System.Windows.Forms.TextBox complemento_funcionario_txt;
+        private System.Windows.Forms.TextBox numero_funcionario_txt;
+        private System.Windows.Forms.TextBox rua_funcionario_txt;
+        private System.Windows.Forms.TextBox nome_funcionario_txt;
+        private System.Windows.Forms.TextBox cpf_funcionario_txt;
+        private System.Windows.Forms.RichTextBox telefone_funcionario_txt;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox idade_funcionario_txt;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox rg_funcionario_txt;
     }
 }
