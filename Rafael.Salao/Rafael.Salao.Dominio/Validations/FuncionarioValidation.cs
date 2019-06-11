@@ -19,7 +19,7 @@ namespace Rafael.Salao.Dominio.Validations
             RuleFor(funcionario => funcionario.Nome)
             .Length(8, 900).WithMessage("O Nome do seu funcionario com toda certeza tem pelo menos 8 digitos né")
             .NotEmpty().WithMessage("Por favor informe o nome do funcionario");
-           
+
             //Idade Validations
             RuleFor(funcionario => funcionario.Idade)
             .NotEmpty().WithMessage("Por favor informe a idade do funcionario")

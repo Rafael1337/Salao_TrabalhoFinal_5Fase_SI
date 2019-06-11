@@ -4,11 +4,12 @@ using Rafael.Salao.Dominio;
 using Rafael.Salao.Dominio.Validations;
 using System;
 using FluentValidation;
-
+using FluentValidation.TestHelper;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace Rafael.Salao.Testes.Dominio
 {
@@ -16,20 +17,45 @@ namespace Rafael.Salao.Testes.Dominio
     public class TesteFuncionario
     {
         [Test]
+        public void Teste_Id_Funcionario_Nao_Pode_Ser_Vazio()
+        {
+            var validation = new FuncionarioValidation();
+            validation.ShouldHaveValidationErrorFor(x => x.Id, (int)0);
+        }
+
+        [Test]
         public void Teste_Nome_Funcionario_Nao_Pode_Ser_Vazio()
         {
             var validation = new FuncionarioValidation();
-            //ARRANGE
-            Funcionario funcionario = new Funcionario();
-            funcionario.Nome = string.Empty;
+            validation.ShouldHaveValidationErrorFor(x => x.Nome, (string)null);
+        }
 
-            //ACTIONl
-            Action resultado = () => validation.Validate(funcionario);
+        [Test]
+        public void Teste_Idade_Funcionario_Nao_Pode_Ser_Vazio()
+        {
+            var validation = new FuncionarioValidation();
+            validation.ShouldHaveValidationErrorFor(x => x.Idade, (int)0);
+        }
 
-            //ASSERT
-            resultado.Should()
-                .Throw<Exception>()
-                .WithMessage("Por favor informe o nome do funcionario");
+        [Test]
+        public void Teste_Telefone_Funcionario_Nao_Pode_Ser_Vazio()
+        {
+            var validation = new FuncionarioValidation();
+            validation.ShouldHaveValidationErrorFor(x => x.Telefone, (double)0.0);
+        }
+
+        [Test]
+        public void Teste_RG_Funcionario_Nao_Pode_Ser_Vazio()
+        {
+            var validation = new FuncionarioValidation();
+            validation.ShouldHaveValidationErrorFor(x => x.RG, (double)0.0);
+        }
+
+        [Test]
+        public void Teste_CPF_Funcionario_Nao_Pode_Ser_Vazio()
+        {
+            var validation = new FuncionarioValidation();
+            validation.ShouldHaveValidationErrorFor(x => x.CPF, (double)0.0);
         }
     }
 }
