@@ -13,15 +13,8 @@ namespace Rafael.Salao.WinApp.Banco
 
         private void gravar_database_btn_Click(object sender, EventArgs e)
         {
-            GerarArquivoDeConexao(servidor_txtbox.Text, banco_txtbox.Text, usuario_txtbox.Text, senha_txtbox.Text);
-        }
-
-        public void GerarArquivoDeConexao(string servidor, string banco, string usuario, string senha)
-        {
-            XDocument xdoc = new XDocument();
-            string connectionstring = "<database-config><servidor>" + servidor + "</servidor>\n<banco>" + banco + "</banco>\n<usuario>" + usuario + "</usuario>\n <senha>" +senha+ "</senha></database-config>";
-            xdoc = XDocument.Parse(connectionstring);
-            xdoc.Save(@"config\" + "databaseconfig.xml");
+            Infra.Dados.DabaseConnection DBConnection = new Infra.Dados.DabaseConnection();
+            DBConnection.CreateConfigDatabaseFile(servidor_txtbox.Text, banco_txtbox.Text, usuario_txtbox.Text, senha_txtbox.Text);
             Close();
         }
     }

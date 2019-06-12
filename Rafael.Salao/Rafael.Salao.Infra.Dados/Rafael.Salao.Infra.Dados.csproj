@@ -76,8 +76,5 @@
       <Name>Rafael.Salao.Dominio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\scripts salao..sql" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

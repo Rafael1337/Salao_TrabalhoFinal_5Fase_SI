@@ -7,18 +7,28 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
 {
     public class FuncionarioDao
     {
-        private const string _scriptInsercao = @"INSERT INTO TBFUNCIONARIO 
+        private const string _scriptInsercao = @"INSERT INTO TBFUNCIONARIO
            ([NOME]
            ,[IDADE]
            ,[TELEFONE]
            ,[CPF]
-           ,[RG])
-           VALUES
-           {0}NOME
-           ,{0}IDADE
-           ,{0}TELEFONE
-           ,{0}CPF 
-           ,{0}RG";
+           ,[RG]
+           ,[RUA]
+           ,[BAIRRO]
+           ,[NUMERO]
+           ,[COMPLEMENTO]
+           ,[CEP])
+     VALUES
+           ({0}NOME,
+           {0}IDADE,
+           {0}TELEFONE,
+           {0}CPF,
+           {0}RG,
+           {0}RUA,
+           {0}BAIRRO,
+           {0}NUMERO,
+           {0}COMPLEMENTO,
+           {0}CEP)";
 
         private const string _scriptRemocao = @"DELETE FROM TBFUNCIONARIO WHERE ID = {0}ID";
 
@@ -86,15 +96,15 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
             funcionario.Nome = Convert.ToString(reader["Nome"]);
             funcionario.Idade = Convert.ToInt32(reader["IDADE"]);
             funcionario.Telefone = Convert.ToDouble(reader["TELEFONE"]);
-            funcionario.RG = Convert.ToDouble(reader["RG"]);
             funcionario.CPF = Convert.ToDouble(reader["CPF"]);
+            funcionario.RG = Convert.ToDouble(reader["RG"]);
             funcionario.Endereco = new Endereco
             {
                 Rua = Convert.ToString(reader["RUA"]),
                 Bairro = Convert.ToString(reader["BAIRRO"]),
                 Numero = Convert.ToString(reader["NUMERO"]),
+                Complemento = Convert.ToString(reader["COMPLEMENTO"]),
                 CEP = Convert.ToString(reader["CEP"]),
-                Complemento = Convert.ToString(reader["Complemento"]),
             };
 
             return funcionario;
@@ -113,8 +123,8 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
                 {"RUA",funcionario.Endereco.Rua},
                 {"BAIRRO",funcionario.Endereco.Bairro},
                 {"NUMERO",funcionario.Endereco.Numero},
-                {"COMPLEMENTO",funcionario.Endereco.Complemento},
                 { "CEP",funcionario.Endereco.CEP},
+                {"COMPLEMENTO",funcionario.Endereco.Complemento},
 
             };
         }

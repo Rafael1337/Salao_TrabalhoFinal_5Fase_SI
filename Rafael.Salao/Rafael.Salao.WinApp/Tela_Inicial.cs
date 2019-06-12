@@ -1,7 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using Rafael.Salao.Infra.Dados;
-using Rafael.Salao.Infra.Dados.Funcionario;
 using Rafael.Salao.WinApp.Banco;
 using Rafael.Salao.WinApp.Funcionarios;
 namespace Rafael.Salao.WinApp
@@ -10,6 +10,7 @@ namespace Rafael.Salao.WinApp
     {
         public DabaseConnection _databaseConnection = new DabaseConnection();
         public Tela_Conexao_Banco TCB = new Tela_Conexao_Banco();
+        
         public Tela_Inicial()
         {
             InializeDatabase();
@@ -18,13 +19,14 @@ namespace Rafael.Salao.WinApp
 
         private void InializeDatabase()
         {
-            while (_databaseConnection.connection_valid == true)
+            try { _databaseConnection.ObterParametrosConnectionString(); _databaseConnection.InitializeConnection(); }
+            catch (DirectoryNotFoundException) {
+                Directory.CreateDirectory(@"config");
+                InializeDatabase();
+            }
+            catch (FileNotFoundException)
             {
-                _databaseConnection.InitializeConnection();
-                if (!_databaseConnection.connection_valid)
-                {
-                    TCB.ShowDialog();
-                }
+                TCB.ShowDialog();
             }
         }
 

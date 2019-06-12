@@ -87,10 +87,12 @@
             // 
             // banco_txtbox
             // 
+            this.banco_txtbox.Enabled = false;
             this.banco_txtbox.Location = new System.Drawing.Point(71, 51);
             this.banco_txtbox.Name = "banco_txtbox";
             this.banco_txtbox.Size = new System.Drawing.Size(200, 20);
             this.banco_txtbox.TabIndex = 5;
+            this.banco_txtbox.Text = "SALAO_DATABASE";
             // 
             // usuario_txtbox
             // 
@@ -154,11 +156,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox servidor_txtbox;
-        private System.Windows.Forms.TextBox banco_txtbox;
-        private System.Windows.Forms.TextBox usuario_txtbox;
-        private System.Windows.Forms.TextBox senha_txtbox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button gravar_database_btn;
+        public System.Windows.Forms.TextBox servidor_txtbox;
+        public System.Windows.Forms.TextBox banco_txtbox;
+        public System.Windows.Forms.TextBox usuario_txtbox;
+        public System.Windows.Forms.TextBox senha_txtbox;
     }
 }
