@@ -27,7 +27,14 @@ namespace Rafael.Salao.Infra.Dados.Helper
             sb.AppendLine("</connectionStrings>");
             sb.AppendLine("</configuration>");
             File.WriteAllText("App.config", sb.ToString());
-            
+            MoveAppConfig();
+        }
+        public void MoveAppConfig()
+        {
+            string first = Directory.GetParent(Directory.GetCurrentDirectory()).ToString();
+            string second = Directory.GetParent(first).ToString();
+            string last = Directory.GetParent(second).ToString();
+            File.Copy("App.config", String.Concat(last,"App.config");
         }
     }
 }
