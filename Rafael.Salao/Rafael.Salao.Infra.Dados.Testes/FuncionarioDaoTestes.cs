@@ -1,11 +1,8 @@
 ﻿using NUnit.Framework;
 using Rafael.Salao.Dominio;
 using Rafael.Salao.Infra.Dados.Funcionario;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+using Rafael.Salao.Infra.Dados;
 
 namespace Rafael.Salao.Infra.Dados.Testes
 {
@@ -75,5 +72,6 @@ namespace Rafael.Salao.Infra.Dados.Testes
             Assert.True(resultado > quantidadeValida);
             Assert.AreEqual(idClienteAdicionado, resultado);
         }
+
     }
 }

@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 using Rafael.Salao.Infra.Dados;
+using Rafael.Salao.Infra.Dados.Helper;
 using Rafael.Salao.WinApp.Banco;
 using Rafael.Salao.WinApp.Funcionarios;
 namespace Rafael.Salao.WinApp
@@ -10,7 +11,6 @@ namespace Rafael.Salao.WinApp
     {
         public DabaseConnection _databaseConnection = new DabaseConnection();
         public Tela_Conexao_Banco TCB = new Tela_Conexao_Banco();
-        
         public Tela_Inicial()
         {
             InializeDatabase();

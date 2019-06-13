@@ -11,6 +11,7 @@ namespace Rafael.Salao.Infra.Dados
         public static SqlConnection connection_created;
         public static string connection_string = "";
         public XDocument xdoc = new XDocument();
+        public AppConfigHelper AppCHelper = new AppConfigHelper();
 
         public void InitializeConnection()
         {
@@ -97,6 +98,7 @@ namespace Rafael.Salao.Infra.Dados
             string connectionstring = "<database-config><servidor>" + servidor + "</servidor>\n<banco>" + banco + "</banco>\n<usuario>" + usuario + "</usuario>\n <senha>" + senha + "</senha></database-config>";
             xdoc = XDocument.Parse(connectionstring);
             File.WriteAllText(@"config\databaseconfig.xml", xdoc.ToString());
+            AppCHelper.CreateAppSettings();
         }
 
         public void ObterParametrosConnectionString()
