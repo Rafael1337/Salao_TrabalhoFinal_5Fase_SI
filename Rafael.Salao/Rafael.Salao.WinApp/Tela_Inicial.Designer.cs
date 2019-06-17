@@ -163,7 +163,7 @@
             this.remover_funcionario_button.Size = new System.Drawing.Size(42, 39);
             this.remover_funcionario_button.TabIndex = 7;
             this.remover_funcionario_button.UseVisualStyleBackColor = true;
-            this.remover_funcionario_button.Click += new System.EventHandler(this.remover_funcionario_button_Click);
+            this.remover_funcionario_button.Click += new System.EventHandler(this.Remover_funcionario_button_Click);
             // 
             // editar_funcionario_button
             // 
@@ -191,7 +191,7 @@
             this.add_funcionario_button.Size = new System.Drawing.Size(42, 39);
             this.add_funcionario_button.TabIndex = 5;
             this.add_funcionario_button.UseVisualStyleBackColor = true;
-            this.add_funcionario_button.Click += new System.EventHandler(this.add_funcionario_button_Click);
+            this.add_funcionario_button.Click += new System.EventHandler(this.Add_funcionario_button_Click);
             // 
             // funcionario_datagrid
             // 

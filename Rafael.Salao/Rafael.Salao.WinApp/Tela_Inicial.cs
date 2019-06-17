@@ -30,12 +30,12 @@ namespace Rafael.Salao.WinApp
             }
         }
 
-        private void remover_funcionario_button_Click(object sender, EventArgs e)
+        private void Remover_funcionario_button_Click(object sender, EventArgs e)
         {
            // FuncionarioDao.RemoverFuncionario(Convert.ToInt32(funcionario_datagrid.Rows[funcionario_datagrid.CurrentRow.Index].Cells[0].Value));
         }
 
-        private void add_funcionario_button_Click(object sender, EventArgs e)
+        private void Add_funcionario_button_Click(object sender, EventArgs e)
         {
             Funcionarios_Adicionar_Tela FAT = new Funcionarios_Adicionar_Tela();
             FAT.ShowDialog();

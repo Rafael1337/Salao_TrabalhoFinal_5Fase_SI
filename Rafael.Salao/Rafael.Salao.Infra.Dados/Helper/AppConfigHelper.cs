@@ -34,7 +34,7 @@ namespace Rafael.Salao.Infra.Dados.Helper
             string first = Directory.GetParent(Directory.GetCurrentDirectory()).ToString();
             string second = Directory.GetParent(first).ToString();
             string last = Directory.GetParent(second).ToString();
-            File.Copy("App.config", String.Concat(last,"App.config"));
+            File.Copy("App.config", String.Concat(last+ "\\Rafael.Salao.Infra.Dados.Testes\\", "App.config"));
         }
     }
 }

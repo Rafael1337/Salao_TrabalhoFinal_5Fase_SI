@@ -17,16 +17,16 @@ namespace Rafael.Salao.Infra.Dados
         {
             GetConnectionString();
             connection_created = new SqlConnection(connection_string);
-            try
-            {
+           // try
+          //  {
                 connection_created.Open();
                 VerifyExistingTables();
                 connection_created.Close();
-            }
-            catch (SqlException)
-            {
-                InitializeConnection();
-            }
+           // }
+           // catch (SqlException e)
+            //{
+             //   InitializeConnection();
+            //}
         }
 
         private void VerifyExistingTables()
@@ -36,7 +36,7 @@ namespace Rafael.Salao.Infra.Dados
                 SqlCommand cmd = new SqlCommand("SELECT Id FROM TBFUNCIONARIO", connection_created);
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
                 CreateTables();
             }
@@ -66,7 +66,7 @@ namespace Rafael.Salao.Infra.Dados
                     CreateDatabase();
                     return true;
                 }
-                catch (SqlException) {
+                catch (SqlException e) {
                     return false;
                 }
             }
@@ -83,7 +83,7 @@ namespace Rafael.Salao.Infra.Dados
                 connection_created.Open();
                 checkdatabase.ExecuteNonQuery();
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
                 connection_created.Close();
                 return false;
@@ -107,14 +107,22 @@ namespace Rafael.Salao.Infra.Dados
             connection_string = @"Data Source=" + xdoc.FindElement("servidor").Value + ";Initial Catalog=" + xdoc.FindElement("banco").Value + ";User ID=" + xdoc.FindElement("usuario").Value + ";Password=" + xdoc.FindElement("senha").Value + ";";
         }
 
-        private void CreateDatabase()
+        private bool CreateDatabase()
         {
-            xdoc = XDocument.Load(@"config\databaseconfig.xml");
-            SqlConnection myConn = new SqlConnection("Server=localhost;Integrated security=SSPI;database=master");
-            SqlCommand sqlexecute = new SqlCommand("CREATE DATABASE SALAO_DATABASE;", myConn);
-            myConn.Open();
-            sqlexecute.ExecuteNonQuery();
-            myConn.Close();
+            try
+            {
+                xdoc = XDocument.Load(@"config\databaseconfig.xml");
+                SqlConnection myConn = new SqlConnection("Server=localhost;Integrated security=SSPI;database=master");
+                SqlCommand sqlexecute = new SqlCommand("CREATE DATABASE SALAO_DATABASE;", myConn);
+                myConn.Open();
+                sqlexecute.ExecuteNonQuery();
+                myConn.Close();
+                return true;
+            }
+            catch (SqlException e)
+            {
+                return true;
+            }
         }
     }
 }
