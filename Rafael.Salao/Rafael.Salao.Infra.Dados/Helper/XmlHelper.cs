@@ -13,5 +13,16 @@ namespace Rafael.Salao.Infra.Dados.Helper
         {
             return document.Descendants(document.Root.Name.Namespace + elementName).FirstOrDefault();
         }
+        public static XAttribute FindAttribute(this XElement element, string attributeName)
+        {
+            XAttribute att = null;
+            try
+            {
+                att = element.Attribute(element.Document.Root.Name.Namespace + attributeName);
+            }
+            catch (Exception) { }
+
+            return att ?? (att = element.Attribute(attributeName));
+        }
     }
 }
