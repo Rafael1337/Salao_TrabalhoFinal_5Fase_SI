@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace Rafael.Salao.Infra.Dados.Helper
@@ -19,13 +16,13 @@ namespace Rafael.Salao.Infra.Dados.Helper
             sb.AppendLine("<?xml version=\"1.0\" encoding=\"utf-8\" ?>");
             sb.AppendLine("<configuration>");
             sb.AppendLine("<appSettings>");
-            sb.AppendLine("<add key = 'DataProvider' value = 'MySql.Data.MySqlClient' />");
-            sb.AppendLine("<add key = 'DataProvider' value = 'System.Data.SqlClient' />");
-            sb.AppendLine("<add key = 'ConnectionStringName' value = 'SqlServer_Teste' />");
+            sb.AppendLine("<add key='DataProvider' value='MySql.Data.MySqlClient' />");
+            sb.AppendLine("<add key='DataProvider' value='System.Data.SqlClient' />");
+            sb.AppendLine("<add key='ConnectionStringName' value='SqlServer_Teste' />");
             sb.AppendLine("</appSettings>");
             sb.AppendLine("<connectionStrings>");
-            sb.AppendLine("<add name='SqlServer' connectionString='Server=localhost;Database=PizzariaDB_Teste;User Id=sa;Password=Password_123'  providerName='System.Data.SqlClient' />");
-            sb.AppendLine("<add name='MySql' connectionString='Server=localhost;Database=pizzariadb_teste;Uid=root;Pwd=P@ssw0rd;Connect Timeout=30;' providerName='MySql.Data.MySqlClient' />");
+            sb.AppendLine("<add name=SqlServer connectionString='Server=localhost;Database=PizzariaDB_Teste;User Id=sa;Password=Password_123' providerName='System.Data.SqlClient' />");
+            sb.AppendLine("<add name=MySql connectionString='Server=localhost;Database=pizzariadb_teste;Uid=root;Pwd=P@ssw0rd;Connect Timeout=30;' providerName='MySql.Data.MySqlClient' />");
             sb.AppendLine("</connectionStrings>");
             sb.AppendLine("</configuration>");
             File.WriteAllText("App.config", sb.ToString());
@@ -36,22 +33,31 @@ namespace Rafael.Salao.Infra.Dados.Helper
             string first = Directory.GetParent(Directory.GetCurrentDirectory()).ToString();
             string second = Directory.GetParent(first).ToString();
             first_folder = Directory.GetParent(second).ToString();
+            XDocument appdoc = new XDocument();
+            appdoc = XDocument.Load("App.config");
             File.Copy("App.config", String.Concat(first_folder + "\\Rafael.Salao.Infra.Dados.Testes\\", "App.config"));
+            VerifyProvider(appdoc);
         }
 
         public void VerifyProvider(XDocument appdoc)
         {
-            if (appdoc.FindElement("add").FindAttribute("providerName").Value.Equals("System.Data.SqlClient") == true)
-                LoadSqlServerProvider();
+            //if (appdoc.FindElement("connectionStrings").Descendants(appdoc.FindElement("add").FindAttribute("providerName").Value).Equals("System.Data.SqlClient"))
+            if(appdoc.FindElement("configuration").HasChild("connectionStrings"))
+            {
+                if (appdoc.FindElement("add name").Value == "System.Data.SqlClient")
+                    LoadSqlServerProvider();
+            }
 
-            if (appdoc.FindElement("add").FindAttribute("providerName").Value.Equals("MySql.Data.MySqlClient") == true)
-                LoadMysqlProvider();
+            //if (appdoc.FindElement("connectionStrings").Descendants(appdoc.FindElement("add").FindAttribute("providerName").Value).Equals("MySql.Data.MySqlClient"))
+            //{
+            //        LoadMysqlProvider();
+            //}
         }
 
         private void LoadMysqlProvider()
         {
             XDocument xdoc = new XDocument();
-            xdoc = XDocument.Load(first_folder + "\\Rafael.Salao.WinApp\\bin\\Debug\\config");
+            xdoc = XDocument.Load(first_folder + "\\Rafael.Salao.WinApp\\bin\\Debug\\config\\databaseconfig.xml");
             string provider = "MySql.Data.MySqlClient";
 
             string servidor = xdoc.FindElement("servidor").Value;
@@ -66,7 +72,7 @@ namespace Rafael.Salao.Infra.Dados.Helper
         private void LoadSqlServerProvider()
         {
             XDocument xdoc = new XDocument();
-            xdoc = XDocument.Load(first_folder + "\\Rafael.Salao.WinApp\\bin\\Debug\\config");
+            xdoc = XDocument.Load(first_folder + "\\Rafael.Salao.WinApp\\bin\\Debug\\config\\databaseconfig.xml");
             string provider = "System.Data.SqlClient";
 
             string servidor = xdoc.FindElement("servidor").Value;
@@ -89,12 +95,12 @@ namespace Rafael.Salao.Infra.Dados.Helper
 
         private void ConstructSqlServer(XDocument appdoc, string connectionStringApp, string provider)
         {
-            if (appdoc.FindElement("add").FindAttribute(provider).Value.Equals("System.Data.SqlClient"))
-            appdoc.FindElement("add").FindAttribute("connectionString").Value.Replace(appdoc.FindElement("add").FindAttribute("connectionString").Value, connectionStringApp);
+            if (appdoc.FindElement("add").FindAttribute(provider).ValueOrDefault() == "System.Data.SqlClient")
+                appdoc.FindElement("add").FindAttribute("connectionString").Value.Replace(appdoc.FindElement("add").FindAttribute("connectionString").Value, connectionStringApp);
         }
         private void ConstructMySql(XDocument appdoc, string connectionStringApp, string provider)
         {
-            if (appdoc.FindElement("add").FindAttribute(provider).Value.Equals("MySql.Data.MySqlClient"))
+            if (appdoc.FindElement("add").FindAttribute(provider).ValueOrDefault() == "MySql.Data.MySqlClient")
                 appdoc.FindElement("add").FindAttribute("connectionString").Value.Replace(appdoc.FindElement("add").FindAttribute("connectionString").Value, connectionStringApp);
         }
     }
