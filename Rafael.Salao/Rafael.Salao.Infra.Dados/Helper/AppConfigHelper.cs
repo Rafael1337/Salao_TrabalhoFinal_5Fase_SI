@@ -89,7 +89,13 @@ namespace Rafael.Salao.Infra.Dados.Helper
 
         private void ConstructSqlServer(XDocument appdoc, string connectionStringApp, string provider)
         {
+            if (appdoc.FindElement("add").FindAttribute(provider).Value.Equals("System.Data.SqlClient"))
             appdoc.FindElement("add").FindAttribute("connectionString").Value.Replace(appdoc.FindElement("add").FindAttribute("connectionString").Value, connectionStringApp);
+        }
+        private void ConstructMySql(XDocument appdoc, string connectionStringApp, string provider)
+        {
+            if (appdoc.FindElement("add").FindAttribute(provider).Value.Equals("MySql.Data.MySqlClient"))
+                appdoc.FindElement("add").FindAttribute("connectionString").Value.Replace(appdoc.FindElement("add").FindAttribute("connectionString").Value, connectionStringApp);
         }
     }
 }
