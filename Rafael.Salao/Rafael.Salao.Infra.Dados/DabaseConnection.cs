@@ -17,16 +17,10 @@ namespace Rafael.Salao.Infra.Dados
         {
             GetConnectionString();
             connection_created = new SqlConnection(connection_string);
-           // try
-          //  {
+
                 connection_created.Open();
                 VerifyExistingTables();
                 connection_created.Close();
-           // }
-           // catch (SqlException e)
-            //{
-             //   InitializeConnection();
-            //}
         }
 
         private void VerifyExistingTables()
@@ -36,7 +30,7 @@ namespace Rafael.Salao.Infra.Dados
                 SqlCommand cmd = new SqlCommand("SELECT Id FROM TBFUNCIONARIO", connection_created);
                 cmd.ExecuteNonQuery();
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
                 CreateTables();
             }

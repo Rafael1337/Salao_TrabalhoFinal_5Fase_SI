@@ -15,6 +15,7 @@ namespace Rafael.Salao.Infra.Dados.Helper
         string first_folder;
         public void CreateAppSettings()
         {
+            GetFirstFolder();
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("<?xml version=\"1.0\" encoding=\"utf-8\" ?>");
             sb.AppendLine("<configuration>");
@@ -24,78 +25,50 @@ namespace Rafael.Salao.Infra.Dados.Helper
             sb.AppendLine("<add key = 'ConnectionStringName' value = 'SqlServer_Teste' />");
             sb.AppendLine("</appSettings>");
             sb.AppendLine("<connectionStrings>");
-            sb.AppendLine("<add name='SqlServer' connectionString='Server=localhost;Database=PizzariaDB_Teste;User Id=sa;Password=Password_123'  providerName='System.Data.SqlClient' />");
-            sb.AppendLine("<add name='MySql' connectionString='Server=localhost;Database=pizzariadb_teste;Uid=root;Pwd=P@ssw0rd;Connect Timeout=30;' providerName='MySql.Data.MySqlClient' />");
+            sb.AppendLine("<add name='SqlServer' connectionString='Server=${servidor};Database=${database};User Id=${usuario};Password=${senha}'  providerName='System.Data.SqlClient' />");
+            sb.AppendLine("<add name='MySql' connectionString='Server=${servidor};Database=${database};Uid=${usuario};Pwd=${senha};Connect Timeout=30;' providerName='MySql.Data.MySqlClient' />");
             sb.AppendLine("</connectionStrings>");
             sb.AppendLine("</configuration>");
             File.WriteAllText("App.config", sb.ToString());
-            MoveAppConfig();
+            SetValuesForAppConfig();
         }
-        public void MoveAppConfig()
+
+        private void GetFirstFolder()
         {
             string first = Directory.GetParent(Directory.GetCurrentDirectory()).ToString();
             string second = Directory.GetParent(first).ToString();
             first_folder = Directory.GetParent(second).ToString();
+        }
+
+        private void SetValuesForAppConfig()
+        {
+            XDocument xdoc = new XDocument();
+            xdoc = XDocument.Load(first_folder + "\\Rafael.Salao.WinApp\\bin\\Debug\\config\\databaseconfig.xml");
+
+            XDocument appconfig = new XDocument();
+            appconfig = XDocument.Load(@"App.config");
+
+            string servidor = xdoc.FindElement("servidor").Value;
+            string database = xdoc.FindElement("banco").Value;
+            string usuario = xdoc.FindElement("usuario").Value;
+            string senha = xdoc.FindElement("senha").Value;
+
+            string newAppconfig;
+            newAppconfig = TxtHelper.ReplacerFieldsInTXT("${servidor}", servidor, appconfig.ToString());
+            newAppconfig = TxtHelper.ReplacerFieldsInTXT("${database}", database, newAppconfig);
+            newAppconfig = TxtHelper.ReplacerFieldsInTXT("${usuario}", usuario, newAppconfig);
+            newAppconfig = TxtHelper.ReplacerFieldsInTXT("${senha}", senha, newAppconfig);
+
+            appconfig = XDocument.Parse(newAppconfig);
+            appconfig.Save("App.config");
+
+            MoveAppConfig();
+
+        }
+
+        public void MoveAppConfig()
+        {
             File.Copy("App.config", String.Concat(first_folder + "\\Rafael.Salao.Infra.Dados.Testes\\", "App.config"));
-        }
-
-        public void VerifyProvider(XDocument appdoc)
-        {
-            if (appdoc.FindElement("add").FindAttribute("providerName").Value.Equals("System.Data.SqlClient") == true)
-                LoadSqlServerProvider();
-
-            if (appdoc.FindElement("add").FindAttribute("providerName").Value.Equals("MySql.Data.MySqlClient") == true)
-                LoadMysqlProvider();
-        }
-
-        private void LoadMysqlProvider()
-        {
-            XDocument xdoc = new XDocument();
-            xdoc = XDocument.Load(first_folder + "\\Rafael.Salao.WinApp\\bin\\Debug\\config");
-            string provider = "MySql.Data.MySqlClient";
-
-            string servidor = xdoc.FindElement("servidor").Value;
-            string database = xdoc.FindElement("banco").Value;
-            string usuario = xdoc.FindElement("usuario").Value;
-            string senha = xdoc.FindElement("senha").Value;
-
-            string connectionStringApp = "Server=" + servidor + ";Database=" + database + ";Uid=" + usuario + ";Pwd=" + senha + ";" + "Connect Timeout=30";
-            ConstructAppConfig(connectionStringApp, provider);
-        }
-
-        private void LoadSqlServerProvider()
-        {
-            XDocument xdoc = new XDocument();
-            xdoc = XDocument.Load(first_folder + "\\Rafael.Salao.WinApp\\bin\\Debug\\config");
-            string provider = "System.Data.SqlClient";
-
-            string servidor = xdoc.FindElement("servidor").Value;
-            string database = xdoc.FindElement("banco").Value;
-            string usuario = xdoc.FindElement("usuario").Value;
-            string senha = xdoc.FindElement("senha").Value;
-
-            string connectionStringApp = "Server=" + servidor + ";Database=" + database + ";User Id=" + usuario + ";Password=" + senha + "";
-            ConstructAppConfig(connectionStringApp, provider);
-        }
-
-        public void ConstructAppConfig(string connectionString, string provider)
-        {
-            XDocument appdoc = new XDocument();
-            appdoc = XDocument.Load(first_folder + "\\Rafael.Salao.Infra.Dados.Testes\\App.config");
-
-
-            ConstructSqlServer(appdoc, connectionString, provider);
-        }
-
-        private void ConstructSqlServer(XDocument appdoc, string connectionStringApp, string provider)
-        {
-            if (appdoc.FindElement("add").FindAttribute(provider).Value.Equals("System.Data.SqlClient"))
-            appdoc.FindElement("add").FindAttribute("connectionString").Value.Replace(appdoc.FindElement("add").FindAttribute("connectionString").Value, connectionStringApp);
-        }
-        private void ConstructMySql(XDocument appdoc, string connectionStringApp, string provider)
-        {
-            if (appdoc.FindElement("add").FindAttribute(provider).Value.Equals("MySql.Data.MySqlClient"))
-                appdoc.FindElement("add").FindAttribute("connectionString").Value.Replace(appdoc.FindElement("add").FindAttribute("connectionString").Value, connectionStringApp);
         }
     }
 }

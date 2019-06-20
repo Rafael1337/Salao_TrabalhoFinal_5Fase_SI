@@ -19,14 +19,22 @@ namespace Rafael.Salao.WinApp
 
         private void InializeDatabase()
         {
-            try { _databaseConnection.ObterParametrosConnectionString(); _databaseConnection.InitializeConnection(); }
-            catch (DirectoryNotFoundException) {
-                Directory.CreateDirectory(@"config");
-                InializeDatabase();
-            }
-            catch (FileNotFoundException)
+
+            if (!Directory.Exists(@"config"))
             {
-                TCB.ShowDialog();
+                Directory.CreateDirectory(@"config");
+            }
+            else
+            {
+                if (!File.Exists(@"config\\databaseconfig.xml")){
+                    TCB.ShowDialog();
+                    InializeDatabase();
+                }
+                else
+                {
+                    _databaseConnection.ObterParametrosConnectionString();
+                    _databaseConnection.InitializeConnection();
+                }
             }
         }
 
