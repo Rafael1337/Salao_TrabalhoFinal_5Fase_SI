@@ -68,7 +68,14 @@ namespace Rafael.Salao.Infra.Dados.Helper
 
         public void MoveAppConfig()
         {
-            File.Copy("App.config", String.Concat(first_folder + "\\Rafael.Salao.Infra.Dados.Testes\\", "App.config"));
+            try
+            {
+                File.Copy("App.config", String.Concat(first_folder + "\\Rafael.Salao.Infra.Dados.Testes\\", "App.config"));
+            }
+            catch (IOException)
+            {
+
+            }
         }
     }
 }

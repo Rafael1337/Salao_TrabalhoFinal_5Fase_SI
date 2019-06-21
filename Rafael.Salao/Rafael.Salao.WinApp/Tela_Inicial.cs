@@ -24,8 +24,7 @@ namespace Rafael.Salao.WinApp
             {
                 Directory.CreateDirectory(@"config");
             }
-            else
-            {
+          
                 if (!File.Exists(@"config\\databaseconfig.xml")){
                     TCB.ShowDialog();
                     InializeDatabase();
@@ -35,7 +34,6 @@ namespace Rafael.Salao.WinApp
                     _databaseConnection.ObterParametrosConnectionString();
                     _databaseConnection.InitializeConnection();
                 }
-            }
         }
 
         private void Remover_funcionario_button_Click(object sender, EventArgs e)
