@@ -17,9 +17,9 @@ namespace Rafael.Salao.Infra.Dados.Testes
             _funcionarioDao = new FuncionarioDao();
 
             //Limpando do a tabela cliente
-            Db.Update("DELETE FROM [TBFUNCIONARIO]");
+            //Db.Update("DELETE FROM [TBFUNCIONARIO]");
             //Zerando o Id
-            Db.Update("DBCC CHECKIDENT('[TBFUNCIONARIO]', RESEED, 0)");
+            //Db.Update("DBCC CHECKIDENT('[TBFUNCIONARIO]', RESEED, 0)");
 
             //Criando cliente inicial
             Dominio.Funcionario novoFuncionario = new Dominio.Funcionario();

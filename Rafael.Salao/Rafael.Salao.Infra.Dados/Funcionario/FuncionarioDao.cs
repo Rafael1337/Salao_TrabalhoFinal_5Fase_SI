@@ -13,22 +13,22 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
            ,[TELEFONE]
            ,[CPF]
            ,[RG]
-           ,[RUA]
            ,[BAIRRO]
+           ,[RUA]
            ,[NUMERO]
-           ,[COMPLEMENTO]
-           ,[CEP])
+           ,[CEP]
+           ,[COMPLEMENTO])
      VALUES
            ({0}NOME,
            {0}IDADE,
            {0}TELEFONE,
            {0}CPF,
            {0}RG,
-           {0}RUA,
            {0}BAIRRO,
+           {0}RUA,
            {0}NUMERO,
-           {0}COMPLEMENTO,
-           {0}CEP)";
+           {0}CEP,
+           {0}COMPLEMENTO)";
 
         private const string _scriptRemocao = @"DELETE FROM TBFUNCIONARIO WHERE ID = {0}ID";
 
@@ -92,19 +92,19 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
         private Dominio.Funcionario ConverterFuncionario(IDataReader reader)
         {
             Dominio.Funcionario funcionario = new Dominio.Funcionario();
-            funcionario.Id = Convert.ToInt32(reader["Id"]);
-            funcionario.Nome = Convert.ToString(reader["Nome"]);
+            funcionario.Id = Convert.ToInt32(reader["ID"]);
+            funcionario.Nome = Convert.ToString(reader["NOME"]);
             funcionario.Idade = Convert.ToInt32(reader["IDADE"]);
             funcionario.Telefone = Convert.ToDouble(reader["TELEFONE"]);
             funcionario.CPF = Convert.ToDouble(reader["CPF"]);
             funcionario.RG = Convert.ToDouble(reader["RG"]);
             funcionario.Endereco = new Endereco
             {
-                Rua = Convert.ToString(reader["RUA"]),
                 Bairro = Convert.ToString(reader["BAIRRO"]),
+                Rua = Convert.ToString(reader["RUA"]),
                 Numero = Convert.ToString(reader["NUMERO"]),
-                Complemento = Convert.ToString(reader["COMPLEMENTO"]),
                 CEP = Convert.ToString(reader["CEP"]),
+                Complemento = Convert.ToString(reader["COMPLEMENTO"]),
             };
 
             return funcionario;
@@ -118,10 +118,10 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
                 { "NOME",funcionario.Nome},
                 {"IDADE",funcionario.Idade},
                 {"TELEFONE",funcionario.Telefone},
-                {"RG",funcionario.RG},
                 {"CPF",funcionario.CPF},
-                {"RUA",funcionario.Endereco.Rua},
+                {"RG",funcionario.RG},
                 {"BAIRRO",funcionario.Endereco.Bairro},
+                {"RUA",funcionario.Endereco.Rua},
                 {"NUMERO",funcionario.Endereco.Numero},
                 { "CEP",funcionario.Endereco.CEP},
                 {"COMPLEMENTO",funcionario.Endereco.Complemento},

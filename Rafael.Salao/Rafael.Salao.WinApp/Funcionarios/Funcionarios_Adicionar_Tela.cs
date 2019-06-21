@@ -29,7 +29,7 @@ namespace Rafael.Salao.WinApp.Funcionarios
             _funcionario.Endereco.Rua = Convert.ToString(rua_funcionario_txt.Text);
             _funcionario.Endereco.Numero = Convert.ToString(numero_funcionario_txt.Text);
             _funcionario.Endereco.CEP = Convert.ToString(cep_funcionario_txt.Text);
-            _funcionario.Endereco.Complemento = Convert.ToString(complemento_funcionario_txt);
+            _funcionario.Endereco.Complemento = Convert.ToString(complemento_funcionario_txt.Text);
 
             _funcionarioDao.Adicionar(_funcionario);
 
