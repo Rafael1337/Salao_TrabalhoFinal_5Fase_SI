@@ -9,12 +9,10 @@ namespace Rafael.Salao.Dominio
     public class Unha
     {
         public int Id { get; set; }
-        public string Tipo { get; set; }
         public double Valor { get; set; }
 
-        public Unha(string _tipo, double _valor)
+        public Unha(double _valor)
         {
-            Tipo = _tipo;
             Valor = _valor;
         }
     }

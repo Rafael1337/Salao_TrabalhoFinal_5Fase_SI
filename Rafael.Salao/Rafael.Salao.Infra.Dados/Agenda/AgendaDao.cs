@@ -82,10 +82,11 @@ namespace Rafael.Salao.Infra.Dados.Agenda
         {
             Dominio.Agenda agenda = new Dominio.Agenda();
             agenda.Id = Convert.ToInt32(reader["ID"]);
-            funcionario.Nome = Convert.ToString(reader["NOME"]);
-            funcionario.Idade = Convert.ToInt32(reader["IDADE"]);
-            funcionario.Telefone = Convert.ToDouble(reader["TELEFONE"]);
-            funcionario.CPF = Convert.ToDouble(reader["CPF"]);
+            agenda.Nome_cliente = Convert.ToString(reader["NOME_CLIENTE"]);
+            agenda.Data = Convert.ToString(reader["DATA"]);
+            agenda.Horario = Convert.ToString(reader["HORARIO"]);
+            agenda.Funcionario.Id = Convert.ToInt32(reader["IDFUNCIONARIO"]);
+            agenda.Servicos.Id = Convert.ToInt32(reader["IDSERVICO"]);
 
             return agenda;
         }
@@ -94,18 +95,12 @@ namespace Rafael.Salao.Infra.Dados.Agenda
         {
             return new Dictionary<string, object>
             {
-                {"Id",funcionario.Id},
-                { "NOME",funcionario.Nome},
-                {"IDADE",funcionario.Idade},
-                {"TELEFONE",funcionario.Telefone},
-                {"CPF",funcionario.CPF},
-                {"RG",funcionario.RG},
-                {"BAIRRO",funcionario.Endereco.Bairro},
-                {"RUA",funcionario.Endereco.Rua},
-                {"NUMERO",funcionario.Endereco.Numero},
-                { "CEP",funcionario.Endereco.CEP},
-                {"COMPLEMENTO",funcionario.Endereco.Complemento},
-
+                {"ID",agenda.Id},
+                {"NOME_CLIENTE",agenda.Nome_cliente},
+                {"DATA",agenda.Data},
+                {"HORARIO",agenda.Horario },
+                {"IDFUNCIONARIO",agenda.Funcionario.Id},
+                {"IDSERVICO",agenda.Servicos.Id},
             };
         }
 
