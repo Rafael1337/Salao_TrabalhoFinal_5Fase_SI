@@ -8,9 +8,9 @@ namespace Rafael.Salao.Dominio
 {
     public class Cabelo
     {
-        private int Id { get; set; }
-        private string Tipo { get; set; }
-        private double Valor { get; set; }
+        public int Id { get; set; }
+        public string Tipo { get; set; }
+        public double Valor { get; set; }
 
         public Cabelo(string _tipo, double _valor)
         {

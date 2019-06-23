@@ -43,9 +43,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cabelo_box_funcionario = new System.Windows.Forms.CheckBox();
+            this.depilacao_box_funcionario = new System.Windows.Forms.CheckBox();
+            this.unha_box_funcionario = new System.Windows.Forms.CheckBox();
             this.gravar_funcionar_button = new System.Windows.Forms.Button();
             this.nome_funcionario_txt = new System.Windows.Forms.TextBox();
             this.cpf_funcionario_txt = new System.Windows.Forms.TextBox();
@@ -186,9 +186,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.cabelo_box_funcionario);
+            this.groupBox2.Controls.Add(this.depilacao_box_funcionario);
+            this.groupBox2.Controls.Add(this.unha_box_funcionario);
             this.groupBox2.Location = new System.Drawing.Point(294, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(264, 114);
@@ -196,35 +196,35 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Serviços";
             // 
-            // checkBox3
+            // cabelo_box_funcionario
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(21, 85);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(59, 17);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Cabelo";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cabelo_box_funcionario.AutoSize = true;
+            this.cabelo_box_funcionario.Location = new System.Drawing.Point(21, 85);
+            this.cabelo_box_funcionario.Name = "cabelo_box_funcionario";
+            this.cabelo_box_funcionario.Size = new System.Drawing.Size(59, 17);
+            this.cabelo_box_funcionario.TabIndex = 2;
+            this.cabelo_box_funcionario.Text = "Cabelo";
+            this.cabelo_box_funcionario.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // depilacao_box_funcionario
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(21, 58);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(74, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Depilação";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.depilacao_box_funcionario.AutoSize = true;
+            this.depilacao_box_funcionario.Location = new System.Drawing.Point(21, 58);
+            this.depilacao_box_funcionario.Name = "depilacao_box_funcionario";
+            this.depilacao_box_funcionario.Size = new System.Drawing.Size(74, 17);
+            this.depilacao_box_funcionario.TabIndex = 1;
+            this.depilacao_box_funcionario.Text = "Depilação";
+            this.depilacao_box_funcionario.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // unha_box_funcionario
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(21, 30);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(70, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Manicure";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.unha_box_funcionario.AutoSize = true;
+            this.unha_box_funcionario.Location = new System.Drawing.Point(21, 30);
+            this.unha_box_funcionario.Name = "unha_box_funcionario";
+            this.unha_box_funcionario.Size = new System.Drawing.Size(70, 17);
+            this.unha_box_funcionario.TabIndex = 0;
+            this.unha_box_funcionario.Text = "Manicure";
+            this.unha_box_funcionario.UseVisualStyleBackColor = true;
             // 
             // gravar_funcionar_button
             // 
@@ -331,9 +331,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cabelo_box_funcionario;
+        private System.Windows.Forms.CheckBox depilacao_box_funcionario;
+        private System.Windows.Forms.CheckBox unha_box_funcionario;
         private System.Windows.Forms.Button gravar_funcionar_button;
         private System.Windows.Forms.TextBox cep_funcionario_txt;
         private System.Windows.Forms.TextBox bairro_funcionario_txt;

@@ -13,11 +13,14 @@ namespace Rafael.Salao.Infra.Dados
     {
         #region Attributes
 
-        private static readonly string connectionStringName = System.Configuration.ConfigurationManager.AppSettings.Get("ConnectionStringName");
+        private static readonly string connectionStringName = "SqlServer";
+            //System.Configuration.ConfigurationManager.AppSettings.Get("ConnectionStringName");
 
-        private static readonly string providerName = ConfigurationManager.ConnectionStrings[connectionStringName].ProviderName;
+        private static readonly string providerName = "System.Data.SqlClient";
+            //ConfigurationManager.ConnectionStrings[connectionStringName].ProviderName;
 
-        private static readonly string connectionString = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;
+        private static readonly string connectionString = "Server=localhost;Database=SALAO_DATABASE;User Id=sa;Password=p@ssw0rd";
+            //ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;
 
         private static readonly DbProviderFactory factory = DbProviderFactories.GetFactory(providerName);
 

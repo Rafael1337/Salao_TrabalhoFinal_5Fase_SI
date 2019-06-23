@@ -29,6 +29,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rafael.Salao.Testes.Dominio", "Rafael.Salao.Testes.Dominio\Rafael.Salao.Testes.Dominio.csproj", "{C84FE1DE-1074-40A5-91D7-2C5E14E48AD9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{A9AC95A7-119A-4115-AF51-E49072D97E85}"
+	ProjectSection(SolutionItems) = preProject
+		Rafael.Salao.Infra.Dados\Scripts\scripts.sql = Rafael.Salao.Infra.Dados\Scripts\scripts.sql
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rafael.Salao.Infra.Dados.Testes", "Rafael.Salao.Infra.Dados.Testes\Rafael.Salao.Infra.Dados.Testes.csproj", "{589B6AB7-730B-4219-98CE-7E7245B6A7DF}"
 EndProject

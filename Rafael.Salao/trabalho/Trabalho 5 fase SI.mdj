@@ -2402,7 +2402,7 @@
 											"top": 189,
 											"width": 146.3388671875,
 											"height": 13,
-											"text": "+Horario: datetime",
+											"text": "+Horario: string",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3794,7 +3794,7 @@
 								"$ref": "AAAAAAFq2iWclhHSOSQ="
 							},
 							"name": "Horario",
-							"type": "datetime"
+							"type": "string"
 						},
 						{
 							"_type": "UMLAttribute",

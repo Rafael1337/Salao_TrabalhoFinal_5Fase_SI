@@ -17,7 +17,10 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
            ,[RUA]
            ,[NUMERO]
            ,[CEP]
-           ,[COMPLEMENTO])
+           ,[COMPLEMENTO]
+           ,[UNHA]
+           ,[CABELO]
+           ,[DEPILACAO])
      VALUES
            ({0}NOME,
            {0}IDADE,
@@ -28,7 +31,10 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
            {0}RUA,
            {0}NUMERO,
            {0}CEP,
-           {0}COMPLEMENTO)";
+           {0}COMPLEMENTO,
+           {0}UNHA,
+           {0}CABELO,
+           {0}DEPILACAO,)";
 
         private const string _scriptRemocao = @"DELETE FROM TBFUNCIONARIO WHERE ID = {0}ID";
 

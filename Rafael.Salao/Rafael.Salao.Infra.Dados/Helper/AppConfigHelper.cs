@@ -22,7 +22,7 @@ namespace Rafael.Salao.Infra.Dados.Helper
             sb.AppendLine("<appSettings>");
             sb.AppendLine("<add key = 'DataProvider' value = 'MySql.Data.MySqlClient' />");
             sb.AppendLine("<add key = 'DataProvider' value = 'System.Data.SqlClient' />");
-            sb.AppendLine("<add key = 'ConnectionStringName' value = 'SqlServer_Teste' />");
+            sb.AppendLine("<add key = 'ConnectionStringName' value='SqlServer' />");
             sb.AppendLine("</appSettings>");
             sb.AppendLine("<connectionStrings>");
             sb.AppendLine("<add name='SqlServer' connectionString='Server=${servidor};Database=${database};User Id=${usuario};Password=${senha}'  providerName='System.Data.SqlClient' />");

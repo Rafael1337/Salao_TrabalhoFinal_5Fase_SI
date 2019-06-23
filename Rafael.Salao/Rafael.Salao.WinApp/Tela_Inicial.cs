@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 using Rafael.Salao.Infra.Dados;
+using Rafael.Salao.Infra.Dados.Funcionario;
 using Rafael.Salao.Infra.Dados.Helper;
 using Rafael.Salao.WinApp.Banco;
 using Rafael.Salao.WinApp.Funcionarios;
@@ -38,7 +39,8 @@ namespace Rafael.Salao.WinApp
 
         private void Remover_funcionario_button_Click(object sender, EventArgs e)
         {
-           // FuncionarioDao.RemoverFuncionario(Convert.ToInt32(funcionario_datagrid.Rows[funcionario_datagrid.CurrentRow.Index].Cells[0].Value));
+            FuncionarioDao funcionario_dao = new FuncionarioDao();
+            funcionario_dao.Deletar(Convert.ToInt32(funcionario_datagrid.Rows[funcionario_datagrid.CurrentRow.Index].Cells[0].Value));
         }
 
         private void Add_funcionario_button_Click(object sender, EventArgs e)

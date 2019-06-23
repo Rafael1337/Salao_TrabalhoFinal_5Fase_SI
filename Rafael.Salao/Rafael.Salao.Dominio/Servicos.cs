@@ -8,8 +8,8 @@ namespace Rafael.Salao.Dominio
 {
     public class Servicos
     {
-        private Cabelo _cabelo { get; set; }
-        private Unha _unha { get; set; }
-        private Depilacao _depilacao { get; set; }
+        public Cabelo Cabelo { get; set; }
+        public Unha Unha { get; set; }
+        public Depilacao Depilacao { get; set; }
     }
 }
