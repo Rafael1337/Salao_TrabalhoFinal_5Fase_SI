@@ -29,8 +29,8 @@ namespace Rafael.Salao.Dominio.Validations
             //    .NotEmpty().WithMessage("Serviço é um campo obrigatório para o Agendamento de horários");
 
             //Funcionario
-            RuleFor(agenda => agenda.Funcionario.Id)
-                .NotEmpty().WithMessage("Funcionário é um campo obrigatório para o Agendamento de horáríos");
+            RuleFor(agenda => agenda.Funcionario)
+                .NotNull().WithMessage("Funcionário é um campo obrigatório para o Agendamento de horáríos");
         }
     }
 }

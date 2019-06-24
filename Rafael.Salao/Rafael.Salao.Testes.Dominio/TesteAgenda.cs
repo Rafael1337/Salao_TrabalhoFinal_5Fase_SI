@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using Rafael.Salao.Dominio.Validations;
 using FluentValidation.TestHelper;
+using Rafael.Salao.Dominio;
 
 namespace Rafael.Salao.Testes.Dominio
 {
@@ -39,7 +40,7 @@ namespace Rafael.Salao.Testes.Dominio
         public void Teste_Funcionario_Agendado_Nao_Pode_Ser_Vazio()
         {
             var validation = new AgendaValidation();
-            validation.ShouldHaveValidationErrorFor(x => x.Funcionario.Id, (int)0);
+            validation.ShouldHaveValidationErrorFor(x => x.Funcionario, (Funcionario)null);
         }
 
         [Test]
