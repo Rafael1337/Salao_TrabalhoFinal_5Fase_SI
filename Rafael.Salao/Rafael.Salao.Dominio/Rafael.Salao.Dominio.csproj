@@ -95,6 +95,7 @@
     <Compile Include="Servicos.cs" />
     <Compile Include="Unha.cs" />
     <Compile Include="Validations\AgendaValidation.cs" />
+    <Compile Include="Validations\EnderecoValidation.cs" />
     <Compile Include="Validations\FuncionarioValidation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

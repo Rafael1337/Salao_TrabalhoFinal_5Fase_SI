@@ -29,12 +29,12 @@ namespace Rafael.Salao.Testes.Dominio
             validation.ShouldHaveValidationErrorFor(x => x.Horario, (string)null);
         }
 
-        //[Test]
-        //public void Teste_Servico_Agendado_Nao_Pode_Ser_Vazio()
-        //{
-        //    var validation = new AgendaValidation();
-        //    validation.ShouldHaveValidationErrorFor(x => x.Servicos.Id, (int)0);
-        //}
+        [Test]
+        public void Teste_Servico_Agendado_Nao_Pode_Ser_Vazio()
+        {
+            var validation = new AgendaValidation();
+            validation.ShouldHaveValidationErrorFor(x => x.Servicos, (Servicos)null);
+        }
 
         [Test]
         public void Teste_Funcionario_Agendado_Nao_Pode_Ser_Vazio()

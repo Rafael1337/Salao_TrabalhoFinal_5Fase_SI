@@ -35,7 +35,6 @@ namespace Rafael.Salao.Dominio.Validations
             //Telefone Validations
             RuleFor(funcionario => funcionario.Telefone)
             .NotEmpty().WithMessage("Por favor informe um telefone");
-
         }
     }
 }

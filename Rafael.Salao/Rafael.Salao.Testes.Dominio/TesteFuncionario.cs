@@ -34,7 +34,6 @@ namespace Rafael.Salao.Testes.Dominio
             var validation = new FuncionarioValidation();
             validation.ShouldHaveValidationErrorFor(x => x.Telefone, (double)0.0);
         }
-
         [Test]
         public void Teste_RG_Funcionario_Nao_Pode_Ser_Vazio()
         {

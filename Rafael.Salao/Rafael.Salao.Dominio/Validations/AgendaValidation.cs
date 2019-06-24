@@ -24,9 +24,9 @@ namespace Rafael.Salao.Dominio.Validations
                 .NotEmpty().WithMessage("A Data é um campo obrigatório para o Agendamento")
                 .Matches("^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d$").WithMessage("Informe uma data valida para ser registrada!");
 
-            ////Servicos 
-            //RuleFor(agenda => agenda.Servicos.Id)
-            //    .NotEmpty().WithMessage("Serviço é um campo obrigatório para o Agendamento de horários");
+            //Servicos 
+            RuleFor(agenda => agenda.Servicos)
+                .NotNull().WithMessage("Serviço é um campo obrigatório para o Agendamento de horários");
 
             //Funcionario
             RuleFor(agenda => agenda.Funcionario)
