@@ -15,6 +15,8 @@ namespace Rafael.Salao.WinApp.Funcionarios
 
         private void gravar_funcionar_button_Click(object sender, EventArgs e)
         {
+
+
             Funcionario _funcionario = new Funcionario();
             _funcionario.Endereco = new Endereco();
 
@@ -33,7 +35,7 @@ namespace Rafael.Salao.WinApp.Funcionarios
             _funcionario.Endereco.Numero = Convert.ToString(numero_funcionario_txt.Text);
             _funcionario.Endereco.CEP = Convert.ToString(cep_funcionario_txt.Text);
             _funcionario.Endereco.Complemento = Convert.ToString(complemento_funcionario_txt.Text);
-
+            
             _funcionarioDao.Adicionar(_funcionario);
 
         }

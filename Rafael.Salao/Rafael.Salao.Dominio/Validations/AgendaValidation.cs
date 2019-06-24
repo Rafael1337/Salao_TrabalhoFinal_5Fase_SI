@@ -31,6 +31,22 @@ namespace Rafael.Salao.Dominio.Validations
             //Funcionario
             RuleFor(agenda => agenda.Funcionario)
                 .NotNull().WithMessage("Funcionário é um campo obrigatório para o Agendamento de horáríos");
+
+            RuleFor(agenda => agenda.Funcionario).SetValidator(new FuncionarioValidation());
+
+            //public void Validate(T entity)
+            //{
+            //    var validator = ValidatorsFactory.Instance.GetValidator(entity.GetType());
+
+            //    if (validator == null)
+            //        return;
+
+            //    var validation = validator.Validate(entity);
+
+            //    if (validation.Errors.Count > 0)
+            //        throw new BusinessException(validation.Errors[0].ErrorMessage);
+            //}
+
         }
     }
 }
