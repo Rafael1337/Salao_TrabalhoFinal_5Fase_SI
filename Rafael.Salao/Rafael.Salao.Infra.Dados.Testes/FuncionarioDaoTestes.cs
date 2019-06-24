@@ -57,16 +57,15 @@ namespace Rafael.Salao.Infra.Dados.Testes
                 novoFuncionario.Endereco.CEP = "88505300";
             };
 
-            int idClienteAdicionado = 2;
+            int idFuncionarioAdicionado = 2;
             int quantidadeValida = 0;
 
             //AÇÃO
-            
             var resultado = _funcionarioDao.Adicionar(novoFuncionario);
 
             //VERIFICAÇÃO        
             Assert.True(resultado > quantidadeValida);
-            Assert.AreEqual(idClienteAdicionado, resultado);
+            Assert.AreEqual(idFuncionarioAdicionado, resultado);
         }
 
     }

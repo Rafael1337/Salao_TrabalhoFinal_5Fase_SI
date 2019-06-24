@@ -43,6 +43,9 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
         ,[TELEFONE] = {0}TELEFONE
         ,[CPF] = {0}CPF
         ,[RG] = {0}RG
+        ,[UNHA] = {0}UNHA
+        ,[CABELO] = {0}CABELO
+        ,[DEPILACAO] = {0}DEPILACAO
         WHERE ID = {0}ID";
 
 
@@ -53,6 +56,9 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
                   ,[TELEFONE]
                   ,[CPF]
                   ,[RG]
+                  ,[UNHA]
+                  ,[CABELO]
+                  ,[DEPILACAO]
               FROM [dbo].[TBFuncionario]
               WHERE [Id] = {0}Id";
 
@@ -62,6 +68,9 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
         ,[TELEFONE]
         ,[CPF]
         ,[RG]
+        ,[UNHA]
+        ,[CABELO]
+        ,[DEPILACAO]
         FROM [TBFUNCIONARIO]";
 
         public int Adicionar(Dominio.Funcionario novoFuncionario)

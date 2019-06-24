@@ -1,7 +1,10 @@
 ﻿
 
+using System;
 using NUnit.Framework;
+using Rafael.Salao.Dominio;
 using Rafael.Salao.Infra.Dados.Agenda;
+using Rafael.Salao.Infra.Dados.Funcionario;
 
 namespace Rafael.Salao.Infra.Dados.Testes
 {
@@ -14,18 +17,47 @@ namespace Rafael.Salao.Infra.Dados.Testes
         public void Inicializar()
         {
             _agendaDao = new AgendaDao();
+            //Adicionando funcionario
+            AdicionaFuncionarioTesteAgenda();
 
-
-            //Criando funcionario inicial
+            //Criando registro agenda inicial
             Dominio.Agenda novoRegistroAgenda = new Dominio.Agenda();
-            novoRegistroAgenda.Funcionario.Id = 1;
+            novoRegistroAgenda.Horario = "20:00";
             novoRegistroAgenda.Nome_cliente = "Daniela";
             novoRegistroAgenda.Servicos.Id = 1;
-            novoRegistroAgenda.Horario = "20:00";
+            novoRegistroAgenda.Funcionario.Id = 1;
             novoRegistroAgenda.Data = "10/09/2019";
 
             //Adicionando o registro da agenda no banco
             _agendaDao.Adicionar(novoRegistroAgenda);
+        }
+
+        private void AdicionarValoresDeServico()
+        {
+
+        }
+
+        private void AdicionaFuncionarioTesteAgenda()
+        {
+
+           FuncionarioDao _funcionarioDao = new FuncionarioDao();
+
+            Dominio.Funcionario novoFuncionario = new Dominio.Funcionario();
+            novoFuncionario.Nome = "Teste 2";
+            novoFuncionario.Idade = 13;
+            novoFuncionario.Telefone = 1333;
+            novoFuncionario.CPF = 09016801928;
+            novoFuncionario.RG = 5972961;
+            novoFuncionario.Endereco = new Endereco();
+            {
+                novoFuncionario.Endereco.Rua = "RUA";
+                novoFuncionario.Endereco.Bairro = "BAIRRO";
+                novoFuncionario.Endereco.Numero = "402";
+                novoFuncionario.Endereco.Complemento = "COMPLEMENTO";
+                novoFuncionario.Endereco.CEP = "88505300";
+            };
+
+            _funcionarioDao.Adicionar(novoFuncionario);
         }
 
         [Test]
