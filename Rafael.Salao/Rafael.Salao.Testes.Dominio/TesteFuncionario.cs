@@ -1,15 +1,6 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-using Rafael.Salao.Dominio;
+﻿using NUnit.Framework;
 using Rafael.Salao.Dominio.Validations;
-using System;
-using FluentValidation;
 using FluentValidation.TestHelper;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Linq.Expressions;
 
 namespace Rafael.Salao.Testes.Dominio
 {
