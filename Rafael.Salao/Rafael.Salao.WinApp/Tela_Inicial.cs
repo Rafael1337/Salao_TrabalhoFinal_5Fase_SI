@@ -6,6 +6,7 @@ using Rafael.Salao.Infra.Dados.Funcionario;
 using Rafael.Salao.Infra.Dados.Helper;
 using Rafael.Salao.WinApp.Banco;
 using Rafael.Salao.WinApp.Funcionarios;
+using Rafael.Salao.WinApp.Caixa;
 namespace Rafael.Salao.WinApp
 {
     public partial class Tela_Inicial : Form
@@ -51,6 +52,13 @@ namespace Rafael.Salao.WinApp
 
         private void editar_funcionario_button_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void add_saldo_Click(object sender, EventArgs e)
+        {
+            TelaAdicionar_Saldo TAS = new TelaAdicionar_Saldo();
+            TAS.ShowDialog();
 
         }
     }

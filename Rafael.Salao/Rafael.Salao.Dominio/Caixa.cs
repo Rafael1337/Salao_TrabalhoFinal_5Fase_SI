@@ -8,7 +8,9 @@ namespace Rafael.Salao.Dominio
 {
     public class Caixa
     {
-        private double Saldo { get; set; }
+        public double Saldo { get; set; }
+        public string Data_Atual { get; set; }
+        public int Caixa_Fechado { get; set; }
 
         public void AdicionarSaldo(double valor)
         {

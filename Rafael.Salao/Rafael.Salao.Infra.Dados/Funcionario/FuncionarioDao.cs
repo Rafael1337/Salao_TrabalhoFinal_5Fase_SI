@@ -34,7 +34,7 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
            {0}COMPLEMENTO,
            {0}UNHA,
            {0}CABELO,
-           {0}DEPILACAO,)";
+           {0}DEPILACAO)";
 
         private const string _scriptRemocao = @"DELETE FROM TBFUNCIONARIO WHERE ID = {0}ID";
 

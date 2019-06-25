@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agenda\AgendaDao.cs" />
+    <Compile Include="Caixa\CaixaDao.cs" />
     <Compile Include="DabaseConnection.cs" />
     <Compile Include="Db.cs" />
     <Compile Include="Funcionario\FuncionarioDao.cs" />

@@ -43,7 +43,7 @@
             this.funcionario_datagrid = new System.Windows.Forms.DataGridView();
             this.caixa_aba = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.add_saldo = new System.Windows.Forms.Button();
             this.saldo_caixa_label = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
@@ -204,7 +204,7 @@
             // caixa_aba
             // 
             this.caixa_aba.Controls.Add(this.button2);
-            this.caixa_aba.Controls.Add(this.button1);
+            this.caixa_aba.Controls.Add(this.add_saldo);
             this.caixa_aba.Controls.Add(this.saldo_caixa_label);
             this.caixa_aba.Controls.Add(this.textBox1);
             this.caixa_aba.Location = new System.Drawing.Point(4, 22);
@@ -228,18 +228,19 @@
             this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // add_saldo
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(16, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 39);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
+            this.add_saldo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("add_saldo.BackgroundImage")));
+            this.add_saldo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.add_saldo.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.add_saldo.FlatAppearance.BorderSize = 0;
+            this.add_saldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_saldo.Location = new System.Drawing.Point(16, 6);
+            this.add_saldo.Name = "add_saldo";
+            this.add_saldo.Size = new System.Drawing.Size(42, 39);
+            this.add_saldo.TabIndex = 2;
+            this.add_saldo.UseVisualStyleBackColor = true;
+            this.add_saldo.Click += new System.EventHandler(this.add_saldo_Click);
             // 
             // saldo_caixa_label
             // 
@@ -295,6 +296,6 @@
         private System.Windows.Forms.Label saldo_caixa_label;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button add_saldo;
     }
 }
