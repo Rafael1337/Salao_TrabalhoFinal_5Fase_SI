@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using Rafael.Salao.Infra.Dados;
 using Rafael.Salao.Infra.Dados.Funcionario;
-using Rafael.Salao.Infra.Dados.Helper;
+using Rafael.Salao.Infra.Dados.Caixa;
 using Rafael.Salao.WinApp.Banco;
 using Rafael.Salao.WinApp.Funcionarios;
 using Rafael.Salao.WinApp.Caixa;
@@ -13,9 +13,11 @@ namespace Rafael.Salao.WinApp
     {
         public DabaseConnection _databaseConnection = new DabaseConnection();
         public Tela_Conexao_Banco TCB = new Tela_Conexao_Banco();
+        public CaixaDao _caixaDao = new CaixaDao();
         public Tela_Inicial()
         {
             InializeDatabase();
+            _caixaDao.FirstTimeOpenInitCaixa(_databaseConnection.connection_created);
             InitializeComponent();
          }
 

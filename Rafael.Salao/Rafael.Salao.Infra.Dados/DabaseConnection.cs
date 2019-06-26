@@ -2,13 +2,14 @@
 using System;
 using System.Data.SqlClient;
 using System.IO;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace Rafael.Salao.Infra.Dados
 {
     public class DabaseConnection
     {
-        public static SqlConnection connection_created;
+        public SqlConnection connection_created;
         public static string connection_string = "";
         public XDocument xdoc = new XDocument();
         public AppConfigHelper AppCHelper = new AppConfigHelper();
@@ -18,9 +19,23 @@ namespace Rafael.Salao.Infra.Dados
             GetConnectionString();
             connection_created = new SqlConnection(connection_string);
 
+            try
+            {
                 connection_created.Open();
                 VerifyExistingTables();
                 connection_created.Close();
+            }
+            catch (SqlException)
+            {
+                if (CheckDatabaseExists(connection_string, "SALAO_DATABASE") == false)
+                {
+                    CreateDatabase();
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel conectar com o banco de dados, verifique se o servior do banco está funcionando corretamente ou sua rede está corretamente configurada.");
+                }
+            }
         }
 
         private void VerifyExistingTables()
@@ -60,24 +75,23 @@ namespace Rafael.Salao.Infra.Dados
                     CreateDatabase();
                     return true;
                 }
-                catch (SqlException e) {
+                catch (SqlException){
                     return false;
                 }
             }
             return true;
         }
 
-        private static bool CheckDatabaseExists(string connection_string, string value)
+        private bool CheckDatabaseExists(string connection_string, string value)
         {
             connection_created = new SqlConnection(connection_string);
             SqlCommand checkdatabase = new SqlCommand("use SALAO_DATABASE", connection_created);
-            
             try
             {
                 connection_created.Open();
                 checkdatabase.ExecuteNonQuery();
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
                 connection_created.Close();
                 return false;
@@ -93,6 +107,10 @@ namespace Rafael.Salao.Infra.Dados
             xdoc = XDocument.Parse(connectionstring);
             File.WriteAllText(@"config\databaseconfig.xml", xdoc.ToString());
             AppCHelper.CreateAppSettings();
+
+            ObterParametrosConnectionString();
+            if (CheckDatabaseExists(connection_string, banco) == false)
+                CreateDatabase();
         }
 
         public void ObterParametrosConnectionString()
@@ -113,7 +131,7 @@ namespace Rafael.Salao.Infra.Dados
                 myConn.Close();
                 return true;
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
                 return true;
             }
