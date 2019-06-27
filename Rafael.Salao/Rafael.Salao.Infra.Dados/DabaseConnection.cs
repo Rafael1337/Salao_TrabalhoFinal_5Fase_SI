@@ -9,8 +9,8 @@ namespace Rafael.Salao.Infra.Dados
 {
     public class DabaseConnection
     {
-        public SqlConnection connection_created;
-        public static string connection_string = "";
+        public static SqlConnection connection_created;
+        public string connection_string = "";
         public XDocument xdoc = new XDocument();
         public AppConfigHelper AppCHelper = new AppConfigHelper();
 
@@ -124,7 +124,7 @@ namespace Rafael.Salao.Infra.Dados
             try
             {
                 xdoc = XDocument.Load(@"config\databaseconfig.xml");
-                SqlConnection myConn = new SqlConnection("Server=localhost;Integrated security=SSPI;database=master");
+                SqlConnection myConn = new SqlConnection("Server="+xdoc.FindElement("servidor").Value+";Integrated security=SSPI;database=master");
                 SqlCommand sqlexecute = new SqlCommand("CREATE DATABASE SALAO_DATABASE;", myConn);
                 myConn.Open();
                 sqlexecute.ExecuteNonQuery();

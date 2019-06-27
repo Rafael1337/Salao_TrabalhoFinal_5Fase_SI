@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,26 @@ namespace Rafael.Salao.Dominio
         public Funcionario Funcionario { get; set; }
         public Servicos Servicos { get; set; }
         public string Data { get; set; }
+
+        private IValidatorFactory validatorFactory;
+        private List<IValidator> _validators;
+
+        public void Validate(Agenda entity)
+        {
+            var validator = validatorFactory.GetValidator(entity.GetType());
+
+            if (validator == null)
+                return;
+
+            var validation = validator.Validate(entity);
+
+            if (validation.Errors.Count > 0)
+                throw new Exception(validation.Errors[0].ErrorMessage);
+        }
+
+        public IValidator GetValidator(Type type)
+        {
+            return _validators.FirstOrDefault(x => x.CanValidateInstancesOfType(type));
+        }
     }
 }

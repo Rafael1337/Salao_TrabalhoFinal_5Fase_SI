@@ -17,7 +17,7 @@ namespace Rafael.Salao.WinApp
         public Tela_Inicial()
         {
             InializeDatabase();
-            _caixaDao.FirstTimeOpenInitCaixa(_databaseConnection.connection_created);
+            _caixaDao.FirstTimeOpenInitCaixa(DabaseConnection.connection_created);
             InitializeComponent();
          }
 
