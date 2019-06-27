@@ -13,7 +13,7 @@ namespace Rafael.Salao.Infra.Dados.Caixa
         private static string init_caixa = @"INSERT INTO TBCAIXA(SALDO, DATA_ATUAL) VALUES(0, CONVERT(date, SYSDATETIME()))";
         private static string _get_register = @"SELECT COUNT(*) FROM TBCAIXA";
 
-        private static string _get_actual_saldo = "SELECT SALDO FROM TBCAIXA WHERE DIA_FECHADO = 0";
+        private static string _get_actual_saldo = "SELECT SALDO FROM TBCAIXA WHERE DIA_FECHADO is NULL";
         public void FirstTimeOpenInitCaixa(SqlConnection connection)
         {
             VerifyContainsData(connection);
@@ -43,12 +43,18 @@ namespace Rafael.Salao.Infra.Dados.Caixa
         public int EscreveSaldoAtual(SqlConnection connection)
         {
             int saldo = 0;
-            SqlCommand cmd = new SqlCommand(_get_register, connection);
+            SqlCommand cmd = new SqlCommand(_get_actual_saldo, connection);
             try
             {
                 connection.Open();
-                saldo = (Int32)cmd.ExecuteScalar();
-                connection.Close();
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        saldo += Convert.ToInt32((read["SALDO"].ToString()));
+                    }
+                }
+                        connection.Close();
             }
             catch (Exception)
             {

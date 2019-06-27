@@ -23,7 +23,7 @@ namespace Rafael.Salao.WinApp
             CarregarContextosDeTelas();
         }
 
-        private void CarregarContextosDeTelas()
+        public void CarregarContextosDeTelas()
         {
             _caixaDao.FirstTimeOpenInitCaixa(DabaseConnection.connection_created);
             saldo_atual_txtbox.Text = _caixaDao.EscreveSaldoAtual(DabaseConnection.connection_created).ToString();
