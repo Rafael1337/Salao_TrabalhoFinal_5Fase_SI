@@ -45,7 +45,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.add_saldo = new System.Windows.Forms.Button();
             this.saldo_caixa_label = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.saldo_atual_txtbox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.agenda_aba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -206,7 +206,7 @@
             this.caixa_aba.Controls.Add(this.button2);
             this.caixa_aba.Controls.Add(this.add_saldo);
             this.caixa_aba.Controls.Add(this.saldo_caixa_label);
-            this.caixa_aba.Controls.Add(this.textBox1);
+            this.caixa_aba.Controls.Add(this.saldo_atual_txtbox);
             this.caixa_aba.Location = new System.Drawing.Point(4, 22);
             this.caixa_aba.Name = "caixa_aba";
             this.caixa_aba.Padding = new System.Windows.Forms.Padding(3);
@@ -251,13 +251,13 @@
             this.saldo_caixa_label.TabIndex = 1;
             this.saldo_caixa_label.Text = "Saldo atual do caixa:";
             // 
-            // textBox1
+            // saldo_atual_txtbox
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(240, 99);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 20);
-            this.textBox1.TabIndex = 0;
+            this.saldo_atual_txtbox.Enabled = false;
+            this.saldo_atual_txtbox.Location = new System.Drawing.Point(240, 99);
+            this.saldo_atual_txtbox.Name = "saldo_atual_txtbox";
+            this.saldo_atual_txtbox.Size = new System.Drawing.Size(149, 20);
+            this.saldo_atual_txtbox.TabIndex = 0;
             // 
             // Tela_Inicial
             // 
@@ -294,7 +294,7 @@
         private System.Windows.Forms.Button add_funcionario_button;
         private System.Windows.Forms.DataGridView funcionario_datagrid;
         private System.Windows.Forms.Label saldo_caixa_label;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox saldo_atual_txtbox;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button add_saldo;
     }

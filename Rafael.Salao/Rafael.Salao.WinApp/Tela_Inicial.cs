@@ -14,16 +14,23 @@ namespace Rafael.Salao.WinApp
         public DabaseConnection _databaseConnection = new DabaseConnection();
         public Tela_Conexao_Banco TCB = new Tela_Conexao_Banco();
         public CaixaDao _caixaDao = new CaixaDao();
+
+
         public Tela_Inicial()
         {
             InializeDatabase();
-            _caixaDao.FirstTimeOpenInitCaixa(DabaseConnection.connection_created);
+            CarregarContextosDeTelas();
             InitializeComponent();
-         }
+        }
+
+        private void CarregarContextosDeTelas()
+        {
+            _caixaDao.FirstTimeOpenInitCaixa(DabaseConnection.connection_created);
+            saldo_atual_txtbox.Text = _caixaDao.EscreveSaldoAtual(DabaseConnection.connection_created);
+        }
 
         private void InializeDatabase()
         {
-
             if (!Directory.Exists(@"config"))
             {
                 Directory.CreateDirectory(@"config");

@@ -18,6 +18,7 @@ namespace Rafael.Salao.WinApp.Caixa
         private void add_saldo_btn_Click(object sender, EventArgs e)
         {
             _caixaDao.AdicionarSaldo(Convert.ToDouble(saldo_adicionar_txtbox.Text), DabaseConnection.connection_created);
+            Close();
         }
     }
 }
