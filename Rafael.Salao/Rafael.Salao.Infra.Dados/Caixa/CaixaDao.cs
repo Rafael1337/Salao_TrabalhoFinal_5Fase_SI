@@ -40,14 +40,14 @@ namespace Rafael.Salao.Infra.Dados.Caixa
             }
         }
 
-        public string EscreveSaldoAtual(SqlConnection connection)
+        public int EscreveSaldoAtual(SqlConnection connection)
         {
-            string saldo = "0";
+            int saldo = 0;
             SqlCommand cmd = new SqlCommand(_get_register, connection);
             try
             {
                 connection.Open();
-                saldo = cmd.ExecuteScalar().ToString();
+                saldo = (Int32)cmd.ExecuteScalar();
                 connection.Close();
             }
             catch (Exception)

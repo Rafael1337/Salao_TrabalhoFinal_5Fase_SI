@@ -294,8 +294,8 @@
         private System.Windows.Forms.Button add_funcionario_button;
         private System.Windows.Forms.DataGridView funcionario_datagrid;
         private System.Windows.Forms.Label saldo_caixa_label;
-        private System.Windows.Forms.TextBox saldo_atual_txtbox;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button add_saldo;
+        public System.Windows.Forms.TextBox saldo_atual_txtbox;
     }
 }

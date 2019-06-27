@@ -19,14 +19,14 @@ namespace Rafael.Salao.WinApp
         public Tela_Inicial()
         {
             InializeDatabase();
-            CarregarContextosDeTelas();
             InitializeComponent();
+            CarregarContextosDeTelas();
         }
 
         private void CarregarContextosDeTelas()
         {
             _caixaDao.FirstTimeOpenInitCaixa(DabaseConnection.connection_created);
-            saldo_atual_txtbox.Text = _caixaDao.EscreveSaldoAtual(DabaseConnection.connection_created);
+            saldo_atual_txtbox.Text = _caixaDao.EscreveSaldoAtual(DabaseConnection.connection_created).ToString();
         }
 
         private void InializeDatabase()
