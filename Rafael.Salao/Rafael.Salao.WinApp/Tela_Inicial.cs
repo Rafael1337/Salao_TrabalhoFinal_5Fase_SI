@@ -66,6 +66,7 @@ namespace Rafael.Salao.WinApp
 
         private void add_saldo_Click(object sender, EventArgs e)
         {
+            this.Hide();
             TelaAdicionar_Saldo TAS = new TelaAdicionar_Saldo();
             TAS.ShowDialog();
 
