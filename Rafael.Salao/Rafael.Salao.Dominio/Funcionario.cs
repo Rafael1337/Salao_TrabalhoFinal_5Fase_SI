@@ -14,7 +14,6 @@ namespace Rafael.Salao.Dominio
         public double Telefone { get; set; }
         public double RG { get; set; }
         public double CPF { get; set; }
-        public Endereco Endereco { get; set; }
         public bool Unha { get; set; }
         public bool Cabelo { get; set; }
         public bool Depilacao { get; set; }

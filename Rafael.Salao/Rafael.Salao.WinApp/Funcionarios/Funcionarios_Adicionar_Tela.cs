@@ -15,10 +15,7 @@ namespace Rafael.Salao.WinApp.Funcionarios
 
         private void gravar_funcionar_button_Click(object sender, EventArgs e)
         {
-
-
             Funcionario _funcionario = new Funcionario();
-            _funcionario.Endereco = new Endereco();
 
             _funcionario.Nome = nome_funcionario_txt.Text;
             _funcionario.Telefone = Convert.ToDouble(telefone_funcionario_txt.Text);
@@ -29,14 +26,9 @@ namespace Rafael.Salao.WinApp.Funcionarios
             _funcionario.Depilacao = depilacao_box_funcionario.Checked;
             _funcionario.Unha = unha_box_funcionario.Checked;
 
-            //Endereco
-            _funcionario.Endereco.Bairro = Convert.ToString(bairro_funcionario_txt.Text);
-            _funcionario.Endereco.Rua = Convert.ToString(rua_funcionario_txt.Text);
-            _funcionario.Endereco.Numero = Convert.ToString(numero_funcionario_txt.Text);
-            _funcionario.Endereco.CEP = Convert.ToString(cep_funcionario_txt.Text);
-            _funcionario.Endereco.Complemento = Convert.ToString(complemento_funcionario_txt.Text);
-            
             _funcionarioDao.Adicionar(_funcionario);
+
+            Close();
 
         }
     }

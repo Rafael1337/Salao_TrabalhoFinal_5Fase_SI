@@ -128,6 +128,7 @@
             this.adicionar_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
             this.adicionar_horario_agenda_button.TabIndex = 1;
             this.adicionar_horario_agenda_button.UseVisualStyleBackColor = true;
+            this.adicionar_horario_agenda_button.Click += new System.EventHandler(this.adicionar_horario_agenda_button_Click);
             // 
             // dataGridView1
             // 

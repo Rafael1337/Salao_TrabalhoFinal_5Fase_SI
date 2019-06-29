@@ -24,7 +24,33 @@ namespace Rafael.Salao.Infra.Dados.Caixa
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
+            else
+            {
+                bool get_new_data_box = VerificaSeDataAtualEDiferenteDeExistente(connection);
+                if(get_new_data_box == true)
+                {
+                    SqlCommand cmd_caixa = new SqlCommand("INSERT INTO TBCAIXA(SALDO, DATA_ATUAL) VALUES(0, CONVERT(date, SYSDATETIME()))", connection);
+                    connection.Open();
+                    cmd_caixa.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
         }
+
+        public bool VerificaSeDataAtualEDiferenteDeExistente(SqlConnection connection)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM TBCAIXA WHERE DATA_ATUAL = CONVERT (date, SYSDATETIME())", connection);
+                connection.Open();
+                int contain_date = (Int32)cmd.ExecuteScalar();
+                connection.Close();
+                if(contain_date > 1)
+                {
+                    return true;
+
+                }
+                    return false;
+        }
+
         private void VerifyContainsData(SqlConnection connection)
         {
             SqlCommand cmd = new SqlCommand(_get_register, connection);

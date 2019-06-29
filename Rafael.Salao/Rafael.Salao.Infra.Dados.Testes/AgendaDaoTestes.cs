@@ -48,14 +48,6 @@ namespace Rafael.Salao.Infra.Dados.Testes
             novoFuncionario.Telefone = 1333;
             novoFuncionario.CPF = 09016801928;
             novoFuncionario.RG = 5972961;
-            novoFuncionario.Endereco = new Endereco();
-            {
-                novoFuncionario.Endereco.Rua = "RUA";
-                novoFuncionario.Endereco.Bairro = "BAIRRO";
-                novoFuncionario.Endereco.Numero = "402";
-                novoFuncionario.Endereco.Complemento = "COMPLEMENTO";
-                novoFuncionario.Endereco.CEP = "88505300";
-            };
 
             _funcionarioDao.Adicionar(novoFuncionario);
         }

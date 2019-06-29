@@ -7,6 +7,8 @@ using Rafael.Salao.Infra.Dados.Caixa;
 using Rafael.Salao.WinApp.Banco;
 using Rafael.Salao.WinApp.Funcionarios;
 using Rafael.Salao.WinApp.Caixa;
+using Rafael.Salao.WinApp.Agenda;
+
 namespace Rafael.Salao.WinApp
 {
     public partial class Tela_Inicial : Form
@@ -66,10 +68,16 @@ namespace Rafael.Salao.WinApp
 
         private void add_saldo_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             TelaAdicionar_Saldo TAS = new TelaAdicionar_Saldo();
             TAS.ShowDialog();
 
+        }
+
+        private void adicionar_horario_agenda_button_Click(object sender, EventArgs e)
+        {
+            Agenda_Adicionar_Tela AAT = new Agenda_Adicionar_Tela();
+            AAT.Show();
         }
     }
 }

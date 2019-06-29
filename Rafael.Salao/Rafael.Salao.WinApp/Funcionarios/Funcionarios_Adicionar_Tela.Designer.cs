@@ -31,17 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cep_funcionario_txt = new System.Windows.Forms.TextBox();
-            this.bairro_funcionario_txt = new System.Windows.Forms.TextBox();
-            this.complemento_funcionario_txt = new System.Windows.Forms.TextBox();
-            this.numero_funcionario_txt = new System.Windows.Forms.TextBox();
-            this.rua_funcionario_txt = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cabelo_box_funcionario = new System.Windows.Forms.CheckBox();
             this.depilacao_box_funcionario = new System.Windows.Forms.CheckBox();
@@ -54,7 +43,6 @@
             this.idade_funcionario_txt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.rg_funcionario_txt = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,105 +72,6 @@
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "CPF:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cep_funcionario_txt);
-            this.groupBox1.Controls.Add(this.bairro_funcionario_txt);
-            this.groupBox1.Controls.Add(this.complemento_funcionario_txt);
-            this.groupBox1.Controls.Add(this.numero_funcionario_txt);
-            this.groupBox1.Controls.Add(this.rua_funcionario_txt);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(12, 165);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(546, 124);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Endereço";
-            // 
-            // cep_funcionario_txt
-            // 
-            this.cep_funcionario_txt.Location = new System.Drawing.Point(328, 48);
-            this.cep_funcionario_txt.Name = "cep_funcionario_txt";
-            this.cep_funcionario_txt.Size = new System.Drawing.Size(212, 20);
-            this.cep_funcionario_txt.TabIndex = 13;
-            // 
-            // bairro_funcionario_txt
-            // 
-            this.bairro_funcionario_txt.Location = new System.Drawing.Point(334, 23);
-            this.bairro_funcionario_txt.Name = "bairro_funcionario_txt";
-            this.bairro_funcionario_txt.Size = new System.Drawing.Size(206, 20);
-            this.bairro_funcionario_txt.TabIndex = 12;
-            // 
-            // complemento_funcionario_txt
-            // 
-            this.complemento_funcionario_txt.Location = new System.Drawing.Point(86, 74);
-            this.complemento_funcionario_txt.Name = "complemento_funcionario_txt";
-            this.complemento_funcionario_txt.Size = new System.Drawing.Size(199, 20);
-            this.complemento_funcionario_txt.TabIndex = 11;
-            // 
-            // numero_funcionario_txt
-            // 
-            this.numero_funcionario_txt.Location = new System.Drawing.Point(59, 48);
-            this.numero_funcionario_txt.Name = "numero_funcionario_txt";
-            this.numero_funcionario_txt.Size = new System.Drawing.Size(226, 20);
-            this.numero_funcionario_txt.TabIndex = 10;
-            // 
-            // rua_funcionario_txt
-            // 
-            this.rua_funcionario_txt.Location = new System.Drawing.Point(42, 23);
-            this.rua_funcionario_txt.Name = "rua_funcionario_txt";
-            this.rua_funcionario_txt.Size = new System.Drawing.Size(243, 20);
-            this.rua_funcionario_txt.TabIndex = 9;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Numero:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 77);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Complemento:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(291, 26);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Bairro:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(291, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "CEP:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Rua:";
             // 
             // groupBox2
             // 
@@ -294,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 346);
+            this.ClientSize = new System.Drawing.Size(570, 158);
             this.Controls.Add(this.rg_funcionario_txt);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.idade_funcionario_txt);
@@ -304,14 +193,11 @@
             this.Controls.Add(this.nome_funcionario_txt);
             this.Controls.Add(this.gravar_funcionar_button);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Funcionarios_Adicionar_Tela";
             this.Text = "Adicionar Funcionario";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -324,22 +210,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox cabelo_box_funcionario;
         private System.Windows.Forms.CheckBox depilacao_box_funcionario;
         private System.Windows.Forms.CheckBox unha_box_funcionario;
         private System.Windows.Forms.Button gravar_funcionar_button;
-        private System.Windows.Forms.TextBox cep_funcionario_txt;
-        private System.Windows.Forms.TextBox bairro_funcionario_txt;
-        private System.Windows.Forms.TextBox complemento_funcionario_txt;
-        private System.Windows.Forms.TextBox numero_funcionario_txt;
-        private System.Windows.Forms.TextBox rua_funcionario_txt;
         private System.Windows.Forms.TextBox nome_funcionario_txt;
         private System.Windows.Forms.TextBox cpf_funcionario_txt;
         private System.Windows.Forms.RichTextBox telefone_funcionario_txt;

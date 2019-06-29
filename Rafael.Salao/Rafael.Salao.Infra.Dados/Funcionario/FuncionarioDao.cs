@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Rafael.Salao.Infra.Dados.Funcionario
 {
@@ -13,11 +14,6 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
            ,[TELEFONE]
            ,[CPF]
            ,[RG]
-           ,[BAIRRO]
-           ,[RUA]
-           ,[NUMERO]
-           ,[CEP]
-           ,[COMPLEMENTO]
            ,[UNHA]
            ,[CABELO]
            ,[DEPILACAO])
@@ -27,11 +23,6 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
            {0}TELEFONE,
            {0}CPF,
            {0}RG,
-           {0}BAIRRO,
-           {0}RUA,
-           {0}NUMERO,
-           {0}CEP,
-           {0}COMPLEMENTO,
            {0}UNHA,
            {0}CABELO,
            {0}DEPILACAO)";
@@ -113,14 +104,9 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
             funcionario.Telefone = Convert.ToDouble(reader["TELEFONE"]);
             funcionario.CPF = Convert.ToDouble(reader["CPF"]);
             funcionario.RG = Convert.ToDouble(reader["RG"]);
-            funcionario.Endereco = new Endereco
-            {
-                Bairro = Convert.ToString(reader["BAIRRO"]),
-                Rua = Convert.ToString(reader["RUA"]),
-                Numero = Convert.ToString(reader["NUMERO"]),
-                CEP = Convert.ToString(reader["CEP"]),
-                Complemento = Convert.ToString(reader["COMPLEMENTO"]),
-            };
+            funcionario.Unha = Convert.ToBoolean(reader["UNHA"]);
+            funcionario.Cabelo = Convert.ToBoolean(reader["CABELO"]);
+            funcionario.Depilacao = Convert.ToBoolean(reader["DEPILACAO"]);
 
             return funcionario;
         }
@@ -135,15 +121,39 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
                 {"TELEFONE",funcionario.Telefone},
                 {"CPF",funcionario.CPF},
                 {"RG",funcionario.RG},
-                {"BAIRRO",funcionario.Endereco.Bairro},
-                {"RUA",funcionario.Endereco.Rua},
-                {"NUMERO",funcionario.Endereco.Numero},
-                { "CEP",funcionario.Endereco.CEP},
-                {"COMPLEMENTO",funcionario.Endereco.Complemento},
-
+                {"UNHA",funcionario.Unha},
+                { "CABELO",funcionario.Cabelo},
+                {"DEPILACAO",funcionario.Depilacao},
             };
         }
 
         #endregion
+
+
+        public List<Dominio.Funcionario> ObterFuncionarioParaCombobox(SqlConnection connection)
+        {
+            List<Dominio.Funcionario> _lista_funcionario = new List<Dominio.Funcionario>();
+            SqlCommand command = new SqlCommand("SELECT * FROM TBFUNCIONARIO", connection);
+            connection.Open();
+            using (SqlDataReader read = command.ExecuteReader())
+            {
+                while (read.Read())
+                {
+                    Dominio.Funcionario funcionario = new Dominio.Funcionario();
+                    funcionario.Nome = ((read["NOME"].ToString()));
+                    funcionario.Idade = Convert.ToInt32((read["IDADE"].ToString()));
+                    funcionario.RG = Convert.ToDouble((read["RG"].ToString()));
+                    funcionario.CPF = Convert.ToDouble((read["CPF"].ToString()));
+                    funcionario.Telefone = Convert.ToDouble((read["TELEFONE"].ToString()));
+                    funcionario.Unha = Convert.ToBoolean(read["UNHA"]);
+                    funcionario.Cabelo = Convert.ToBoolean(read["CABELO"]);
+                    funcionario.Depilacao = Convert.ToBoolean(read["DEPILACAO"]);
+
+                    _lista_funcionario.Add(funcionario);
+                }
+            }
+
+            return _lista_funcionario;
+        }
     }
 }

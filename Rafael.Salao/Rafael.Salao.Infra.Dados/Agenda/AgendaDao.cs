@@ -8,16 +8,16 @@ namespace Rafael.Salao.Infra.Dados.Agenda
     {
         private const string _scriptInsercao = @"INSERT INTO TBAGENDA
            ([HORARIO]
+           ,[DATA]
            ,[NOME_CLIENTE]
            ,[IDFUNCIONARIO]
-           ,[IDSERVICO]
-           ,[DATA])
+           ,[IDSERVICO])
      VALUES
            ({0}HORARIO,
+           {0}DATA,
            {0}NOME_CLIENTE,
            {0}IDFUNCIONARIO,
-           {0}IDSERVICO,
-           {0}DATA";
+           {0}IDSERVICO";
 
         private const string _scriptRemocao = @"DELETE FROM TBAGENDA WHERE ID = {0}ID";
 
