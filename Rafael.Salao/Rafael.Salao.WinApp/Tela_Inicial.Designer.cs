@@ -35,20 +35,20 @@
             this.remover_horario_agenda_button = new System.Windows.Forms.Button();
             this.editar_horario_agenda_button = new System.Windows.Forms.Button();
             this.adicionar_horario_agenda_button = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.agenda_datagrid = new System.Windows.Forms.DataGridView();
             this.funcionarios_aba = new System.Windows.Forms.TabPage();
             this.remover_funcionario_button = new System.Windows.Forms.Button();
             this.editar_funcionario_button = new System.Windows.Forms.Button();
             this.add_funcionario_button = new System.Windows.Forms.Button();
             this.funcionario_datagrid = new System.Windows.Forms.DataGridView();
             this.caixa_aba = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.add_saldo = new System.Windows.Forms.Button();
             this.saldo_caixa_label = new System.Windows.Forms.Label();
             this.saldo_atual_txtbox = new System.Windows.Forms.TextBox();
+            this.fechar_caixa = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.agenda_aba.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenda_datagrid)).BeginInit();
             this.funcionarios_aba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.funcionario_datagrid)).BeginInit();
             this.caixa_aba.SuspendLayout();
@@ -63,7 +63,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(610, 326);
+            this.tabControl1.Size = new System.Drawing.Size(654, 326);
             this.tabControl1.TabIndex = 0;
             // 
             // inicio_aba
@@ -71,7 +71,7 @@
             this.inicio_aba.Location = new System.Drawing.Point(4, 22);
             this.inicio_aba.Name = "inicio_aba";
             this.inicio_aba.Padding = new System.Windows.Forms.Padding(3);
-            this.inicio_aba.Size = new System.Drawing.Size(602, 300);
+            this.inicio_aba.Size = new System.Drawing.Size(646, 300);
             this.inicio_aba.TabIndex = 0;
             this.inicio_aba.Text = "Inicio";
             this.inicio_aba.UseVisualStyleBackColor = true;
@@ -81,11 +81,11 @@
             this.agenda_aba.Controls.Add(this.remover_horario_agenda_button);
             this.agenda_aba.Controls.Add(this.editar_horario_agenda_button);
             this.agenda_aba.Controls.Add(this.adicionar_horario_agenda_button);
-            this.agenda_aba.Controls.Add(this.dataGridView1);
+            this.agenda_aba.Controls.Add(this.agenda_datagrid);
             this.agenda_aba.Location = new System.Drawing.Point(4, 22);
             this.agenda_aba.Name = "agenda_aba";
             this.agenda_aba.Padding = new System.Windows.Forms.Padding(3);
-            this.agenda_aba.Size = new System.Drawing.Size(602, 300);
+            this.agenda_aba.Size = new System.Drawing.Size(646, 300);
             this.agenda_aba.TabIndex = 1;
             this.agenda_aba.Text = "Agenda";
             this.agenda_aba.UseVisualStyleBackColor = true;
@@ -130,13 +130,13 @@
             this.adicionar_horario_agenda_button.UseVisualStyleBackColor = true;
             this.adicionar_horario_agenda_button.Click += new System.EventHandler(this.adicionar_horario_agenda_button_Click);
             // 
-            // dataGridView1
+            // agenda_datagrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(590, 246);
-            this.dataGridView1.TabIndex = 0;
+            this.agenda_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.agenda_datagrid.Location = new System.Drawing.Point(6, 48);
+            this.agenda_datagrid.Name = "agenda_datagrid";
+            this.agenda_datagrid.Size = new System.Drawing.Size(634, 246);
+            this.agenda_datagrid.TabIndex = 0;
             // 
             // funcionarios_aba
             // 
@@ -147,7 +147,7 @@
             this.funcionarios_aba.Location = new System.Drawing.Point(4, 22);
             this.funcionarios_aba.Name = "funcionarios_aba";
             this.funcionarios_aba.Padding = new System.Windows.Forms.Padding(3);
-            this.funcionarios_aba.Size = new System.Drawing.Size(602, 300);
+            this.funcionarios_aba.Size = new System.Drawing.Size(646, 300);
             this.funcionarios_aba.TabIndex = 2;
             this.funcionarios_aba.Text = "Funcionarios";
             this.funcionarios_aba.UseVisualStyleBackColor = true;
@@ -199,35 +199,22 @@
             this.funcionario_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.funcionario_datagrid.Location = new System.Drawing.Point(6, 51);
             this.funcionario_datagrid.Name = "funcionario_datagrid";
-            this.funcionario_datagrid.Size = new System.Drawing.Size(590, 246);
+            this.funcionario_datagrid.Size = new System.Drawing.Size(634, 246);
             this.funcionario_datagrid.TabIndex = 4;
             // 
             // caixa_aba
             // 
-            this.caixa_aba.Controls.Add(this.button2);
+            this.caixa_aba.Controls.Add(this.fechar_caixa);
             this.caixa_aba.Controls.Add(this.add_saldo);
             this.caixa_aba.Controls.Add(this.saldo_caixa_label);
             this.caixa_aba.Controls.Add(this.saldo_atual_txtbox);
             this.caixa_aba.Location = new System.Drawing.Point(4, 22);
             this.caixa_aba.Name = "caixa_aba";
             this.caixa_aba.Padding = new System.Windows.Forms.Padding(3);
-            this.caixa_aba.Size = new System.Drawing.Size(602, 300);
+            this.caixa_aba.Size = new System.Drawing.Size(646, 300);
             this.caixa_aba.TabIndex = 3;
             this.caixa_aba.Text = "Caixa";
             this.caixa_aba.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(64, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(41, 39);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // add_saldo
             // 
@@ -260,17 +247,31 @@
             this.saldo_atual_txtbox.Size = new System.Drawing.Size(149, 20);
             this.saldo_atual_txtbox.TabIndex = 0;
             // 
+            // fechar_caixa
+            // 
+            this.fechar_caixa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fechar_caixa.BackgroundImage")));
+            this.fechar_caixa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.fechar_caixa.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.fechar_caixa.FlatAppearance.BorderSize = 0;
+            this.fechar_caixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fechar_caixa.Location = new System.Drawing.Point(64, 6);
+            this.fechar_caixa.Name = "fechar_caixa";
+            this.fechar_caixa.Size = new System.Drawing.Size(42, 39);
+            this.fechar_caixa.TabIndex = 3;
+            this.fechar_caixa.UseVisualStyleBackColor = true;
+            this.fechar_caixa.Click += new System.EventHandler(this.fechar_caixa_Click);
+            // 
             // Tela_Inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 341);
+            this.ClientSize = new System.Drawing.Size(678, 341);
             this.Controls.Add(this.tabControl1);
             this.Name = "Tela_Inicial";
             this.Text = "Tela Inicial";
             this.tabControl1.ResumeLayout(false);
             this.agenda_aba.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agenda_datagrid)).EndInit();
             this.funcionarios_aba.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.funcionario_datagrid)).EndInit();
             this.caixa_aba.ResumeLayout(false);
@@ -287,7 +288,7 @@
         private System.Windows.Forms.TabPage funcionarios_aba;
         private System.Windows.Forms.TabPage caixa_aba;
         private System.Windows.Forms.Button adicionar_horario_agenda_button;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView agenda_datagrid;
         private System.Windows.Forms.Button remover_horario_agenda_button;
         private System.Windows.Forms.Button editar_horario_agenda_button;
         private System.Windows.Forms.Button remover_funcionario_button;
@@ -295,8 +296,8 @@
         private System.Windows.Forms.Button add_funcionario_button;
         private System.Windows.Forms.DataGridView funcionario_datagrid;
         private System.Windows.Forms.Label saldo_caixa_label;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button add_saldo;
         public System.Windows.Forms.TextBox saldo_atual_txtbox;
+        private System.Windows.Forms.Button fechar_caixa;
     }
 }

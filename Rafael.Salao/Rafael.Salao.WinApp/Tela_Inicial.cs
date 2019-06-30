@@ -9,6 +9,8 @@ using Rafael.Salao.WinApp.Funcionarios;
 using Rafael.Salao.WinApp.Caixa;
 using Rafael.Salao.WinApp.Agenda;
 using Rafael.Salao.Infra.Dados.Servicos;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Rafael.Salao.WinApp
 {
@@ -18,7 +20,7 @@ namespace Rafael.Salao.WinApp
         public Tela_Conexao_Banco TCB = new Tela_Conexao_Banco();
         public CaixaDao _caixaDao = new CaixaDao();
         public ServicosDao _servicosDao = new ServicosDao();
-
+        public FuncionarioDao _funcionarioDao = new FuncionarioDao();
 
         public Tela_Inicial()
         {
@@ -29,10 +31,34 @@ namespace Rafael.Salao.WinApp
 
         public void CarregarContextosDeTelas()
         {
-
             _servicosDao.VerifyAlredyExistServices();
             _caixaDao.FirstTimeOpenInitCaixa(DabaseConnection.connection_created);
             saldo_atual_txtbox.Text = _caixaDao.EscreveSaldoAtual(DabaseConnection.connection_created).ToString();
+            PopulateGrids();
+        }
+
+        private void PopulateGrids()
+        {
+            PopulateFuncionarioGrid();
+            PopulateAgendaGrid();
+        }
+
+        private void PopulateFuncionarioGrid()
+        {
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(new SqlCommand("select * from tbfuncionario", DabaseConnection.connection_created));
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+            funcionario_datagrid.DataSource = dtRecord;
+        }
+
+        private void PopulateAgendaGrid()
+        {
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(new SqlCommand("select NOME_CLIENTE, DATA, HORARIO from tbagenda", DabaseConnection.connection_created));
+            
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+            agenda_datagrid.DataSource = dtRecord;
         }
 
         private void InializeDatabase()
@@ -82,6 +108,11 @@ namespace Rafael.Salao.WinApp
         {
             Agenda_Adicionar_Tela AAT = new Agenda_Adicionar_Tela();
             AAT.Show();
+        }
+
+        private void fechar_caixa_Click(object sender, EventArgs e)
+        {
+            _caixaDao.FecharCaixa();
         }
     }
 }

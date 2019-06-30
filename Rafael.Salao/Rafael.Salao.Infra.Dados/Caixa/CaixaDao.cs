@@ -99,5 +99,16 @@ namespace Rafael.Salao.Infra.Dados.Caixa
             cmd.ExecuteNonQuery();
             connection.Close();
         }
+
+        public void FecharCaixa()
+        {
+            string _scriptfechamento = @"UPDATE TBCAIXA SET DIA_FECHADO = 1 where DATA_ATUAL = CONVERT (date, SYSDATETIME())";
+            SqlCommand command = new SqlCommand(_scriptfechamento, DabaseConnection.connection_created);
+            DabaseConnection.connection_created.Open();
+            command.ExecuteNonQuery();
+            DabaseConnection.connection_created.Close();
+
+
+        }
     }
 }
