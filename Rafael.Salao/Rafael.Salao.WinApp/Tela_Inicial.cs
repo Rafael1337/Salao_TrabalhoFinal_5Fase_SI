@@ -8,6 +8,7 @@ using Rafael.Salao.WinApp.Banco;
 using Rafael.Salao.WinApp.Funcionarios;
 using Rafael.Salao.WinApp.Caixa;
 using Rafael.Salao.WinApp.Agenda;
+using Rafael.Salao.Infra.Dados.Servicos;
 
 namespace Rafael.Salao.WinApp
 {
@@ -16,6 +17,7 @@ namespace Rafael.Salao.WinApp
         public DabaseConnection _databaseConnection = new DabaseConnection();
         public Tela_Conexao_Banco TCB = new Tela_Conexao_Banco();
         public CaixaDao _caixaDao = new CaixaDao();
+        public ServicosDao _servicosDao = new ServicosDao();
 
 
         public Tela_Inicial()
@@ -27,6 +29,8 @@ namespace Rafael.Salao.WinApp
 
         public void CarregarContextosDeTelas()
         {
+
+            _servicosDao.VerifyAlredyExistServices();
             _caixaDao.FirstTimeOpenInitCaixa(DabaseConnection.connection_created);
             saldo_atual_txtbox.Text = _caixaDao.EscreveSaldoAtual(DabaseConnection.connection_created).ToString();
         }

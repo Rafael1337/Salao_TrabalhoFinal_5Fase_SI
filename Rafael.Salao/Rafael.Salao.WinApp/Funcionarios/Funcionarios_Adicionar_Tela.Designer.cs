@@ -117,7 +117,7 @@
             // 
             // gravar_funcionar_button
             // 
-            this.gravar_funcionar_button.Location = new System.Drawing.Point(483, 295);
+            this.gravar_funcionar_button.Location = new System.Drawing.Point(483, 132);
             this.gravar_funcionar_button.Name = "gravar_funcionar_button";
             this.gravar_funcionar_button.Size = new System.Drawing.Size(75, 23);
             this.gravar_funcionar_button.TabIndex = 6;
@@ -183,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 158);
+            this.ClientSize = new System.Drawing.Size(570, 159);
             this.Controls.Add(this.rg_funcionario_txt);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.idade_funcionario_txt);

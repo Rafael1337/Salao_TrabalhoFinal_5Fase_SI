@@ -31,16 +31,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.horario_agenda = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.nome_cliente_txtbox = new System.Windows.Forms.TextBox();
+            this.agenda_servico_combobox = new System.Windows.Forms.ComboBox();
             this.agenda_funcionario_combobox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.telefone_cliente_textbox = new System.Windows.Forms.RichTextBox();
+            this.adicionar_agenda_btn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.data_agenda = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -70,13 +70,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Serviço:";
             // 
-            // dateTimePicker1
+            // horario_agenda
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(200, 165);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(82, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.horario_agenda.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horario_agenda.Location = new System.Drawing.Point(200, 165);
+            this.horario_agenda.Name = "horario_agenda";
+            this.horario_agenda.Size = new System.Drawing.Size(82, 20);
+            this.horario_agenda.TabIndex = 3;
             // 
             // label4
             // 
@@ -87,20 +87,20 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Horario:";
             // 
-            // textBox1
+            // nome_cliente_txtbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 5;
+            this.nome_cliente_txtbox.Location = new System.Drawing.Point(109, 14);
+            this.nome_cliente_txtbox.Name = "nome_cliente_txtbox";
+            this.nome_cliente_txtbox.Size = new System.Drawing.Size(158, 20);
+            this.nome_cliente_txtbox.TabIndex = 5;
             // 
-            // comboBox1
+            // agenda_servico_combobox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(68, 105);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 21);
-            this.comboBox1.TabIndex = 6;
+            this.agenda_servico_combobox.FormattingEnabled = true;
+            this.agenda_servico_combobox.Location = new System.Drawing.Point(68, 105);
+            this.agenda_servico_combobox.Name = "agenda_servico_combobox";
+            this.agenda_servico_combobox.Size = new System.Drawing.Size(175, 21);
+            this.agenda_servico_combobox.TabIndex = 6;
             // 
             // agenda_funcionario_combobox
             // 
@@ -119,22 +119,23 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Telefone:";
             // 
-            // richTextBox1
+            // telefone_cliente_textbox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(84, 45);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(183, 21);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.telefone_cliente_textbox.Location = new System.Drawing.Point(84, 45);
+            this.telefone_cliente_textbox.Name = "telefone_cliente_textbox";
+            this.telefone_cliente_textbox.Size = new System.Drawing.Size(183, 21);
+            this.telefone_cliente_textbox.TabIndex = 9;
+            this.telefone_cliente_textbox.Text = "";
             // 
-            // button1
+            // adicionar_agenda_btn
             // 
-            this.button1.Location = new System.Drawing.Point(68, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Registrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.adicionar_agenda_btn.Location = new System.Drawing.Point(68, 209);
+            this.adicionar_agenda_btn.Name = "adicionar_agenda_btn";
+            this.adicionar_agenda_btn.Size = new System.Drawing.Size(199, 23);
+            this.adicionar_agenda_btn.TabIndex = 10;
+            this.adicionar_agenda_btn.Text = "Registrar";
+            this.adicionar_agenda_btn.UseVisualStyleBackColor = true;
+            this.adicionar_agenda_btn.Click += new System.EventHandler(this.adicionar_agenda_button_Click);
             // 
             // label6
             // 
@@ -145,13 +146,13 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Data:";
             // 
-            // dateTimePicker2
+            // data_agenda
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(53, 165);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(82, 20);
-            this.dateTimePicker2.TabIndex = 11;
+            this.data_agenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.data_agenda.Location = new System.Drawing.Point(53, 165);
+            this.data_agenda.Name = "data_agenda";
+            this.data_agenda.Size = new System.Drawing.Size(82, 20);
+            this.data_agenda.TabIndex = 11;
             // 
             // Agenda_Adicionar_Tela
             // 
@@ -159,15 +160,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 253);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.data_agenda);
+            this.Controls.Add(this.adicionar_agenda_btn);
+            this.Controls.Add(this.telefone_cliente_textbox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.agenda_funcionario_combobox);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.agenda_servico_combobox);
+            this.Controls.Add(this.nome_cliente_txtbox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.horario_agenda);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -183,15 +184,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker horario_agenda;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox nome_cliente_txtbox;
+        private System.Windows.Forms.ComboBox agenda_servico_combobox;
         private System.Windows.Forms.ComboBox agenda_funcionario_combobox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox telefone_cliente_textbox;
+        private System.Windows.Forms.Button adicionar_agenda_btn;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker data_agenda;
     }
 }

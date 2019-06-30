@@ -24,8 +24,8 @@ namespace Rafael.Salao.Infra.Dados.Testes
             Dominio.Agenda novoRegistroAgenda = new Dominio.Agenda();
             novoRegistroAgenda.Horario = "20:00";
             novoRegistroAgenda.Nome_cliente = "Daniela";
-            novoRegistroAgenda.Servicos.Id = 1;
-            novoRegistroAgenda.Funcionario.Id = 1;
+            novoRegistroAgenda.IdServico = 1;
+            novoRegistroAgenda.Idfuncionario = 1;
             novoRegistroAgenda.Data = "10/09/2019";
 
             //Adicionando o registro da agenda no banco
@@ -61,8 +61,8 @@ namespace Rafael.Salao.Infra.Dados.Testes
             novoRegistroAgenda.Nome_cliente = "Cliente1";
             novoRegistroAgenda.Horario = "13:00:00";
             novoRegistroAgenda.Data = "10/10/2019";
-            novoRegistroAgenda.Servicos.Id = 1;
-            novoRegistroAgenda.Funcionario.Id = 1;
+            novoRegistroAgenda.IdServico = 1;
+            novoRegistroAgenda.Idfuncionario = 1;
 
             int idClienteAdicionado = 2;
             int quantidadeValida = 0;

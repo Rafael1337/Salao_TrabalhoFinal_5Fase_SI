@@ -152,6 +152,7 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
                     _lista_funcionario.Add(funcionario);
                 }
             }
+            connection.Close();
 
             return _lista_funcionario;
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Rafael.Salao.Infra.Dados.Agenda
 {
@@ -17,7 +18,7 @@ namespace Rafael.Salao.Infra.Dados.Agenda
            {0}DATA,
            {0}NOME_CLIENTE,
            {0}IDFUNCIONARIO,
-           {0}IDSERVICO";
+           {0}IDSERVICO)";
 
         private const string _scriptRemocao = @"DELETE FROM TBAGENDA WHERE ID = {0}ID";
 
@@ -76,7 +77,46 @@ namespace Rafael.Salao.Infra.Dados.Agenda
             Db.Delete(_scriptRemocao, parms);
         }
 
-        # region Metódos Privados - Conversor e Manipulador de Parametros
+        public int GetFuncionarioData(string NomeFuncionario)
+        {
+           string _script_get_funcionarioId = @"SELECT ID FROM TBFUNCIONARIO WHERE NOME = @name";
+            int idfuncionario = 0;
+            SqlCommand cmd = new SqlCommand(_script_get_funcionarioId, DabaseConnection.connection_created);
+            cmd.Parameters.AddWithValue("@name", NomeFuncionario);
+            DabaseConnection.connection_created.Open();
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        idfuncionario = Convert.ToInt32((read["ID"].ToString()));
+                    }
+                }
+                DabaseConnection.connection_created.Close();
+
+            return idfuncionario;
+        }
+
+        public int GetServicoData(string tipoServico)
+        {
+            string _script_get_servicoId = @"SELECT ID FROM TBSERVICO WHERE TIPO = @tiposervico";
+            int idservico = 0;
+            SqlCommand cmd = new SqlCommand(_script_get_servicoId, DabaseConnection.connection_created);
+            cmd.Parameters.AddWithValue("@tiposervico", tipoServico);
+
+            DabaseConnection.connection_created.Open();
+            using (SqlDataReader read = cmd.ExecuteReader())
+            {
+                while (read.Read())
+                {
+                    idservico = Convert.ToInt32((read["ID"].ToString()));
+                }
+            }
+            DabaseConnection.connection_created.Close();
+
+            return idservico;
+        }
+
+        #region Metódos Privados - Conversor e Manipulador de Parametros
 
         private Dominio.Agenda ConverterAgenda(IDataReader reader)
         {
@@ -85,8 +125,8 @@ namespace Rafael.Salao.Infra.Dados.Agenda
             agenda.Nome_cliente = Convert.ToString(reader["NOME_CLIENTE"]);
             agenda.Data = Convert.ToString(reader["DATA"]);
             agenda.Horario = Convert.ToString(reader["HORARIO"]);
-            agenda.Funcionario.Id = Convert.ToInt32(reader["IDFUNCIONARIO"]);
-            agenda.Servicos.Id = Convert.ToInt32(reader["IDSERVICO"]);
+            agenda.Idfuncionario = Convert.ToInt32(reader["IDFUNCIONARIO"]);
+            agenda.IdServico = Convert.ToInt32(reader["IDSERVICO"]);
 
             return agenda;
         }
@@ -99,8 +139,8 @@ namespace Rafael.Salao.Infra.Dados.Agenda
                 {"NOME_CLIENTE",agenda.Nome_cliente},
                 {"DATA",agenda.Data},
                 {"HORARIO",agenda.Horario },
-                {"IDFUNCIONARIO",agenda.Funcionario.Id},
-                {"IDSERVICO",agenda.Servicos.Id},
+                {"IDFUNCIONARIO",agenda.Idfuncionario},
+                {"IDSERVICO",agenda.IdServico},
             };
         }
 
