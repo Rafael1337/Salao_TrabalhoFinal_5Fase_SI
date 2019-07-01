@@ -11,6 +11,8 @@ using Rafael.Salao.WinApp.Agenda;
 using Rafael.Salao.Infra.Dados.Servicos;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
+using Rafael.Salao.Infra.Dados.Agenda;
 
 namespace Rafael.Salao.WinApp
 {
@@ -18,9 +20,16 @@ namespace Rafael.Salao.WinApp
     {
         public DabaseConnection _databaseConnection = new DabaseConnection();
         public Tela_Conexao_Banco TCB = new Tela_Conexao_Banco();
+
         public CaixaDao _caixaDao = new CaixaDao();
         public ServicosDao _servicosDao = new ServicosDao();
         public FuncionarioDao _funcionarioDao = new FuncionarioDao();
+        public AgendaDao _agendaDao = new AgendaDao();
+
+        public DataTable dtRecordFuncionario = new DataTable();
+        public DataTable dtRecordAgenda = new DataTable();
+        public BindingSource bindingSource1 = new BindingSource();
+
 
         public Tela_Inicial()
         {
@@ -37,28 +46,25 @@ namespace Rafael.Salao.WinApp
             PopulateGrids();
         }
 
-        private void PopulateGrids()
+        public void PopulateGrids()
         {
             PopulateFuncionarioGrid();
             PopulateAgendaGrid();
         }
 
-        private void PopulateFuncionarioGrid()
+        public void PopulateFuncionarioGrid()
         {
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(new SqlCommand("select * from tbfuncionario", DabaseConnection.connection_created));
-
-            DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
-            funcionario_datagrid.DataSource = dtRecord;
+            SqlDataAdapter sqlDataAdapFuncionario = new SqlDataAdapter(new SqlCommand("select * from tbfuncionario", DabaseConnection.connection_created));
+            sqlDataAdapFuncionario.Fill(dtRecordFuncionario);
+            funcionario_datagrid.DataSource = dtRecordFuncionario;
         }
 
         private void PopulateAgendaGrid()
         {
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(new SqlCommand("select NOME_CLIENTE, DATA, HORARIO from tbagenda", DabaseConnection.connection_created));
-            
-            DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
-            agenda_datagrid.DataSource = dtRecord;
+            SqlDataAdapter sqlDataAdapAgenda = new SqlDataAdapter(new SqlCommand("SELECT ID, HORARIO, DATA, NOME_CLIENTE FROM TBAGENDA", DabaseConnection.connection_created));
+
+            sqlDataAdapAgenda.Fill(dtRecordAgenda);
+            agenda_datagrid.DataSource = dtRecordAgenda;
         }
 
         private void InializeDatabase()
@@ -81,12 +87,17 @@ namespace Rafael.Salao.WinApp
 
         private void Remover_funcionario_button_Click(object sender, EventArgs e)
         {
-            FuncionarioDao funcionario_dao = new FuncionarioDao();
-            funcionario_dao.Deletar(Convert.ToInt32(funcionario_datagrid.Rows[funcionario_datagrid.CurrentRow.Index].Cells[0].Value));
+            IList<Dominio.Funcionario> list_funcionario;
+            _funcionarioDao.Deletar(Convert.ToInt32(funcionario_datagrid.Rows[funcionario_datagrid.CurrentRow.Index].Cells[0].Value));
+            list_funcionario = _funcionarioDao.BuscarTodos();
+
+            funcionario_datagrid.DataSource = list_funcionario;
+            funcionario_datagrid.Update();
         }
 
         private void Add_funcionario_button_Click(object sender, EventArgs e)
         {
+            Hide();
             Funcionarios_Adicionar_Tela FAT = new Funcionarios_Adicionar_Tela();
             FAT.ShowDialog();
         }
@@ -106,6 +117,7 @@ namespace Rafael.Salao.WinApp
 
         private void adicionar_horario_agenda_button_Click(object sender, EventArgs e)
         {
+            Hide();
             Agenda_Adicionar_Tela AAT = new Agenda_Adicionar_Tela();
             AAT.Show();
         }
@@ -113,6 +125,22 @@ namespace Rafael.Salao.WinApp
         private void fechar_caixa_Click(object sender, EventArgs e)
         {
             _caixaDao.FecharCaixa();
+        }
+
+        private void remover_horario_agenda_button_Click(object sender, EventArgs e)
+        {
+            IList<Dominio.Agenda> list_agenda;
+            _agendaDao.Deletar(Convert.ToInt32(agenda_datagrid.Rows[agenda_datagrid.CurrentRow.Index].Cells[0].Value));
+            list_agenda = _agendaDao.BuscarTodos();
+
+            agenda_datagrid.DataSource = list_agenda;
+            try
+            {
+                agenda_datagrid.Columns["Idservico"].Visible = false;
+                agenda_datagrid.Columns["Idfuncionario"].Visible = false;
+            }
+            catch (Exception) { }
+            agenda_datagrid.Update();
         }
     }
 }

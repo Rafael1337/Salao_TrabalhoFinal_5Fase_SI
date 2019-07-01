@@ -33,14 +33,14 @@ namespace Rafael.Salao.Testes.Dominio
         public void Teste_Servico_Agendado_Nao_Pode_Ser_Vazio()
         {
             var validation = new AgendaValidation();
-            validation.ShouldHaveValidationErrorFor(x => x.Servicos, (Servicos)null);
+            validation.ShouldHaveValidationErrorFor(x => x.IdServico, 0);
         }
 
         [Test]
         public void Teste_Funcionario_Agendado_Nao_Pode_Ser_Vazio()
         {
             var validation = new AgendaValidation();
-            validation.ShouldHaveValidationErrorFor(x => x.Funcionario, (Funcionario)null);
+            validation.ShouldHaveValidationErrorFor(x => x.Idfuncionario, 0);
         }
 
         [Test]

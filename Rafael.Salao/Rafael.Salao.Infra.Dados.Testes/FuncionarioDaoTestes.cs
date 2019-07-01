@@ -37,6 +37,8 @@ namespace Rafael.Salao.Infra.Dados.Testes
 
         private void LimpaBanco()
         {
+            Db.Update("DELETE FROM TBAGENDA");
+            Db.Update("DBCC CHECKIDENT('[TBAGENDA]', RESEED, 0)");
             Db.Update("DELETE FROM TBFUNCIONARIO");
             Db.Update("DBCC CHECKIDENT('[TBFUNCIONARIO]', RESEED, 0)");
         }
@@ -66,6 +68,28 @@ namespace Rafael.Salao.Infra.Dados.Testes
             //VERIFICAÇÃO        
             Assert.True(resultado > quantidadeValida);
             Assert.AreEqual(idFuncionarioAdicionado, resultado);
+        }
+
+        [Test]
+        public void Teste_Deve_Deletar_Funcionario_Por_Id()
+        {
+            int idFuncionarioDeletado = 1;
+            int quantidadeFuncionario = 0;
+
+            _funcionarioDao.Deletar(idFuncionarioDeletado);
+
+            var resultado = _funcionarioDao.BuscarTodos();
+            Assert.AreEqual(quantidadeFuncionario, resultado.Count);
+        }
+
+        [Test]
+        public void Teste_Deve_Buscar_Todos_Os_Funcionarios()
+        {
+            int quantidadeFuncionarios = 1;
+
+            var resultado = _funcionarioDao.BuscarTodos();
+
+            Assert.AreEqual(quantidadeFuncionarios, resultado.Count);
         }
 
     }

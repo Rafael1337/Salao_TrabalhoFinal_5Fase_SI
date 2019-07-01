@@ -74,13 +74,6 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
             return Db.GetAll(_scriptExibir, ConverterFuncionario);
         }
 
-        public Dominio.Funcionario BuscarPorId(int id)
-        {
-            var parms = new Dictionary<string, object> { { "Id", id } };
-
-            return Db.Get(_scriptBuscaPorId, ConverterFuncionario, parms);
-        }
-
         public void Editar(Dominio.Funcionario funcionario)
         {
             Db.Update(_scriptUpdate, BuscarParametros(funcionario));

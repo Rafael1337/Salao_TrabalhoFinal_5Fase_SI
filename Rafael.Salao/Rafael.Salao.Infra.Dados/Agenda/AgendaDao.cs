@@ -42,10 +42,10 @@ namespace Rafael.Salao.Infra.Dados.Agenda
 
         private const string _scriptExibir = @"SELECT [ID]
         ,[HORARIO]
+        ,[DATA]
         ,[NOME_CLIENTE]
         ,[IDFUNCIONARIO]
         ,[IDSERVICO]
-        ,[DATA]
         FROM [TBAGENDA]";
 
         public int Adicionar(Dominio.Agenda novoRegistroAgenda)
@@ -56,13 +56,6 @@ namespace Rafael.Salao.Infra.Dados.Agenda
         public IList<Dominio.Agenda> BuscarTodos()
         {
             return Db.GetAll(_scriptExibir, ConverterAgenda);
-        }
-
-        public Dominio.Agenda BuscarPorId(int id)
-        {
-            var parms = new Dictionary<string, object> { { "Id", id } };
-
-            return Db.Get(_scriptBuscaPorId, ConverterAgenda, parms);
         }
 
         public void Editar(Dominio.Agenda agenda)

@@ -63,7 +63,12 @@ namespace Rafael.Salao.WinApp.Agenda
             ag.IdServico = _agendaDao.GetServicoData(agenda_servico_combobox.SelectedItem.ToString());
 
             _agendaDao.Adicionar(ag);
-        }
 
+
+            Close();
+
+            Tela_Inicial TI = new Tela_Inicial();
+            TI.Show();
+        }
     }
 }

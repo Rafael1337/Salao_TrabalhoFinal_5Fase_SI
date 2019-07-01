@@ -42,10 +42,10 @@
             this.add_funcionario_button = new System.Windows.Forms.Button();
             this.funcionario_datagrid = new System.Windows.Forms.DataGridView();
             this.caixa_aba = new System.Windows.Forms.TabPage();
+            this.fechar_caixa = new System.Windows.Forms.Button();
             this.add_saldo = new System.Windows.Forms.Button();
             this.saldo_caixa_label = new System.Windows.Forms.Label();
             this.saldo_atual_txtbox = new System.Windows.Forms.TextBox();
-            this.fechar_caixa = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.agenda_aba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.agenda_datagrid)).BeginInit();
@@ -102,6 +102,7 @@
             this.remover_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
             this.remover_horario_agenda_button.TabIndex = 3;
             this.remover_horario_agenda_button.UseVisualStyleBackColor = true;
+            this.remover_horario_agenda_button.Click += new System.EventHandler(this.remover_horario_agenda_button_Click);
             // 
             // editar_horario_agenda_button
             // 
@@ -216,6 +217,20 @@
             this.caixa_aba.Text = "Caixa";
             this.caixa_aba.UseVisualStyleBackColor = true;
             // 
+            // fechar_caixa
+            // 
+            this.fechar_caixa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fechar_caixa.BackgroundImage")));
+            this.fechar_caixa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.fechar_caixa.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.fechar_caixa.FlatAppearance.BorderSize = 0;
+            this.fechar_caixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fechar_caixa.Location = new System.Drawing.Point(64, 6);
+            this.fechar_caixa.Name = "fechar_caixa";
+            this.fechar_caixa.Size = new System.Drawing.Size(42, 39);
+            this.fechar_caixa.TabIndex = 3;
+            this.fechar_caixa.UseVisualStyleBackColor = true;
+            this.fechar_caixa.Click += new System.EventHandler(this.fechar_caixa_Click);
+            // 
             // add_saldo
             // 
             this.add_saldo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("add_saldo.BackgroundImage")));
@@ -246,20 +261,6 @@
             this.saldo_atual_txtbox.Name = "saldo_atual_txtbox";
             this.saldo_atual_txtbox.Size = new System.Drawing.Size(149, 20);
             this.saldo_atual_txtbox.TabIndex = 0;
-            // 
-            // fechar_caixa
-            // 
-            this.fechar_caixa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fechar_caixa.BackgroundImage")));
-            this.fechar_caixa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.fechar_caixa.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
-            this.fechar_caixa.FlatAppearance.BorderSize = 0;
-            this.fechar_caixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fechar_caixa.Location = new System.Drawing.Point(64, 6);
-            this.fechar_caixa.Name = "fechar_caixa";
-            this.fechar_caixa.Size = new System.Drawing.Size(42, 39);
-            this.fechar_caixa.TabIndex = 3;
-            this.fechar_caixa.UseVisualStyleBackColor = true;
-            this.fechar_caixa.Click += new System.EventHandler(this.fechar_caixa_Click);
             // 
             // Tela_Inicial
             // 
@@ -294,10 +295,10 @@
         private System.Windows.Forms.Button remover_funcionario_button;
         private System.Windows.Forms.Button editar_funcionario_button;
         private System.Windows.Forms.Button add_funcionario_button;
-        private System.Windows.Forms.DataGridView funcionario_datagrid;
         private System.Windows.Forms.Label saldo_caixa_label;
         private System.Windows.Forms.Button add_saldo;
         public System.Windows.Forms.TextBox saldo_atual_txtbox;
         private System.Windows.Forms.Button fechar_caixa;
+        public System.Windows.Forms.DataGridView funcionario_datagrid;
     }
 }

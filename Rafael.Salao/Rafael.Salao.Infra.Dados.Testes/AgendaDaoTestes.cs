@@ -1,6 +1,5 @@
-﻿
-
-using System;
+﻿using System;
+using System.Data.SqlClient;
 using NUnit.Framework;
 using Rafael.Salao.Dominio;
 using Rafael.Salao.Infra.Dados.Agenda;
@@ -11,11 +10,13 @@ namespace Rafael.Salao.Infra.Dados.Testes
     [TestFixture]
     public class AgendaDaoTestes
     {
+        private DabaseConnection _databaseConnection = new DabaseConnection();
         private AgendaDao _agendaDao;
 
         [SetUp]
         public void Inicializar()
         {
+            LimpaBanco();
             _agendaDao = new AgendaDao();
             //Adicionando funcionario
             AdicionaFuncionarioTesteAgenda();
@@ -32,9 +33,12 @@ namespace Rafael.Salao.Infra.Dados.Testes
             _agendaDao.Adicionar(novoRegistroAgenda);
         }
 
-        private void AdicionarValoresDeServico()
+        private void LimpaBanco()
         {
-
+            Db.Update("DELETE FROM TBAGENDA");
+            Db.Update("DBCC CHECKIDENT('[TBAGENDA]', RESEED, 0)");
+            Db.Update("DELETE FROM TBFUNCIONARIO");
+            Db.Update("DBCC CHECKIDENT('[TBFUNCIONARIO]', RESEED, 0)");
         }
 
         private void AdicionaFuncionarioTesteAgenda()
@@ -74,6 +78,59 @@ namespace Rafael.Salao.Infra.Dados.Testes
             //VERIFICAÇÃO        
             Assert.True(resultado > quantidadeValida);
             Assert.AreEqual(idClienteAdicionado, resultado);
+        }
+
+        [Test]
+        public void Teste_Deve_Deletar_Agenda_Por_Id()
+        {
+            int idAgenda = 1;
+            int quantidadeAgenda = 0;
+
+            _agendaDao.Deletar(idAgenda);
+
+            var resultado = _agendaDao.BuscarTodos();
+            Assert.AreEqual(quantidadeAgenda, resultado.Count);
+        }
+
+
+        [Test]
+        public void Teste_Deve_Buscar_Todos_Os_Registros_Agenda()
+        {
+            int quantidadeAgenda = 1;
+
+            var resultado = _agendaDao.BuscarTodos();
+
+            Assert.AreEqual(quantidadeAgenda, resultado.Count);
+        }
+        
+        [Test]
+        public void Teste_Deve_Buscar_Id_Do_Funcionario_Para_Agenda()
+        {
+            string connectionString = "Server=localhost;Database=SALAO_DATABASE;User Id=sa;Password=p@ssw0rd";
+
+            DabaseConnection.connection_created = new SqlConnection(connectionString);
+
+            string nome_funcionario = "Teste 2";
+            int esperado = 1;
+
+            var resultado = _agendaDao.GetFuncionarioData(nome_funcionario);
+
+            Assert.AreEqual(esperado, resultado);
+        }
+
+        [Test]
+        public void Teste_Deve_Buscar_Id_Do_Servico_Para_Agenda()
+        {
+            string connectionString = "Server=localhost;Database=SALAO_DATABASE;User Id=sa;Password=p@ssw0rd";
+
+            DabaseConnection.connection_created = new SqlConnection(connectionString);
+
+            string tipoServico = "PROGRESSIVA";
+            int esperado = 1;
+
+            var resultado = _agendaDao.GetServicoData(tipoServico);
+
+            Assert.AreEqual(esperado, resultado);
         }
     }
 }

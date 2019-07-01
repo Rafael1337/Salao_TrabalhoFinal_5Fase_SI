@@ -30,6 +30,8 @@ namespace Rafael.Salao.WinApp.Funcionarios
 
             Close();
 
+            Tela_Inicial TI = new Tela_Inicial();
+            TI.Show();
         }
     }
 }
