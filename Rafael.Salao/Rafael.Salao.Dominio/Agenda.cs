@@ -14,10 +14,6 @@ namespace Rafael.Salao.Dominio
 
         public void Validacao()
         {
-            if (Id == 0)
-            {
-                throw new Exception("Ocorreu um problema interno por favor contate o suporte");
-            }
             //Nome_Cliente
             if (string.IsNullOrEmpty(Nome_cliente) || string.IsNullOrWhiteSpace(Nome_cliente))
             {
@@ -35,6 +31,14 @@ namespace Rafael.Salao.Dominio
             {
                 throw new Exception("A Data é um campo obrigatório para o Agendamento");
             }
+
+
+            //Data
+            else if (string.IsNullOrEmpty(Telefone) || string.IsNullOrWhiteSpace(Telefone))
+            {
+                throw new Exception("O Telefone é um campo obrigatório para o Agendamento");
+            }
+
 
             //Servicos 
             else if (IdServico == 0)

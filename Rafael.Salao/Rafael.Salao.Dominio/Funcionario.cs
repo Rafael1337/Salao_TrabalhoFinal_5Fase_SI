@@ -20,10 +20,6 @@ namespace Rafael.Salao.Dominio
 
         public void Validacao()
         {
-            //Id Validations
-            if(Id == 0)
-            throw new Exception("O Id do funcionario registrado foi inserido vazio, por favor contate o suporte");
-
             //Nome Validations
             if(string.IsNullOrEmpty(Nome) || string.IsNullOrWhiteSpace(Nome))
                 throw new Exception("Por favor informe o nome do funcionario");
@@ -54,7 +50,7 @@ namespace Rafael.Salao.Dominio
                 throw new Exception("Por favor informe um RG Valido com ate 6 digitos");
 
             if(RG.ToString().Length > 15)
-                    throw new Exception("Por favor informe um RG Valido com menos de 15 digitos");
+                    throw new Exception("Por favor informe um RG Valido com no maximo 15 digitos");
 
             //Telefone Validations
             if(string.IsNullOrEmpty(Telefone) || string.IsNullOrWhiteSpace(Telefone))

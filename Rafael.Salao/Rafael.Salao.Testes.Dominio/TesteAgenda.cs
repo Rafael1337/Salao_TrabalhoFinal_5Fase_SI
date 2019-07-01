@@ -27,16 +27,16 @@ namespace Rafael.Salao.Testes.Dominio
         }
 
         [Test]
-        public void Teste_Id_Agendado_Nao_Pode_Ser_Vazio()
+        public void Teste_Telefone_Agendado_Nao_Pode_Ser_Vazio()
         {
 
-            agenda.Id = 0;
+            agenda.Telefone = string.Empty;
 
             Action resultado = () => agenda.Validacao();
 
             resultado.Should()
                 .Throw<Exception>()
-                .WithMessage("Ocorreu um problema interno por favor contate o suporte");
+                .WithMessage("O Telefone é um campo obrigatório para o Agendamento");
         }
 
         [Test]

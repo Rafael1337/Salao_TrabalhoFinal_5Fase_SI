@@ -155,5 +155,11 @@ namespace Rafael.Salao.WinApp
             Agenda_Editar_Tela AET = new Agenda_Editar_Tela(agenda_edit);
             AET.Show();
         }
+
+        private void ver_extrato_Click(object sender, EventArgs e)
+        {
+            Extrato_Dias_Caixa EDC = new Extrato_Dias_Caixa();
+            EDC.Show();
+        }
     }
 }

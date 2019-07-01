@@ -37,12 +37,12 @@
             this.unha_box_funcionario = new System.Windows.Forms.CheckBox();
             this.gravar_funcionar_button = new System.Windows.Forms.Button();
             this.nome_funcionario_txt = new System.Windows.Forms.TextBox();
-            this.cpf_funcionario_txt = new System.Windows.Forms.TextBox();
             this.telefone_funcionario_txt = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.idade_funcionario_txt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.rg_funcionario_txt = new System.Windows.Forms.TextBox();
+            this.idade_funcionario_txt = new System.Windows.Forms.MaskedTextBox();
+            this.cpf_funcionario_txt = new System.Windows.Forms.MaskedTextBox();
+            this.rg_funcionario_txt = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,13 +132,6 @@
             this.nome_funcionario_txt.Size = new System.Drawing.Size(184, 20);
             this.nome_funcionario_txt.TabIndex = 7;
             // 
-            // cpf_funcionario_txt
-            // 
-            this.cpf_funcionario_txt.Location = new System.Drawing.Point(49, 68);
-            this.cpf_funcionario_txt.Name = "cpf_funcionario_txt";
-            this.cpf_funcionario_txt.Size = new System.Drawing.Size(184, 20);
-            this.cpf_funcionario_txt.TabIndex = 8;
-            // 
             // telefone_funcionario_txt
             // 
             this.telefone_funcionario_txt.Location = new System.Drawing.Point(70, 36);
@@ -150,18 +143,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 123);
+            this.label9.Location = new System.Drawing.Point(12, 126);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 13);
             this.label9.TabIndex = 11;
             this.label9.Text = "Idade:";
-            // 
-            // idade_funcionario_txt
-            // 
-            this.idade_funcionario_txt.Location = new System.Drawing.Point(49, 121);
-            this.idade_funcionario_txt.Name = "idade_funcionario_txt";
-            this.idade_funcionario_txt.Size = new System.Drawing.Size(68, 20);
-            this.idade_funcionario_txt.TabIndex = 12;
             // 
             // label10
             // 
@@ -172,12 +158,35 @@
             this.label10.TabIndex = 13;
             this.label10.Text = "RG:";
             // 
+            // idade_funcionario_txt
+            // 
+            this.idade_funcionario_txt.Location = new System.Drawing.Point(49, 121);
+            this.idade_funcionario_txt.Mask = "000";
+            this.idade_funcionario_txt.Name = "idade_funcionario_txt";
+            this.idade_funcionario_txt.Size = new System.Drawing.Size(135, 20);
+            this.idade_funcionario_txt.TabIndex = 16;
+            this.idade_funcionario_txt.Text = "00";
+            this.idade_funcionario_txt.ValidatingType = typeof(int);
+            // 
+            // cpf_funcionario_txt
+            // 
+            this.cpf_funcionario_txt.Location = new System.Drawing.Point(57, 68);
+            this.cpf_funcionario_txt.Mask = "00000000000";
+            this.cpf_funcionario_txt.Name = "cpf_funcionario_txt";
+            this.cpf_funcionario_txt.Size = new System.Drawing.Size(184, 20);
+            this.cpf_funcionario_txt.TabIndex = 3;
+            this.cpf_funcionario_txt.Text = "0";
+            this.cpf_funcionario_txt.ValidatingType = typeof(int);
+            // 
             // rg_funcionario_txt
             // 
-            this.rg_funcionario_txt.Location = new System.Drawing.Point(49, 95);
+            this.rg_funcionario_txt.Location = new System.Drawing.Point(48, 94);
+            this.rg_funcionario_txt.Mask = "000000";
             this.rg_funcionario_txt.Name = "rg_funcionario_txt";
-            this.rg_funcionario_txt.Size = new System.Drawing.Size(158, 20);
-            this.rg_funcionario_txt.TabIndex = 14;
+            this.rg_funcionario_txt.Size = new System.Drawing.Size(146, 20);
+            this.rg_funcionario_txt.TabIndex = 3;
+            this.rg_funcionario_txt.Text = "0";
+            this.rg_funcionario_txt.ValidatingType = typeof(int);
             // 
             // Funcionarios_Adicionar_Tela
             // 
@@ -185,11 +194,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 159);
             this.Controls.Add(this.rg_funcionario_txt);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.cpf_funcionario_txt);
             this.Controls.Add(this.idade_funcionario_txt);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.telefone_funcionario_txt);
-            this.Controls.Add(this.cpf_funcionario_txt);
             this.Controls.Add(this.nome_funcionario_txt);
             this.Controls.Add(this.gravar_funcionar_button);
             this.Controls.Add(this.groupBox2);
@@ -216,11 +225,11 @@
         private System.Windows.Forms.CheckBox unha_box_funcionario;
         private System.Windows.Forms.Button gravar_funcionar_button;
         private System.Windows.Forms.TextBox nome_funcionario_txt;
-        private System.Windows.Forms.TextBox cpf_funcionario_txt;
         private System.Windows.Forms.RichTextBox telefone_funcionario_txt;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox idade_funcionario_txt;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox rg_funcionario_txt;
+        private System.Windows.Forms.MaskedTextBox idade_funcionario_txt;
+        private System.Windows.Forms.MaskedTextBox cpf_funcionario_txt;
+        private System.Windows.Forms.MaskedTextBox rg_funcionario_txt;
     }
 }

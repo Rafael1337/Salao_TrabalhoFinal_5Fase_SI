@@ -55,9 +55,18 @@ namespace Rafael.Salao.WinApp.Agenda
             ag.Horario = horario_agenda.Text;
             ag.Nome_cliente = nome_cliente_txtbox.Text;
             ag.Telefone = Convert.ToString(telefone_cliente_textbox.Text);
-            VerifyComboboxes(ag);
+            ag.Idfuncionario = _agendaDao.GetFuncionarioData(agenda_funcionario_combobox.SelectedItem.ToString());
+            ag.IdServico = _agendaDao.GetServicoData(agenda_servico_combobox.SelectedItem.ToString());
 
-            ag.Validacao();
+            try
+            {
+                ag.Validacao();
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+                return;
+            }
 
             _agendaDao.Adicionar(ag);
 

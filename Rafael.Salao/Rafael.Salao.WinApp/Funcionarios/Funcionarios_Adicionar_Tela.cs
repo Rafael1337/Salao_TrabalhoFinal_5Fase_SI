@@ -17,14 +17,24 @@ namespace Rafael.Salao.WinApp.Funcionarios
         {
             Funcionario _funcionario = new Funcionario();
 
-            _funcionario.Nome = nome_funcionario_txt.Text;
-            _funcionario.Telefone = telefone_funcionario_txt.Text;
-            _funcionario.Idade = Convert.ToInt32(idade_funcionario_txt.Text);
-            _funcionario.RG = Convert.ToDouble(rg_funcionario_txt.Text);
-            _funcionario.CPF = Convert.ToDouble(cpf_funcionario_txt.Text);
-            _funcionario.Cabelo = cabelo_box_funcionario.Checked;
-            _funcionario.Depilacao = depilacao_box_funcionario.Checked;
-            _funcionario.Unha = unha_box_funcionario.Checked;
+                _funcionario.Nome = nome_funcionario_txt.Text;
+                _funcionario.Telefone = telefone_funcionario_txt.Text;
+                _funcionario.Idade = Convert.ToInt32(idade_funcionario_txt.Text);
+                _funcionario.RG = Convert.ToDouble(rg_funcionario_txt.Text);
+                _funcionario.CPF = Convert.ToDouble(cpf_funcionario_txt.Text);
+                _funcionario.Cabelo = cabelo_box_funcionario.Checked;
+                _funcionario.Depilacao = depilacao_box_funcionario.Checked;
+                _funcionario.Unha = unha_box_funcionario.Checked;
+
+            try {
+                
+            _funcionario.Validacao();
+
+            }catch(Exception message)
+            {
+                MessageBox.Show(message.Message);
+                return;
+            }
 
             _funcionarioDao.Adicionar(_funcionario);
 
