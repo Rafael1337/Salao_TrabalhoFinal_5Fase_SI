@@ -181,7 +181,7 @@
             // rg_funcionario_txt
             // 
             this.rg_funcionario_txt.Location = new System.Drawing.Point(48, 94);
-            this.rg_funcionario_txt.Mask = "000000";
+            this.rg_funcionario_txt.Mask = "00000000000000";
             this.rg_funcionario_txt.Name = "rg_funcionario_txt";
             this.rg_funcionario_txt.Size = new System.Drawing.Size(146, 20);
             this.rg_funcionario_txt.TabIndex = 3;

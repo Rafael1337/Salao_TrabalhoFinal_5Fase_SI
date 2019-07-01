@@ -5,13 +5,7 @@ using Rafael.Salao.Infra.Dados.Funcionario;
 using Rafael.Salao.Infra.Dados.Servicos;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Rafael.Salao.WinApp.Agenda
@@ -49,52 +43,26 @@ namespace Rafael.Salao.WinApp.Agenda
 
         public void PopulateComboboxFuncionario(Dominio.Agenda agenda_exibir)
         {
-
-            string Nome = "";
-            SqlCommand sqlcommand = new SqlCommand("SELECT NOME FROM TBFUNCIONARIO INNER JOIN TBAGENDA ON TBFUNCIONARIO.ID = " + agenda_exibir.Idfuncionario, DabaseConnection.connection_created);
-            DabaseConnection.connection_created.Open();
-            using (SqlDataReader read = sqlcommand.ExecuteReader())
-            {
-                while (read.Read())
-                {
-                    Nome = (read["NOME"].ToString());
-                }
-            }
-            DabaseConnection.connection_created.Close();
-
             _lista_funcionario = _funcionarioDao.ObterFuncionarioParaCombobox(DabaseConnection.connection_created);
             foreach (var funcionario in _lista_funcionario)
             {
                 agenda_funcionario_combobox.Items.Add(funcionario.Nome);
-                if (funcionario.Nome == Nome)
+                if (funcionario.Nome == _agendaDao.Get_NameCombobox(agenda_exibir))
                 {
-                    agenda_funcionario_combobox.SelectedItem = Nome;
+                    agenda_funcionario_combobox.SelectedItem = _agendaDao.Get_NameCombobox(agenda_exibir);
                 }
             }
         }
 
         public void PopulateComboboxServico(Dominio.Agenda agenda_exibir)
         {
-            string tipo = "";
-            SqlCommand sqlcommand = new SqlCommand("SELECT TIPO FROM TBSERVICO INNER JOIN TBAGENDA ON TBSERVICO.ID = " + agenda_exibir.IdServico, DabaseConnection.connection_created);
-            DabaseConnection.connection_created.Open();
-            using (SqlDataReader read = sqlcommand.ExecuteReader())
-            {
-                while (read.Read())
-                {
-                    tipo = (read["TIPO"].ToString());
-                }
-            }
-            DabaseConnection.connection_created.Close();
-
-
             _lista_servicos = _servicosDao.ObterServicosParaCombobox();
             foreach (var servico in _lista_servicos)
             {
                 agenda_servico_combobox.Items.Add(servico.Tipo);
-                if(servico.Tipo == tipo)
+                if(servico.Tipo == _agendaDao.GetTipoComboboxValue(agenda_exibir))
                 {
-                    agenda_servico_combobox.SelectedItem = tipo;
+                    agenda_servico_combobox.SelectedItem = _agendaDao.GetTipoComboboxValue(agenda_exibir);
                 }
             }
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using Rafael.Salao.Dominio;
 
 namespace Rafael.Salao.Infra.Dados.Agenda
 {
@@ -54,6 +55,40 @@ namespace Rafael.Salao.Infra.Dados.Agenda
         ,[IDFUNCIONARIO]
         ,[IDSERVICO]
         FROM [TBAGENDA]";
+
+        public string Get_NameCombobox(Dominio.Agenda agenda_exibir)
+        {
+            string Nome = "";
+            SqlCommand sqlcommand = new SqlCommand("SELECT NOME FROM TBFUNCIONARIO INNER JOIN TBAGENDA ON TBFUNCIONARIO.ID = " + agenda_exibir.Idfuncionario, DabaseConnection.connection_created);
+            DabaseConnection.connection_created.Open();
+            using (SqlDataReader read = sqlcommand.ExecuteReader())
+            {
+                while (read.Read())
+                {
+                    Nome = (read["NOME"].ToString());
+                }
+            }
+            DabaseConnection.connection_created.Close();
+
+            return Nome;
+        }
+
+        public string GetTipoComboboxValue(Dominio.Agenda agenda_exibir)
+        {
+            string tipo = "";
+            SqlCommand sqlcommand = new SqlCommand("SELECT TIPO FROM TBSERVICO INNER JOIN TBAGENDA ON TBSERVICO.ID = " + agenda_exibir.IdServico, DabaseConnection.connection_created);
+            DabaseConnection.connection_created.Open();
+            using (SqlDataReader read = sqlcommand.ExecuteReader())
+            {
+                while (read.Read())
+                {
+                    tipo = (read["TIPO"].ToString());
+                }
+            }
+            DabaseConnection.connection_created.Close();
+
+            return tipo;
+        }
 
         public int Adicionar(Dominio.Agenda novoRegistroAgenda)
         {
