@@ -31,22 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tela_Inicial));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.agenda_aba = new System.Windows.Forms.TabPage();
-            this.remover_horario_agenda_button = new System.Windows.Forms.Button();
-            this.editar_horario_agenda_button = new System.Windows.Forms.Button();
-            this.adicionar_horario_agenda_button = new System.Windows.Forms.Button();
             this.agenda_datagrid = new System.Windows.Forms.DataGridView();
             this.funcionarios_aba = new System.Windows.Forms.TabPage();
-            this.remover_funcionario_button = new System.Windows.Forms.Button();
-            this.editar_funcionario_button = new System.Windows.Forms.Button();
-            this.add_funcionario_button = new System.Windows.Forms.Button();
             this.funcionario_datagrid = new System.Windows.Forms.DataGridView();
             this.caixa_aba = new System.Windows.Forms.TabPage();
-            this.ver_extrato = new System.Windows.Forms.Button();
-            this.fechar_caixa = new System.Windows.Forms.Button();
-            this.add_saldo = new System.Windows.Forms.Button();
             this.saldo_caixa_label = new System.Windows.Forms.Label();
             this.saldo_atual_txtbox = new System.Windows.Forms.TextBox();
             this.get_agenda_data = new System.Windows.Forms.Button();
+            this.remover_horario_agenda_button = new System.Windows.Forms.Button();
+            this.editar_horario_agenda_button = new System.Windows.Forms.Button();
+            this.adicionar_horario_agenda_button = new System.Windows.Forms.Button();
+            this.remover_funcionario_button = new System.Windows.Forms.Button();
+            this.editar_funcionario_button = new System.Windows.Forms.Button();
+            this.add_funcionario_button = new System.Windows.Forms.Button();
+            this.ver_extrato = new System.Windows.Forms.Button();
+            this.fechar_caixa = new System.Windows.Forms.Button();
+            this.add_saldo = new System.Windows.Forms.Button();
+            this.exibir_detalhes_funcionario = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.agenda_aba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.agenda_datagrid)).BeginInit();
@@ -80,6 +81,82 @@
             this.agenda_aba.TabIndex = 1;
             this.agenda_aba.Text = "Agenda";
             this.agenda_aba.UseVisualStyleBackColor = true;
+            // 
+            // agenda_datagrid
+            // 
+            this.agenda_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.agenda_datagrid.Location = new System.Drawing.Point(6, 48);
+            this.agenda_datagrid.Name = "agenda_datagrid";
+            this.agenda_datagrid.Size = new System.Drawing.Size(634, 246);
+            this.agenda_datagrid.TabIndex = 0;
+            // 
+            // funcionarios_aba
+            // 
+            this.funcionarios_aba.Controls.Add(this.exibir_detalhes_funcionario);
+            this.funcionarios_aba.Controls.Add(this.remover_funcionario_button);
+            this.funcionarios_aba.Controls.Add(this.editar_funcionario_button);
+            this.funcionarios_aba.Controls.Add(this.add_funcionario_button);
+            this.funcionarios_aba.Controls.Add(this.funcionario_datagrid);
+            this.funcionarios_aba.Location = new System.Drawing.Point(4, 22);
+            this.funcionarios_aba.Name = "funcionarios_aba";
+            this.funcionarios_aba.Padding = new System.Windows.Forms.Padding(3);
+            this.funcionarios_aba.Size = new System.Drawing.Size(646, 300);
+            this.funcionarios_aba.TabIndex = 2;
+            this.funcionarios_aba.Text = "Funcionarios";
+            this.funcionarios_aba.UseVisualStyleBackColor = true;
+            // 
+            // funcionario_datagrid
+            // 
+            this.funcionario_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.funcionario_datagrid.Location = new System.Drawing.Point(6, 51);
+            this.funcionario_datagrid.Name = "funcionario_datagrid";
+            this.funcionario_datagrid.Size = new System.Drawing.Size(634, 246);
+            this.funcionario_datagrid.TabIndex = 4;
+            // 
+            // caixa_aba
+            // 
+            this.caixa_aba.Controls.Add(this.ver_extrato);
+            this.caixa_aba.Controls.Add(this.fechar_caixa);
+            this.caixa_aba.Controls.Add(this.add_saldo);
+            this.caixa_aba.Controls.Add(this.saldo_caixa_label);
+            this.caixa_aba.Controls.Add(this.saldo_atual_txtbox);
+            this.caixa_aba.Location = new System.Drawing.Point(4, 22);
+            this.caixa_aba.Name = "caixa_aba";
+            this.caixa_aba.Padding = new System.Windows.Forms.Padding(3);
+            this.caixa_aba.Size = new System.Drawing.Size(646, 300);
+            this.caixa_aba.TabIndex = 3;
+            this.caixa_aba.Text = "Caixa";
+            this.caixa_aba.UseVisualStyleBackColor = true;
+            // 
+            // saldo_caixa_label
+            // 
+            this.saldo_caixa_label.AutoSize = true;
+            this.saldo_caixa_label.Location = new System.Drawing.Point(128, 102);
+            this.saldo_caixa_label.Name = "saldo_caixa_label";
+            this.saldo_caixa_label.Size = new System.Drawing.Size(106, 13);
+            this.saldo_caixa_label.TabIndex = 1;
+            this.saldo_caixa_label.Text = "Saldo atual do caixa:";
+            // 
+            // saldo_atual_txtbox
+            // 
+            this.saldo_atual_txtbox.Enabled = false;
+            this.saldo_atual_txtbox.Location = new System.Drawing.Point(240, 99);
+            this.saldo_atual_txtbox.Name = "saldo_atual_txtbox";
+            this.saldo_atual_txtbox.Size = new System.Drawing.Size(149, 20);
+            this.saldo_atual_txtbox.TabIndex = 0;
+            // 
+            // get_agenda_data
+            // 
+            this.get_agenda_data.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("get_agenda_data.BackgroundImage")));
+            this.get_agenda_data.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.get_agenda_data.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.get_agenda_data.FlatAppearance.BorderSize = 0;
+            this.get_agenda_data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.get_agenda_data.Location = new System.Drawing.Point(161, 6);
+            this.get_agenda_data.Name = "get_agenda_data";
+            this.get_agenda_data.Size = new System.Drawing.Size(42, 39);
+            this.get_agenda_data.TabIndex = 4;
+            this.get_agenda_data.UseVisualStyleBackColor = true;
             // 
             // remover_horario_agenda_button
             // 
@@ -123,28 +200,6 @@
             this.adicionar_horario_agenda_button.UseVisualStyleBackColor = true;
             this.adicionar_horario_agenda_button.Click += new System.EventHandler(this.adicionar_horario_agenda_button_Click);
             // 
-            // agenda_datagrid
-            // 
-            this.agenda_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.agenda_datagrid.Location = new System.Drawing.Point(6, 48);
-            this.agenda_datagrid.Name = "agenda_datagrid";
-            this.agenda_datagrid.Size = new System.Drawing.Size(634, 246);
-            this.agenda_datagrid.TabIndex = 0;
-            // 
-            // funcionarios_aba
-            // 
-            this.funcionarios_aba.Controls.Add(this.remover_funcionario_button);
-            this.funcionarios_aba.Controls.Add(this.editar_funcionario_button);
-            this.funcionarios_aba.Controls.Add(this.add_funcionario_button);
-            this.funcionarios_aba.Controls.Add(this.funcionario_datagrid);
-            this.funcionarios_aba.Location = new System.Drawing.Point(4, 22);
-            this.funcionarios_aba.Name = "funcionarios_aba";
-            this.funcionarios_aba.Padding = new System.Windows.Forms.Padding(3);
-            this.funcionarios_aba.Size = new System.Drawing.Size(646, 300);
-            this.funcionarios_aba.TabIndex = 2;
-            this.funcionarios_aba.Text = "Funcionarios";
-            this.funcionarios_aba.UseVisualStyleBackColor = true;
-            // 
             // remover_funcionario_button
             // 
             this.remover_funcionario_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("remover_funcionario_button.BackgroundImage")));
@@ -186,29 +241,6 @@
             this.add_funcionario_button.TabIndex = 5;
             this.add_funcionario_button.UseVisualStyleBackColor = true;
             this.add_funcionario_button.Click += new System.EventHandler(this.Add_funcionario_button_Click);
-            // 
-            // funcionario_datagrid
-            // 
-            this.funcionario_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.funcionario_datagrid.Location = new System.Drawing.Point(6, 51);
-            this.funcionario_datagrid.Name = "funcionario_datagrid";
-            this.funcionario_datagrid.Size = new System.Drawing.Size(634, 246);
-            this.funcionario_datagrid.TabIndex = 4;
-            // 
-            // caixa_aba
-            // 
-            this.caixa_aba.Controls.Add(this.ver_extrato);
-            this.caixa_aba.Controls.Add(this.fechar_caixa);
-            this.caixa_aba.Controls.Add(this.add_saldo);
-            this.caixa_aba.Controls.Add(this.saldo_caixa_label);
-            this.caixa_aba.Controls.Add(this.saldo_atual_txtbox);
-            this.caixa_aba.Location = new System.Drawing.Point(4, 22);
-            this.caixa_aba.Name = "caixa_aba";
-            this.caixa_aba.Padding = new System.Windows.Forms.Padding(3);
-            this.caixa_aba.Size = new System.Drawing.Size(646, 300);
-            this.caixa_aba.TabIndex = 3;
-            this.caixa_aba.Text = "Caixa";
-            this.caixa_aba.UseVisualStyleBackColor = true;
             // 
             // ver_extrato
             // 
@@ -253,36 +285,19 @@
             this.add_saldo.UseVisualStyleBackColor = true;
             this.add_saldo.Click += new System.EventHandler(this.add_saldo_Click);
             // 
-            // saldo_caixa_label
+            // exibir_detalhes_funcionario
             // 
-            this.saldo_caixa_label.AutoSize = true;
-            this.saldo_caixa_label.Location = new System.Drawing.Point(128, 102);
-            this.saldo_caixa_label.Name = "saldo_caixa_label";
-            this.saldo_caixa_label.Size = new System.Drawing.Size(106, 13);
-            this.saldo_caixa_label.TabIndex = 1;
-            this.saldo_caixa_label.Text = "Saldo atual do caixa:";
-            // 
-            // saldo_atual_txtbox
-            // 
-            this.saldo_atual_txtbox.Enabled = false;
-            this.saldo_atual_txtbox.Location = new System.Drawing.Point(240, 99);
-            this.saldo_atual_txtbox.Name = "saldo_atual_txtbox";
-            this.saldo_atual_txtbox.Size = new System.Drawing.Size(149, 20);
-            this.saldo_atual_txtbox.TabIndex = 0;
-            // 
-            // get_agenda_data
-            // 
-            this.get_agenda_data.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("get_agenda_data.BackgroundImage")));
-            this.get_agenda_data.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.get_agenda_data.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
-            this.get_agenda_data.FlatAppearance.BorderSize = 0;
-            this.get_agenda_data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.get_agenda_data.Location = new System.Drawing.Point(161, 6);
-            this.get_agenda_data.Name = "get_agenda_data";
-            this.get_agenda_data.Size = new System.Drawing.Size(42, 39);
-            this.get_agenda_data.TabIndex = 4;
-            this.get_agenda_data.UseVisualStyleBackColor = true;
-            this.get_agenda_data.Click += new System.EventHandler(this.get_agenda_data_Click);
+            this.exibir_detalhes_funcionario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exibir_detalhes_funcionario.BackgroundImage")));
+            this.exibir_detalhes_funcionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.exibir_detalhes_funcionario.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.exibir_detalhes_funcionario.FlatAppearance.BorderSize = 0;
+            this.exibir_detalhes_funcionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exibir_detalhes_funcionario.Location = new System.Drawing.Point(150, 6);
+            this.exibir_detalhes_funcionario.Name = "exibir_detalhes_funcionario";
+            this.exibir_detalhes_funcionario.Size = new System.Drawing.Size(42, 39);
+            this.exibir_detalhes_funcionario.TabIndex = 8;
+            this.exibir_detalhes_funcionario.UseVisualStyleBackColor = true;
+            this.exibir_detalhes_funcionario.Click += new System.EventHandler(this.exibir_detalhes_funcionario_Click);
             // 
             // Tela_Inicial
             // 
@@ -323,5 +338,6 @@
         private System.Windows.Forms.DataGridView agenda_datagrid;
         private System.Windows.Forms.Button ver_extrato;
         private System.Windows.Forms.Button get_agenda_data;
+        private System.Windows.Forms.Button exibir_detalhes_funcionario;
     }
 }

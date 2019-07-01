@@ -169,5 +169,14 @@ namespace Rafael.Salao.WinApp
             Exibir_Agendamento EA = new Exibir_Agendamento(agenda_Exibir);
             EA.Show();
         }
+
+        private void exibir_detalhes_funcionario_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Dominio.Funcionario funcionario_exibir = _funcionarioDao.BuscarPorId(Convert.ToInt32(funcionario_datagrid.Rows[funcionario_datagrid.CurrentRow.Index].Cells[0].Value));
+
+            Exibir_Funcionario EF = new Exibir_Funcionario(funcionario_exibir);
+            EF.Show();
+        }
     }
 }
