@@ -46,6 +46,7 @@
             this.add_saldo = new System.Windows.Forms.Button();
             this.saldo_caixa_label = new System.Windows.Forms.Label();
             this.saldo_atual_txtbox = new System.Windows.Forms.TextBox();
+            this.get_agenda_data = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.agenda_aba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.agenda_datagrid)).BeginInit();
@@ -67,6 +68,7 @@
             // 
             // agenda_aba
             // 
+            this.agenda_aba.Controls.Add(this.get_agenda_data);
             this.agenda_aba.Controls.Add(this.remover_horario_agenda_button);
             this.agenda_aba.Controls.Add(this.editar_horario_agenda_button);
             this.agenda_aba.Controls.Add(this.adicionar_horario_agenda_button);
@@ -268,6 +270,20 @@
             this.saldo_atual_txtbox.Size = new System.Drawing.Size(149, 20);
             this.saldo_atual_txtbox.TabIndex = 0;
             // 
+            // get_agenda_data
+            // 
+            this.get_agenda_data.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("get_agenda_data.BackgroundImage")));
+            this.get_agenda_data.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.get_agenda_data.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.get_agenda_data.FlatAppearance.BorderSize = 0;
+            this.get_agenda_data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.get_agenda_data.Location = new System.Drawing.Point(161, 6);
+            this.get_agenda_data.Name = "get_agenda_data";
+            this.get_agenda_data.Size = new System.Drawing.Size(42, 39);
+            this.get_agenda_data.TabIndex = 4;
+            this.get_agenda_data.UseVisualStyleBackColor = true;
+            this.get_agenda_data.Click += new System.EventHandler(this.get_agenda_data_Click);
+            // 
             // Tela_Inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,5 +322,6 @@
         private System.Windows.Forms.Button adicionar_horario_agenda_button;
         private System.Windows.Forms.DataGridView agenda_datagrid;
         private System.Windows.Forms.Button ver_extrato;
+        private System.Windows.Forms.Button get_agenda_data;
     }
 }

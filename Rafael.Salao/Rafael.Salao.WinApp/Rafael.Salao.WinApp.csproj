@@ -79,6 +79,12 @@
     <Compile Include="Agenda\Agenda_Editar_Tela.Designer.cs">
       <DependentUpon>Agenda_Editar_Tela.cs</DependentUpon>
     </Compile>
+    <Compile Include="Agenda\Exibir_Agendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda\Exibir_Agendamento.Designer.cs">
+      <DependentUpon>Exibir_Agendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Banco\Tela_Conexao_Banco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Agenda\Agenda_Editar_Tela.resx">
       <DependentUpon>Agenda_Editar_Tela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agenda\Exibir_Agendamento.resx">
+      <DependentUpon>Exibir_Agendamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Banco\Tela_Conexao_Banco.resx">
       <DependentUpon>Tela_Conexao_Banco.cs</DependentUpon>
