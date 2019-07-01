@@ -29,7 +29,7 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
 
         private const string _scriptRemocao = @"DELETE FROM TBFUNCIONARIO WHERE ID = {0}ID";
 
-        private const string _scriptUpdate = @"UPDATE SALAO_DATABASE TBFUNCIONARIO SET NOME = {0}NOME,
+        private const string _scriptUpdate = @"UPDATE TBFUNCIONARIO SET NOME = {0}NOME
         ,[IDADE] = {0}IDADE
         ,[TELEFONE] = {0}TELEFONE
         ,[CPF] = {0}CPF
@@ -77,6 +77,14 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
         public void Editar(Dominio.Funcionario funcionario)
         {
             Db.Update(_scriptUpdate, BuscarParametros(funcionario));
+        }
+
+
+        public Dominio.Funcionario BuscarPorId(int id)
+        {
+            var parms = new Dictionary<string, object> { { "Id", id } };
+
+            return Db.Get(_scriptBuscaPorId, ConverterFuncionario, parms);
         }
 
         public void Deletar(int id)

@@ -104,7 +104,11 @@ namespace Rafael.Salao.WinApp
 
         private void editar_funcionario_button_Click(object sender, EventArgs e)
         {
+            Hide();
+            Dominio.Funcionario funcionario_edit = _funcionarioDao.BuscarPorId(Convert.ToInt32(funcionario_datagrid.Rows[funcionario_datagrid.CurrentRow.Index].Cells[0].Value));
 
+            Funcionarios_Editar_Tela FET = new Funcionarios_Editar_Tela(funcionario_edit);
+            FET.Show();
         }
 
         private void add_saldo_Click(object sender, EventArgs e)
