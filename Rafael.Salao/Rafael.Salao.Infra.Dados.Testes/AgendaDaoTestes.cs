@@ -25,6 +25,7 @@ namespace Rafael.Salao.Infra.Dados.Testes
             Dominio.Agenda novoRegistroAgenda = new Dominio.Agenda();
             novoRegistroAgenda.Horario = "20:00";
             novoRegistroAgenda.Nome_cliente = "Daniela";
+            novoRegistroAgenda.Telefone = "322202222";
             novoRegistroAgenda.IdServico = 1;
             novoRegistroAgenda.Idfuncionario = 1;
             novoRegistroAgenda.Data = "10/09/2019";
@@ -63,6 +64,7 @@ namespace Rafael.Salao.Infra.Dados.Testes
 
             Dominio.Agenda novoRegistroAgenda = new Dominio.Agenda();
             novoRegistroAgenda.Nome_cliente = "Cliente1";
+            novoRegistroAgenda.Telefone = "322202222";
             novoRegistroAgenda.Horario = "13:00:00";
             novoRegistroAgenda.Data = "10/10/2019";
             novoRegistroAgenda.IdServico = 1;
@@ -116,6 +118,22 @@ namespace Rafael.Salao.Infra.Dados.Testes
             var resultado = _agendaDao.GetFuncionarioData(nome_funcionario);
 
             Assert.AreEqual(esperado, resultado);
+        }
+
+        [Test]
+        public void Teste_Deve_Editar_Qualquer_Campo_da_Agenda()
+        {
+            //CENÁRIO
+            int idAgendaEditada = 1; 
+            string telefoneEditado = "999"; 
+            Dominio.Agenda agendaEditado = _agendaDao.BuscarPorId(idAgendaEditada);
+
+            //AÇÃO
+            agendaEditado.Telefone = telefoneEditado;
+            _agendaDao.Editar(agendaEditado);
+
+            Dominio.Agenda agendaBuscada = _agendaDao.BuscarPorId(idAgendaEditada);
+            Assert.AreEqual(telefoneEditado, agendaBuscada.Telefone);
         }
 
         [Test]

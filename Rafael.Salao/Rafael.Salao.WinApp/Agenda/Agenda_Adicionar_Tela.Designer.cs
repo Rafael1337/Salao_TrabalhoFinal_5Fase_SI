@@ -51,6 +51,7 @@
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome do cliente:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -60,6 +61,7 @@
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Funcionário:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -69,6 +71,7 @@
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Serviço:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // horario_agenda
             // 
@@ -77,6 +80,7 @@
             this.horario_agenda.Name = "horario_agenda";
             this.horario_agenda.Size = new System.Drawing.Size(82, 20);
             this.horario_agenda.TabIndex = 3;
+            this.horario_agenda.ValueChanged += new System.EventHandler(this.horario_agenda_ValueChanged);
             // 
             // label4
             // 
@@ -86,6 +90,7 @@
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Horario:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // nome_cliente_txtbox
             // 
@@ -93,6 +98,7 @@
             this.nome_cliente_txtbox.Name = "nome_cliente_txtbox";
             this.nome_cliente_txtbox.Size = new System.Drawing.Size(158, 20);
             this.nome_cliente_txtbox.TabIndex = 5;
+            this.nome_cliente_txtbox.TextChanged += new System.EventHandler(this.nome_cliente_txtbox_TextChanged);
             // 
             // agenda_servico_combobox
             // 
@@ -101,6 +107,7 @@
             this.agenda_servico_combobox.Name = "agenda_servico_combobox";
             this.agenda_servico_combobox.Size = new System.Drawing.Size(175, 21);
             this.agenda_servico_combobox.TabIndex = 6;
+            this.agenda_servico_combobox.SelectedIndexChanged += new System.EventHandler(this.agenda_servico_combobox_SelectedIndexChanged);
             // 
             // agenda_funcionario_combobox
             // 
@@ -109,6 +116,7 @@
             this.agenda_funcionario_combobox.Name = "agenda_funcionario_combobox";
             this.agenda_funcionario_combobox.Size = new System.Drawing.Size(196, 21);
             this.agenda_funcionario_combobox.TabIndex = 7;
+            this.agenda_funcionario_combobox.SelectedIndexChanged += new System.EventHandler(this.agenda_funcionario_combobox_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -118,6 +126,7 @@
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Telefone:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // telefone_cliente_textbox
             // 
@@ -126,6 +135,7 @@
             this.telefone_cliente_textbox.Size = new System.Drawing.Size(183, 21);
             this.telefone_cliente_textbox.TabIndex = 9;
             this.telefone_cliente_textbox.Text = "";
+            this.telefone_cliente_textbox.TextChanged += new System.EventHandler(this.telefone_cliente_textbox_TextChanged);
             // 
             // adicionar_agenda_btn
             // 
@@ -145,6 +155,7 @@
             this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Data:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // data_agenda
             // 
@@ -153,6 +164,7 @@
             this.data_agenda.Name = "data_agenda";
             this.data_agenda.Size = new System.Drawing.Size(82, 20);
             this.data_agenda.TabIndex = 11;
+            this.data_agenda.ValueChanged += new System.EventHandler(this.data_agenda_ValueChanged);
             // 
             // Agenda_Adicionar_Tela
             // 

@@ -61,7 +61,7 @@ namespace Rafael.Salao.WinApp
 
         private void PopulateAgendaGrid()
         {
-            SqlDataAdapter sqlDataAdapAgenda = new SqlDataAdapter(new SqlCommand("SELECT ID, HORARIO, DATA, NOME_CLIENTE FROM TBAGENDA", DabaseConnection.connection_created));
+            SqlDataAdapter sqlDataAdapAgenda = new SqlDataAdapter(new SqlCommand("SELECT ID, HORARIO, DATA, NOME_CLIENTE, TELEFONE FROM TBAGENDA", DabaseConnection.connection_created));
 
             sqlDataAdapAgenda.Fill(dtRecordAgenda);
             agenda_datagrid.DataSource = dtRecordAgenda;
@@ -141,6 +141,15 @@ namespace Rafael.Salao.WinApp
             }
             catch (Exception) { }
             agenda_datagrid.Update();
+        }
+
+        private void editar_horario_agenda_button_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Dominio.Agenda agenda_edit = _agendaDao.BuscarPorId(Convert.ToInt32(agenda_datagrid.Rows[agenda_datagrid.CurrentRow.Index].Cells[0].Value));
+
+            Agenda_Editar_Tela AET = new Agenda_Editar_Tela(agenda_edit);
+            AET.Show();
         }
     }
 }

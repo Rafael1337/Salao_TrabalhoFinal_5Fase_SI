@@ -116,6 +116,7 @@
             this.editar_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
             this.editar_horario_agenda_button.TabIndex = 2;
             this.editar_horario_agenda_button.UseVisualStyleBackColor = true;
+            this.editar_horario_agenda_button.Click += new System.EventHandler(this.editar_horario_agenda_button_Click);
             // 
             // adicionar_horario_agenda_button
             // 

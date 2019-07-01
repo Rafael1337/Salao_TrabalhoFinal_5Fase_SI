@@ -11,39 +11,46 @@ namespace Rafael.Salao.Infra.Dados.Agenda
            ([HORARIO]
            ,[DATA]
            ,[NOME_CLIENTE]
+           ,[TELEFONE]
            ,[IDFUNCIONARIO]
            ,[IDSERVICO])
      VALUES
            ({0}HORARIO,
            {0}DATA,
            {0}NOME_CLIENTE,
+           {0}TELEFONE,
            {0}IDFUNCIONARIO,
            {0}IDSERVICO)";
 
         private const string _scriptRemocao = @"DELETE FROM TBAGENDA WHERE ID = {0}ID";
 
-        private const string _scriptUpdate = @"UPDATE SALAO_DATABASE TBAGENDA SET HORARIO = {0}HORARIO,
-        ,[NOME_CLIENTE] = {0}NOME_CLIENTE
-        ,[IDFUNCIONARIO] = {0}IDFUNCIONARIO
-        ,[IDSERVICO] = {0}IDSERVICO
-        ,[DATA] = {0}DATA
-        WHERE ID = {0}ID";
+        private const string _scriptUpdate =
+            @"UPDATE [dbo].[TBAGENDA]
+               SET [HORARIO] = {0}HORARIO
+                  ,[DATA] = {0}DATA
+                  ,[NOME_CLIENTE] = {0}NOME_CLIENTE
+                  ,[TELEFONE] = {0}TELEFONE
+                  ,[IDFUNCIONARIO] = {0}IDFUNCIONARIO
+                  ,[IDSERVICO] = {0}IDSERVICO
+             WHERE [ID] = {0}ID";
 
 
         private const string _scriptBuscaPorId =
-            @"SELECT [Id]
+            @"SELECT [ID]
                   ,[HORARIO]
                   ,[NOME_CLIENTE]
+                  ,[TELEFONE]
                   ,[IDFUNCIONARIO]
                   ,[IDSERVICO]
                   ,[DATA]
               FROM [dbo].[TBAGENDA]
-              WHERE [Id] = {0}Id";
+              WHERE [ID] = {0}ID";
 
         private const string _scriptExibir = @"SELECT [ID]
         ,[HORARIO]
         ,[DATA]
         ,[NOME_CLIENTE]
+        ,[TELEFONE]
         ,[IDFUNCIONARIO]
         ,[IDSERVICO]
         FROM [TBAGENDA]";
@@ -68,6 +75,13 @@ namespace Rafael.Salao.Infra.Dados.Agenda
             var parms = new Dictionary<string, object> { { "Id", id } };
 
             Db.Delete(_scriptRemocao, parms);
+        }
+
+        public Dominio.Agenda BuscarPorId(int id)
+        {
+            var parms = new Dictionary<string, object> { { "Id", id } };
+
+            return Db.Get(_scriptBuscaPorId, ConverterAgenda, parms);
         }
 
         public int GetFuncionarioData(string NomeFuncionario)
@@ -115,9 +129,10 @@ namespace Rafael.Salao.Infra.Dados.Agenda
         {
             Dominio.Agenda agenda = new Dominio.Agenda();
             agenda.Id = Convert.ToInt32(reader["ID"]);
-            agenda.Nome_cliente = Convert.ToString(reader["NOME_CLIENTE"]);
-            agenda.Data = Convert.ToString(reader["DATA"]);
             agenda.Horario = Convert.ToString(reader["HORARIO"]);
+            agenda.Data = Convert.ToString(reader["DATA"]);
+            agenda.Nome_cliente = Convert.ToString(reader["NOME_CLIENTE"]);
+            agenda.Telefone = Convert.ToString((reader["TELEFONE"]));
             agenda.Idfuncionario = Convert.ToInt32(reader["IDFUNCIONARIO"]);
             agenda.IdServico = Convert.ToInt32(reader["IDSERVICO"]);
 
@@ -129,9 +144,10 @@ namespace Rafael.Salao.Infra.Dados.Agenda
             return new Dictionary<string, object>
             {
                 {"ID",agenda.Id},
-                {"NOME_CLIENTE",agenda.Nome_cliente},
-                {"DATA",agenda.Data},
                 {"HORARIO",agenda.Horario },
+                {"DATA",agenda.Data},
+                {"NOME_CLIENTE",agenda.Nome_cliente},
+                {"TELEFONE",agenda.Telefone },
                 {"IDFUNCIONARIO",agenda.Idfuncionario},
                 {"IDSERVICO",agenda.IdServico},
             };

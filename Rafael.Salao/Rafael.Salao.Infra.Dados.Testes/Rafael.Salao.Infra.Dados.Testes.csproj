@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgendaDaoTestes.cs" />
+    <Compile Include="CaixaDaoTestes.cs" />
     <Compile Include="FuncionarioDaoTestes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
