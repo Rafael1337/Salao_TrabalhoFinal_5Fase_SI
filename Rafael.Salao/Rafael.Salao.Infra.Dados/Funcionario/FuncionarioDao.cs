@@ -102,7 +102,7 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
             funcionario.Id = Convert.ToInt32(reader["ID"]);
             funcionario.Nome = Convert.ToString(reader["NOME"]);
             funcionario.Idade = Convert.ToInt32(reader["IDADE"]);
-            funcionario.Telefone = Convert.ToDouble(reader["TELEFONE"]);
+            funcionario.Telefone = (reader["TELEFONE"]).ToString();
             funcionario.CPF = Convert.ToDouble(reader["CPF"]);
             funcionario.RG = Convert.ToDouble(reader["RG"]);
             funcionario.Unha = Convert.ToBoolean(reader["UNHA"]);
@@ -145,7 +145,7 @@ namespace Rafael.Salao.Infra.Dados.Funcionario
                     funcionario.Idade = Convert.ToInt32((read["IDADE"].ToString()));
                     funcionario.RG = Convert.ToDouble((read["RG"].ToString()));
                     funcionario.CPF = Convert.ToDouble((read["CPF"].ToString()));
-                    funcionario.Telefone = Convert.ToDouble((read["TELEFONE"].ToString()));
+                    funcionario.Telefone = (read["TELEFONE"].ToString()).ToString();
                     funcionario.Unha = Convert.ToBoolean(read["UNHA"]);
                     funcionario.Cabelo = Convert.ToBoolean(read["CABELO"]);
                     funcionario.Depilacao = Convert.ToBoolean(read["DEPILACAO"]);

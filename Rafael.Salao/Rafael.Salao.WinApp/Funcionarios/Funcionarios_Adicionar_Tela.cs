@@ -18,7 +18,7 @@ namespace Rafael.Salao.WinApp.Funcionarios
             Funcionario _funcionario = new Funcionario();
 
             _funcionario.Nome = nome_funcionario_txt.Text;
-            _funcionario.Telefone = Convert.ToDouble(telefone_funcionario_txt.Text);
+            _funcionario.Telefone = telefone_funcionario_txt.Text;
             _funcionario.Idade = Convert.ToInt32(idade_funcionario_txt.Text);
             _funcionario.RG = Convert.ToDouble(rg_funcionario_txt.Text);
             _funcionario.CPF = Convert.ToDouble(cpf_funcionario_txt.Text);

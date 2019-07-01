@@ -1,53 +1,102 @@
 ﻿using NUnit.Framework;
-using Rafael.Salao.Dominio.Validations;
 using FluentValidation.TestHelper;
 using Rafael.Salao.Dominio;
+using System;
+using FluentAssertions;
 
 namespace Rafael.Salao.Testes.Dominio
 {
     [TestFixture]
     public class TesteAgenda
     {
-        [Test]
-        public void Teste_Id_Agenda_Nao_Pode_Ser_Vazio()
+        public Agenda agenda;
+
+        [SetUp]
+        public void Inicializador()
         {
-            var validation = new AgendaValidation();
-            validation.ShouldHaveValidationErrorFor(x => x.Id, (int)0);
+            agenda = new Agenda();
+
+            //Criando registro agenda inicial
+            agenda.Id = 1;
+            agenda.Horario = "20:00";
+            agenda.Nome_cliente = "Daniela";
+            agenda.Telefone = "322202222";
+            agenda.IdServico = 1;
+            agenda.Idfuncionario = 1;
+            agenda.Data = "10/09/2019";
+        }
+
+        [Test]
+        public void Teste_Id_Agendado_Nao_Pode_Ser_Vazio()
+        {
+
+            agenda.Id = 0;
+
+            Action resultado = () => agenda.Validacao();
+
+            resultado.Should()
+                .Throw<Exception>()
+                .WithMessage("Ocorreu um problema interno por favor contate o suporte");
         }
 
         [Test]
         public void Teste_Nome_Cliente_Agendado_Nao_Pode_Ser_Vazio()
         {
-            var validation = new AgendaValidation();
-            validation.ShouldHaveValidationErrorFor(x => x.Nome_cliente, (string)null);
+
+            agenda.Nome_cliente = string.Empty;
+
+            Action resultado = () => agenda.Validacao();
+
+            resultado.Should()
+                .Throw<Exception>()
+                .WithMessage("O Nome do cliente é um campo obrigatório");
         }
 
         [Test]
         public void Teste_Horario_Agendado_Nao_Pode_Ser_Vazio()
         {
-            var validation = new AgendaValidation();
-            validation.ShouldHaveValidationErrorFor(x => x.Horario, (string)null);
+            agenda.Horario = string.Empty;
+
+            Action resultado = () => agenda.Validacao();
+
+            resultado.Should()
+                .Throw<Exception>()
+                .WithMessage("O Horário é um campo obrigatório para o Agendamento");
         }
 
         [Test]
         public void Teste_Servico_Agendado_Nao_Pode_Ser_Vazio()
         {
-            var validation = new AgendaValidation();
-            validation.ShouldHaveValidationErrorFor(x => x.IdServico, 0);
+            agenda.IdServico = 0;
+         
+            Action resultado = () => agenda.Validacao();
+
+            resultado.Should()
+                .Throw<Exception>()
+                .WithMessage("Serviço é um campo obrigatório para o Agendamento de horários");
         }
 
         [Test]
         public void Teste_Funcionario_Agendado_Nao_Pode_Ser_Vazio()
         {
-            var validation = new AgendaValidation();
-            validation.ShouldHaveValidationErrorFor(x => x.Idfuncionario, 0);
+           agenda.Idfuncionario = 0;
+         
+            Action resultado = () => agenda.Validacao();
+
+            resultado.Should()
+                .Throw<Exception>()
+                .WithMessage("Funcionário é um campo obrigatório para o Agendamento de horáríos");
         }
 
         [Test]
         public void Teste_Data_Agendada_Nao_Pode_Ser_Vazia()
         {
-            var validation = new AgendaValidation();
-            validation.ShouldHaveValidationErrorFor(x => x.Data, (string)null);
+            agenda.Data = string.Empty;
+            Action resultado = () => agenda.Validacao();
+
+            resultado.Should()
+                .Throw<Exception>()
+                .WithMessage("A Data é um campo obrigatório para o Agendamento");
         }
     }
 }

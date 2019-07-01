@@ -50,7 +50,7 @@ namespace Rafael.Salao.Infra.Dados.Testes
             Dominio.Funcionario novoFuncionario = new Dominio.Funcionario();
             novoFuncionario.Nome = "Teste 2";
             novoFuncionario.Idade = 13;
-            novoFuncionario.Telefone = 1333;
+            novoFuncionario.Telefone = "1333";
             novoFuncionario.CPF = 09016801928;
             novoFuncionario.RG = 5972961;
 
@@ -108,7 +108,7 @@ namespace Rafael.Salao.Infra.Dados.Testes
         [Test]
         public void Teste_Deve_Buscar_Id_Do_Funcionario_Para_Agenda()
         {
-            string connectionString = "Server=localhost;Database=SALAO_DATABASE;User Id=sa;Password=p@ssw0rd";
+            string connectionString = "Server=172.31.40.23;Database=SALAO_DATABASE;User Id=sa;Password=p@ssw0rd";
 
             DabaseConnection.connection_created = new SqlConnection(connectionString);
 
@@ -139,7 +139,7 @@ namespace Rafael.Salao.Infra.Dados.Testes
         [Test]
         public void Teste_Deve_Buscar_Id_Do_Servico_Para_Agenda()
         {
-            string connectionString = "Server=localhost;Database=SALAO_DATABASE;User Id=sa;Password=p@ssw0rd";
+            string connectionString = "Server=172.31.40.23;Database=SALAO_DATABASE;User Id=sa;Password=p@ssw0rd";
 
             DabaseConnection.connection_created = new SqlConnection(connectionString);
 

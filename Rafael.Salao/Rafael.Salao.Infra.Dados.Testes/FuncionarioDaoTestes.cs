@@ -24,7 +24,7 @@ namespace Rafael.Salao.Infra.Dados.Testes
             Dominio.Funcionario novoFuncionario = new Dominio.Funcionario();
             novoFuncionario.Nome = "Teste 1";
             novoFuncionario.Idade = 13;
-            novoFuncionario.Telefone = 1333;
+            novoFuncionario.Telefone = "323";
             novoFuncionario.CPF = 09016801928;
             novoFuncionario.RG = 5972961;
             novoFuncionario.Unha = true;
@@ -51,7 +51,7 @@ namespace Rafael.Salao.Infra.Dados.Testes
             Dominio.Funcionario novoFuncionario = new Dominio.Funcionario();
             novoFuncionario.Nome = "Teste 2";
             novoFuncionario.Idade = 13;
-            novoFuncionario.Telefone = 1333;
+            novoFuncionario.Telefone = "323";
             novoFuncionario.CPF = 09016801928;
             novoFuncionario.RG = 5972961;
             novoFuncionario.Unha = false;
@@ -92,5 +92,32 @@ namespace Rafael.Salao.Infra.Dados.Testes
             Assert.AreEqual(quantidadeFuncionarios, resultado.Count);
         }
 
+
+        [Test]
+        public void Teste_Deve_Editar_Qualquer_Campo_do_Funcionario()
+        {
+            //CENÁRIO
+            int idFuncionarioEditado = 1;
+            string telefoneEditado = "9990";
+            Dominio.Funcionario funcionarioEditado = _funcionarioDao.BuscarPorId(idFuncionarioEditado);
+
+            //AÇÃO
+            funcionarioEditado.Telefone = telefoneEditado;
+            _funcionarioDao.Editar(funcionarioEditado);
+
+            Dominio.Funcionario funcionarioBuscado = _funcionarioDao.BuscarPorId(idFuncionarioEditado);
+            Assert.AreEqual(telefoneEditado, funcionarioBuscado.Telefone);
+        }
+
+
+        [Test]
+        public void Teste_Deve_Buscar_Funcionario_Por_Id()
+        {
+            int idFuncionarioBuscar = 1;
+
+            Dominio.Funcionario resultado = _funcionarioDao.BuscarPorId(idFuncionarioBuscar);
+
+            Assert.NotNull(resultado);
+        }
     }
 }

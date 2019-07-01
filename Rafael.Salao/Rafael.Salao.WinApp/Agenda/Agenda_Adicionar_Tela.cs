@@ -20,7 +20,6 @@ namespace Rafael.Salao.WinApp.Agenda
         public List<Servicos> _lista_servicos = new List<Servicos>();
 
         public AgendaDao _agendaDao = new AgendaDao();
-
         public Agenda_Adicionar_Tela()
         {
             InitializeComponent();
@@ -56,16 +55,26 @@ namespace Rafael.Salao.WinApp.Agenda
             ag.Horario = horario_agenda.Text;
             ag.Nome_cliente = nome_cliente_txtbox.Text;
             ag.Telefone = Convert.ToString(telefone_cliente_textbox.Text);
-            ag.Idfuncionario =  _agendaDao.GetFuncionarioData(agenda_funcionario_combobox.SelectedItem.ToString());
-            ag.IdServico = _agendaDao.GetServicoData(agenda_servico_combobox.SelectedItem.ToString());
+            VerifyComboboxes(ag);
+
+            ag.Validacao();
 
             _agendaDao.Adicionar(ag);
-
 
             Close();
 
             Tela_Inicial TI = new Tela_Inicial();
             TI.Show();
+        }
+
+        private void VerifyComboboxes(Dominio.Agenda ag)
+        {
+            try
+            {
+                ag.Idfuncionario = _agendaDao.GetFuncionarioData(agenda_funcionario_combobox.SelectedItem.ToString());
+            }
+            catch (Exception) { MessageBox.Show("Selecione algum valor para funcionario"); return; }
+            try { ag.IdServico = _agendaDao.GetServicoData(agenda_servico_combobox.SelectedItem.ToString()); } catch (Exception) { MessageBox.Show("Selecione algum valor para servico"); return; }
         }
 
         private void label2_Click(object sender, EventArgs e)

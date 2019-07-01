@@ -30,12 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tela_Inicial));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.inicio_aba = new System.Windows.Forms.TabPage();
-            this.agenda_aba = new System.Windows.Forms.TabPage();
-            this.remover_horario_agenda_button = new System.Windows.Forms.Button();
-            this.editar_horario_agenda_button = new System.Windows.Forms.Button();
-            this.adicionar_horario_agenda_button = new System.Windows.Forms.Button();
-            this.agenda_datagrid = new System.Windows.Forms.DataGridView();
             this.funcionarios_aba = new System.Windows.Forms.TabPage();
             this.remover_funcionario_button = new System.Windows.Forms.Button();
             this.editar_funcionario_button = new System.Windows.Forms.Button();
@@ -46,17 +40,21 @@
             this.add_saldo = new System.Windows.Forms.Button();
             this.saldo_caixa_label = new System.Windows.Forms.Label();
             this.saldo_atual_txtbox = new System.Windows.Forms.TextBox();
+            this.agenda_datagrid = new System.Windows.Forms.DataGridView();
+            this.adicionar_horario_agenda_button = new System.Windows.Forms.Button();
+            this.editar_horario_agenda_button = new System.Windows.Forms.Button();
+            this.remover_horario_agenda_button = new System.Windows.Forms.Button();
+            this.agenda_aba = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
-            this.agenda_aba.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.agenda_datagrid)).BeginInit();
             this.funcionarios_aba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.funcionario_datagrid)).BeginInit();
             this.caixa_aba.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.agenda_datagrid)).BeginInit();
+            this.agenda_aba.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.inicio_aba);
             this.tabControl1.Controls.Add(this.agenda_aba);
             this.tabControl1.Controls.Add(this.funcionarios_aba);
             this.tabControl1.Controls.Add(this.caixa_aba);
@@ -65,80 +63,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(654, 326);
             this.tabControl1.TabIndex = 0;
-            // 
-            // inicio_aba
-            // 
-            this.inicio_aba.Location = new System.Drawing.Point(4, 22);
-            this.inicio_aba.Name = "inicio_aba";
-            this.inicio_aba.Padding = new System.Windows.Forms.Padding(3);
-            this.inicio_aba.Size = new System.Drawing.Size(646, 300);
-            this.inicio_aba.TabIndex = 0;
-            this.inicio_aba.Text = "Inicio";
-            this.inicio_aba.UseVisualStyleBackColor = true;
-            // 
-            // agenda_aba
-            // 
-            this.agenda_aba.Controls.Add(this.remover_horario_agenda_button);
-            this.agenda_aba.Controls.Add(this.editar_horario_agenda_button);
-            this.agenda_aba.Controls.Add(this.adicionar_horario_agenda_button);
-            this.agenda_aba.Controls.Add(this.agenda_datagrid);
-            this.agenda_aba.Location = new System.Drawing.Point(4, 22);
-            this.agenda_aba.Name = "agenda_aba";
-            this.agenda_aba.Padding = new System.Windows.Forms.Padding(3);
-            this.agenda_aba.Size = new System.Drawing.Size(646, 300);
-            this.agenda_aba.TabIndex = 1;
-            this.agenda_aba.Text = "Agenda";
-            this.agenda_aba.UseVisualStyleBackColor = true;
-            // 
-            // remover_horario_agenda_button
-            // 
-            this.remover_horario_agenda_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("remover_horario_agenda_button.BackgroundImage")));
-            this.remover_horario_agenda_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.remover_horario_agenda_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
-            this.remover_horario_agenda_button.FlatAppearance.BorderSize = 0;
-            this.remover_horario_agenda_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.remover_horario_agenda_button.Location = new System.Drawing.Point(102, 6);
-            this.remover_horario_agenda_button.Name = "remover_horario_agenda_button";
-            this.remover_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
-            this.remover_horario_agenda_button.TabIndex = 3;
-            this.remover_horario_agenda_button.UseVisualStyleBackColor = true;
-            this.remover_horario_agenda_button.Click += new System.EventHandler(this.remover_horario_agenda_button_Click);
-            // 
-            // editar_horario_agenda_button
-            // 
-            this.editar_horario_agenda_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editar_horario_agenda_button.BackgroundImage")));
-            this.editar_horario_agenda_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editar_horario_agenda_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
-            this.editar_horario_agenda_button.FlatAppearance.BorderSize = 0;
-            this.editar_horario_agenda_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editar_horario_agenda_button.Location = new System.Drawing.Point(54, 6);
-            this.editar_horario_agenda_button.Name = "editar_horario_agenda_button";
-            this.editar_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
-            this.editar_horario_agenda_button.TabIndex = 2;
-            this.editar_horario_agenda_button.UseVisualStyleBackColor = true;
-            this.editar_horario_agenda_button.Click += new System.EventHandler(this.editar_horario_agenda_button_Click);
-            // 
-            // adicionar_horario_agenda_button
-            // 
-            this.adicionar_horario_agenda_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("adicionar_horario_agenda_button.BackgroundImage")));
-            this.adicionar_horario_agenda_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.adicionar_horario_agenda_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
-            this.adicionar_horario_agenda_button.FlatAppearance.BorderSize = 0;
-            this.adicionar_horario_agenda_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.adicionar_horario_agenda_button.Location = new System.Drawing.Point(6, 6);
-            this.adicionar_horario_agenda_button.Name = "adicionar_horario_agenda_button";
-            this.adicionar_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
-            this.adicionar_horario_agenda_button.TabIndex = 1;
-            this.adicionar_horario_agenda_button.UseVisualStyleBackColor = true;
-            this.adicionar_horario_agenda_button.Click += new System.EventHandler(this.adicionar_horario_agenda_button_Click);
-            // 
-            // agenda_datagrid
-            // 
-            this.agenda_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.agenda_datagrid.Location = new System.Drawing.Point(6, 48);
-            this.agenda_datagrid.Name = "agenda_datagrid";
-            this.agenda_datagrid.Size = new System.Drawing.Size(634, 246);
-            this.agenda_datagrid.TabIndex = 0;
             // 
             // funcionarios_aba
             // 
@@ -263,6 +187,70 @@
             this.saldo_atual_txtbox.Size = new System.Drawing.Size(149, 20);
             this.saldo_atual_txtbox.TabIndex = 0;
             // 
+            // agenda_datagrid
+            // 
+            this.agenda_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.agenda_datagrid.Location = new System.Drawing.Point(6, 48);
+            this.agenda_datagrid.Name = "agenda_datagrid";
+            this.agenda_datagrid.Size = new System.Drawing.Size(634, 246);
+            this.agenda_datagrid.TabIndex = 0;
+            // 
+            // adicionar_horario_agenda_button
+            // 
+            this.adicionar_horario_agenda_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("adicionar_horario_agenda_button.BackgroundImage")));
+            this.adicionar_horario_agenda_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.adicionar_horario_agenda_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.adicionar_horario_agenda_button.FlatAppearance.BorderSize = 0;
+            this.adicionar_horario_agenda_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adicionar_horario_agenda_button.Location = new System.Drawing.Point(6, 6);
+            this.adicionar_horario_agenda_button.Name = "adicionar_horario_agenda_button";
+            this.adicionar_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
+            this.adicionar_horario_agenda_button.TabIndex = 1;
+            this.adicionar_horario_agenda_button.UseVisualStyleBackColor = true;
+            this.adicionar_horario_agenda_button.Click += new System.EventHandler(this.adicionar_horario_agenda_button_Click);
+            // 
+            // editar_horario_agenda_button
+            // 
+            this.editar_horario_agenda_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editar_horario_agenda_button.BackgroundImage")));
+            this.editar_horario_agenda_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.editar_horario_agenda_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.editar_horario_agenda_button.FlatAppearance.BorderSize = 0;
+            this.editar_horario_agenda_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editar_horario_agenda_button.Location = new System.Drawing.Point(54, 6);
+            this.editar_horario_agenda_button.Name = "editar_horario_agenda_button";
+            this.editar_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
+            this.editar_horario_agenda_button.TabIndex = 2;
+            this.editar_horario_agenda_button.UseVisualStyleBackColor = true;
+            this.editar_horario_agenda_button.Click += new System.EventHandler(this.editar_horario_agenda_button_Click);
+            // 
+            // remover_horario_agenda_button
+            // 
+            this.remover_horario_agenda_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("remover_horario_agenda_button.BackgroundImage")));
+            this.remover_horario_agenda_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.remover_horario_agenda_button.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.remover_horario_agenda_button.FlatAppearance.BorderSize = 0;
+            this.remover_horario_agenda_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.remover_horario_agenda_button.Location = new System.Drawing.Point(102, 6);
+            this.remover_horario_agenda_button.Name = "remover_horario_agenda_button";
+            this.remover_horario_agenda_button.Size = new System.Drawing.Size(42, 39);
+            this.remover_horario_agenda_button.TabIndex = 3;
+            this.remover_horario_agenda_button.UseVisualStyleBackColor = true;
+            this.remover_horario_agenda_button.Click += new System.EventHandler(this.remover_horario_agenda_button_Click);
+            // 
+            // agenda_aba
+            // 
+            this.agenda_aba.Controls.Add(this.remover_horario_agenda_button);
+            this.agenda_aba.Controls.Add(this.editar_horario_agenda_button);
+            this.agenda_aba.Controls.Add(this.adicionar_horario_agenda_button);
+            this.agenda_aba.Controls.Add(this.agenda_datagrid);
+            this.agenda_aba.Location = new System.Drawing.Point(4, 22);
+            this.agenda_aba.Name = "agenda_aba";
+            this.agenda_aba.Padding = new System.Windows.Forms.Padding(3);
+            this.agenda_aba.Size = new System.Drawing.Size(646, 300);
+            this.agenda_aba.TabIndex = 1;
+            this.agenda_aba.Text = "Agenda";
+            this.agenda_aba.UseVisualStyleBackColor = true;
+            // 
             // Tela_Inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,12 +260,12 @@
             this.Name = "Tela_Inicial";
             this.Text = "Tela Inicial";
             this.tabControl1.ResumeLayout(false);
-            this.agenda_aba.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.agenda_datagrid)).EndInit();
             this.funcionarios_aba.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.funcionario_datagrid)).EndInit();
             this.caixa_aba.ResumeLayout(false);
             this.caixa_aba.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.agenda_datagrid)).EndInit();
+            this.agenda_aba.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -285,14 +273,8 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage inicio_aba;
-        private System.Windows.Forms.TabPage agenda_aba;
         private System.Windows.Forms.TabPage funcionarios_aba;
         private System.Windows.Forms.TabPage caixa_aba;
-        private System.Windows.Forms.Button adicionar_horario_agenda_button;
-        private System.Windows.Forms.DataGridView agenda_datagrid;
-        private System.Windows.Forms.Button remover_horario_agenda_button;
-        private System.Windows.Forms.Button editar_horario_agenda_button;
         private System.Windows.Forms.Button remover_funcionario_button;
         private System.Windows.Forms.Button editar_funcionario_button;
         private System.Windows.Forms.Button add_funcionario_button;
@@ -301,5 +283,10 @@
         public System.Windows.Forms.TextBox saldo_atual_txtbox;
         private System.Windows.Forms.Button fechar_caixa;
         public System.Windows.Forms.DataGridView funcionario_datagrid;
+        private System.Windows.Forms.TabPage agenda_aba;
+        private System.Windows.Forms.Button remover_horario_agenda_button;
+        private System.Windows.Forms.Button editar_horario_agenda_button;
+        private System.Windows.Forms.Button adicionar_horario_agenda_button;
+        private System.Windows.Forms.DataGridView agenda_datagrid;
     }
 }

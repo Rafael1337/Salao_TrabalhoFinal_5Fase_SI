@@ -19,7 +19,7 @@ namespace Rafael.Salao.Infra.Dados
         private static readonly string providerName = "System.Data.SqlClient";
             //ConfigurationManager.ConnectionStrings[connectionStringName].ProviderName;
 
-        private static readonly string connectionString = "Server=localhost;Database=SALAO_DATABASE;User Id=sa;Password=p@ssw0rd";
+        private static readonly string connectionString = "Server=172.31.40.23;Database=SALAO_DATABASE;User Id=sa;Password=p@ssw0rd";
             //ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;
 
         private static readonly DbProviderFactory factory = DbProviderFactories.GetFactory(providerName);

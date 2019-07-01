@@ -1,15 +1,10 @@
-﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Rafael.Salao.Dominio
 {
     public class Agenda
     {
-        public int Id {get; set;}
+        public int Id { get; set; }
         public string Horario { get; set; }
         public string Nome_cliente { get; set; }
         public string Telefone { get; set; }
@@ -17,25 +12,41 @@ namespace Rafael.Salao.Dominio
         public int IdServico { get; set; }
         public string Data { get; set; }
 
-        private IValidatorFactory validatorFactory;
-        private List<IValidator> _validators;
-
-        public void Validate(Agenda entity)
+        public void Validacao()
         {
-            var validator = validatorFactory.GetValidator(entity.GetType());
+            if (Id == 0)
+            {
+                throw new Exception("Ocorreu um problema interno por favor contate o suporte");
+            }
+            //Nome_Cliente
+            if (string.IsNullOrEmpty(Nome_cliente) || string.IsNullOrWhiteSpace(Nome_cliente))
+            {
+                throw new Exception("O Nome do cliente é um campo obrigatório");
+            }
 
-            if (validator == null)
-                return;
+            //Horario
+            else if (string.IsNullOrWhiteSpace(Horario) || string.IsNullOrEmpty(Horario))
+            {
+                throw new Exception("O Horário é um campo obrigatório para o Agendamento");
+            }
 
-            var validation = validator.Validate(entity);
+            //Data
+            else if (string.IsNullOrEmpty(Data) || string.IsNullOrWhiteSpace(Data))
+            {
+                throw new Exception("A Data é um campo obrigatório para o Agendamento");
+            }
 
-            if (validation.Errors.Count > 0)
-                throw new Exception(validation.Errors[0].ErrorMessage);
-        }
+            //Servicos 
+            else if (IdServico == 0)
+            {
+                throw new Exception("Serviço é um campo obrigatório para o Agendamento de horários");
+            }
 
-        public IValidator GetValidator(Type type)
-        {
-            return _validators.FirstOrDefault(x => x.CanValidateInstancesOfType(type));
+            //Funcionario
+            else if (Idfuncionario == 0)
+            {
+                throw new Exception("Funcionário é um campo obrigatório para o Agendamento de horáríos");
+            }
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Rafael.Salao.WinApp.Funcionarios
             Dominio.Funcionario funcionarioEditado = _funcionarioDao.BuscarPorId(funcionario.Id);
 
             funcionarioEditado.Nome = nome_funcionario_txt.Text;
-            funcionarioEditado.Telefone = Convert.ToDouble(telefone_funcionario_txt.Text);
+            funcionarioEditado.Telefone = telefone_funcionario_txt.Text;
             funcionarioEditado.CPF = Convert.ToDouble(cpf_funcionario_txt.Text);
             funcionarioEditado.RG = Convert.ToDouble(rg_funcionario_txt.Text);
             funcionarioEditado.Idade = Convert.ToInt32(idade_funcionario_txt.Text);
